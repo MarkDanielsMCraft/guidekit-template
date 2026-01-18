@@ -1030,48 +1030,48 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
     <div className="min-h-screen pb-20">
       <Header emergencyMode={emergencyMode} setEmergencyMode={setEmergencyMode} isPostDetail={true} />
       {/* Top nav */}
-      <div className="glass-card sticky top-[72px] z-50 px-4 py-4 flex items-center justify-between border-b border-white/20">
+      <div className="glass-card sticky top-[72px] z-50 px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between border-b border-white/20 gap-2">
         <button
           onClick={onBack}
-          className="flex items-center text-slate-600 hover:text-slate-900 bg-white/50 hover:bg-white px-4 py-2 rounded-full transition-all text-sm font-bold shadow-sm backdrop-blur-md"
+          className="flex items-center text-slate-600 hover:text-slate-900 bg-white/50 hover:bg-white px-3 sm:px-4 py-2 rounded-full transition-all text-xs sm:text-sm font-bold shadow-sm backdrop-blur-md"
         >
-          <ArrowLeft className="mr-2" size={18} />
-          Back
+          <ArrowLeft className="mr-1 sm:mr-2" size={16} />
+          <span className="hidden sm:inline">Back</span>
         </button>
 
         <button
           onClick={onReset}
-          className="inline-flex items-center text-xs font-bold text-slate-500 bg-white/70 border border-slate-200 px-3 py-2 rounded-full hover:bg-white transition"
+          className="inline-flex items-center text-xs font-bold text-slate-500 bg-white/70 border border-slate-200 px-2.5 sm:px-3 py-2 rounded-full hover:bg-white transition"
           title="Reset checklist for this post"
         >
-          <RotateCcw size={14} className="mr-1" />
-          Reset checklist
+          <RotateCcw size={12} className="mr-1" />
+          <span className="hidden sm:inline">Reset</span>
         </button>
       </div>
 
       {/* Header */}
-      <div className="px-6 py-12 mb-6 text-center relative overflow-hidden">
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br ${post.color} opacity-20 blur-3xl rounded-full`} />
+      <div className="px-4 sm:px-6 py-8 sm:py-12 mb-6 text-center relative overflow-hidden">
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-72 h-48 sm:h-72 bg-gradient-to-br ${post.color} opacity-20 blur-3xl rounded-full`} />
         <div className="relative z-10">
-          <div className={`inline-flex p-5 rounded-3xl mb-6 bg-gradient-to-br ${post.color} text-white shadow-2xl ${post.shadow} animate-float`}>
-            {React.cloneElement(post.icon, { size: 42 })}
+          <div className={`inline-flex p-3 sm:p-5 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 bg-gradient-to-br ${post.color} text-white shadow-2xl ${post.shadow} animate-float`}>
+            {React.cloneElement(post.icon, { size: 32 })}
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-2 sm:mb-3 tracking-tight">
             {post.title}
           </h1>
-          <p className="text-slate-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed px-2">
             {post.summary}
           </p>
 
-          <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
-            <div className="inline-flex items-center text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wide">
-              <CheckCircle size={12} className="mr-1 text-emerald-500" />
-              Verified: {post.verified}
+          <div className="mt-3 sm:mt-4 flex items-center justify-center gap-2 flex-wrap">
+            <div className="inline-flex items-center text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full uppercase tracking-wide">
+              <CheckCircle size={10} className="mr-1 text-emerald-500" />
+              <span className="hidden sm:inline">Verified:</span> {post.verified}
             </div>
 
-            <div className="inline-flex items-center text-xs font-bold text-slate-600 bg-white/70 border border-slate-200 px-3 py-1 rounded-full">
-              <span className="mr-2">{progressPercent}% complete</span>
-              <span className="h-2 w-24 bg-slate-100 rounded-full overflow-hidden">
+            <div className="inline-flex items-center text-xs font-bold text-slate-600 bg-white/70 border border-slate-200 px-2.5 py-1 rounded-full">
+              <span className="mr-1.5">{progressPercent}%</span>
+              <span className="h-2 w-16 sm:w-24 bg-slate-100 rounded-full overflow-hidden">
                 <span className={`block h-full bg-gradient-to-r ${post.color}`} style={{ width: `${progressPercent}%` }} />
               </span>
             </div>
@@ -1080,11 +1080,11 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
       </div>
 
       {/* Content */}
-      <div className="max-w-3xl mx-auto px-6 space-y-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-6 sm:space-y-8">
         
         {/* Render STRUCTURED CONTENT ARRAY */}
         {post.content && (
-          <div className="prose prose-slate max-w-none bg-white p-8 rounded-3xl border border-slate-100 shadow-sm leading-relaxed text-lg content-block">
+          <div className="prose prose-slate max-w-none bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-sm leading-relaxed text-base sm:text-lg content-block">
             {post.content.map((block, i) => {
               if (block.type === 'h2') return <h2 key={i}>{block.text}</h2>;
               if (block.type === 'p') return <p key={i}>{renderRichText(block.text, `p-${i}`)}</p>;
@@ -1095,20 +1095,20 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
         )}
 
         {/* Golden rule */}
-        <div className="bg-amber-50/80 p-6 rounded-3xl border border-amber-100/60">
+        <div className="bg-amber-50/80 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-amber-100/60">
           <div className="flex items-center gap-2 text-amber-700 font-black text-xs uppercase tracking-wider mb-2">
-            <AlertTriangle size={16} />
+            <AlertTriangle size={14} />
             Golden Rule
           </div>
-          <p className="text-slate-800 font-semibold">{post.goldenRule}</p>
+          <p className="text-slate-800 font-semibold text-sm sm:text-base">{post.goldenRule}</p>
         </div>
 
         {/* Checklist */}
-        <div className="space-y-6">
-          <div className="flex items-center space-x-4 py-2">
+        <div className="space-y-4 sm:space-y-6">
+          <div className="flex items-center space-x-3 sm:space-x-4 py-2">
             <div className="h-px bg-slate-200 flex-1" />
-            <h3 className="font-black text-slate-400 text-xs uppercase tracking-[0.2em]">
-              Action Plan & Checklist
+            <h3 className="font-black text-slate-400 text-xs uppercase tracking-wider sm:tracking-[0.2em]">
+              <span className="hidden sm:inline">Action Plan & </span>Checklist
             </h3>
             <div className="h-px bg-slate-200 flex-1" />
           </div>
@@ -1120,16 +1120,16 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
             return (
               <div
                 key={key}
-                className={`bg-white p-6 rounded-3xl shadow-sm border transition-all duration-300 transform ${
+                className={`bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm border transition-all duration-300 transform ${
                   isDone
                     ? "border-emerald-200 opacity-90"
                     : "border-slate-100 hover:shadow-xl hover:shadow-slate-200/40 hover:-translate-y-1"
                 }`}
               >
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <div className="flex items-center">
+                <div className="flex items-start justify-between gap-2 sm:gap-3 mb-3">
+                  <div className="flex items-start min-w-0 flex-1">
                     <span
-                      className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-black mr-3 transition-colors ${
+                      className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-black mr-2 sm:mr-3 transition-colors flex-shrink-0 ${
                         isDone ? "bg-emerald-100 text-emerald-600" : "bg-slate-100 text-slate-500"
                       }`}
                     >
@@ -1137,7 +1137,7 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
                     </span>
 
                     <h4
-                      className={`font-bold text-lg transition-colors ${
+                      className={`font-bold text-sm sm:text-lg transition-colors leading-snug ${
                         isDone
                           ? "text-emerald-800 line-through decoration-emerald-500/30"
                           : "text-slate-900"
@@ -1149,26 +1149,26 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
 
                   <button
                     onClick={() => onToggle(post.slug, idx)}
-                    className={`p-2 rounded-xl transition-all duration-300 ${
+                    className={`p-1.5 sm:p-2 rounded-lg sm:rounded-xl transition-all duration-300 flex-shrink-0 ${
                       isDone
                         ? "bg-emerald-100 text-emerald-600"
                         : "bg-slate-50 text-slate-300 hover:bg-slate-100 hover:text-indigo-500"
                     }`}
                     title="Mark done / not done"
                   >
-                    {isDone ? <CheckSquare size={24} /> : <Square size={24} />}
+                    {isDone ? <CheckSquare size={20} /> : <Square size={20} />}
                   </button>
                 </div>
 
-                <p className={`text-slate-500 mb-4 ml-9 font-medium leading-relaxed ${isDone ? "opacity-50" : "opacity-100"}`}>
+                <p className={`text-slate-500 mb-3 sm:mb-4 ml-8 sm:ml-9 font-medium leading-relaxed text-sm sm:text-base ${isDone ? "opacity-50" : "opacity-100"}`}>
                   {step.text}
                 </p>
 
                 {!isDone && (
-                  <div className="ml-9">
-                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-3 flex items-start">
-                      <span className="text-lg mr-3">👉</span>
-                      <span className="text-slate-700 font-semibold text-sm pt-0.5">
+                  <div className="ml-8 sm:ml-9">
+                    <div className="bg-slate-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-100 mb-3 flex items-start gap-2 sm:gap-3">
+                      <span className="text-base sm:text-lg flex-shrink-0">👉</span>
+                      <span className="text-slate-700 font-semibold text-xs sm:text-sm pt-0.5 leading-snug">
                         {step.action}
                       </span>
                     </div>
@@ -1181,16 +1181,16 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
                             href={l.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full text-left bg-white hover:bg-slate-50 border border-slate-100 rounded-2xl px-4 py-3 transition flex items-center justify-between"
+                            className="w-full text-left bg-white hover:bg-slate-50 border border-slate-100 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 transition flex items-start sm:items-center justify-between gap-2"
                           >
-                            <div className="min-w-0">
-                              <div className="flex items-center gap-2 mb-1">
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1 flex-wrap">
                                 <SourcePill source={l.source} />
-                                <span className="text-xs text-slate-400 font-bold">Read more</span>
+                                <span className="text-xs text-slate-400 font-bold hidden sm:inline">Read more</span>
                               </div>
-                              <p className="text-sm font-bold text-slate-800 truncate">{l.title}</p>
+                              <p className="text-xs sm:text-sm font-bold text-slate-800 truncate">{l.title}</p>
                             </div>
-                            <ExternalLink size={16} className="text-slate-400 flex-shrink-0 ml-3" />
+                            <ExternalLink size={14} className="text-slate-400 flex-shrink-0 ml-2" />
                           </a>
                         ))}
                       </div>
