@@ -134,6 +134,14 @@ const styles = `
   }
 
   .glass-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  }
+
+  .glass-card-liquid {
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -749,8 +757,8 @@ const RESOURCES = [
 // UI COMPONENTS
 // =======================
 
-const Header = ({ emergencyMode, setEmergencyMode }) => (
-  <header className="sticky top-0 z-50 glass-card border-b border-white/20">
+const Header = ({ emergencyMode, setEmergencyMode, isPostDetail = false }) => (
+  <header className={`sticky top-0 z-50 border-b border-white/20 ${isPostDetail ? 'glass-card-liquid' : 'glass-card'}`}>
     <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div className="flex items-center space-x-3">
         <div className="bg-gradient-to-tr from-indigo-600 to-violet-600 text-white p-2.5 rounded-xl shadow-lg shadow-indigo-500/30">
@@ -1010,7 +1018,7 @@ const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, 
 
   return (
     <div className="min-h-screen pb-20">
-      <Header emergencyMode={emergencyMode} setEmergencyMode={setEmergencyMode} />
+      <Header emergencyMode={emergencyMode} setEmergencyMode={setEmergencyMode} isPostDetail={true} />
       {/* Top nav */}
       <div className="glass-card sticky top-[72px] z-50 px-4 py-4 flex items-center justify-between border-b border-white/20">
         <button
