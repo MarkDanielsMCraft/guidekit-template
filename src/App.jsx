@@ -1482,6 +1482,23 @@ export default function App() {
 
             <footer className="text-center py-12 text-slate-400 text-sm font-medium border-t border-slate-200/50 glass-card">
               <p>Made with ❤️ for future colleagues.</p>
+              
+              {/* Buy Me A Coffee Button - Prominent */}
+              <div className="my-6 py-6 border-y border-slate-200/50">
+                <p className="text-xs font-bold text-slate-500 mb-3 uppercase tracking-wider">Like this guide? Support the author</p>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.bmcWalletButton) {
+                      window.bmcWalletButton.open();
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 text-white font-black uppercase tracking-wide text-sm hover:from-amber-300 hover:via-orange-300 hover:to-rose-300 transition-all shadow-lg shadow-orange-400/40 hover:shadow-xl hover:shadow-orange-400/60 hover:scale-105 active:scale-95"
+                >
+                  ☕ Buy Me A Coffee
+                </button>
+              </div>
+              
               <p className="mt-2 text-xs opacity-70">
                 Unofficial Guide • Verified {META.lastUpdatedDate}
               </p>
