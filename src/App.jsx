@@ -141,12 +141,12 @@ const styles = `
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
   }
 
-  .glass-card-liquid {
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.6);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  .glass-card-transparent {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
   }
 
   @keyframes gradient-animation {
@@ -758,7 +758,7 @@ const RESOURCES = [
 // =======================
 
 const Header = ({ emergencyMode, setEmergencyMode, isPostDetail = false }) => (
-  <header className={`sticky top-0 z-50 border-b border-white/20 ${isPostDetail ? 'glass-card-liquid' : 'glass-card'}`}>
+  <header className={`sticky top-0 z-50 border-b ${isPostDetail ? 'glass-card-transparent border-transparent' : 'glass-card border-white/20'}`}>
     <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div className="flex items-center space-x-3">
         <div className="bg-gradient-to-tr from-indigo-600 to-violet-600 text-white p-2.5 rounded-xl shadow-lg shadow-indigo-500/30">
