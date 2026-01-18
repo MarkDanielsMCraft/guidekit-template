@@ -1003,15 +1003,16 @@ const ReadMoreList = ({ links }) => {
   );
 };
 
-const PostDetail = ({ post, onBack, progress, onToggle, onReset }) => {
+const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergencyMode, setEmergencyMode }) => {
   const total = post.steps.length;
   const done = post.steps.reduce((acc, _, i) => acc + (progress[`${post.slug}-${i}`] ? 1 : 0), 0);
   const progressPercent = pct(done, total);
 
   return (
     <div className="min-h-screen pb-20">
+      <Header emergencyMode={emergencyMode} setEmergencyMode={setEmergencyMode} />
       {/* Top nav */}
-      <div className="glass-card sticky top-0 z-50 px-4 py-4 flex items-center justify-between border-b border-white/20">
+      <div className="glass-card sticky top-[72px] z-50 px-4 py-4 flex items-center justify-between border-b border-white/20">
         <button
           onClick={onBack}
           className="flex items-center text-slate-600 hover:text-slate-900 bg-white/50 hover:bg-white px-4 py-2 rounded-full transition-all text-sm font-bold shadow-sm backdrop-blur-md"
@@ -1411,6 +1412,8 @@ export default function App() {
             progress={progress}
             onToggle={toggleStep}
             onReset={() => resetPost(activePost.slug)}
+            emergencyMode={emergencyMode}
+            setEmergencyMode={setEmergencyMode}
           />
         ) : (
           <>
