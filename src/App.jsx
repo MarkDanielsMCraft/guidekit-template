@@ -134,10 +134,10 @@ const styles = `
   }
 
   .glass-card {
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.6);
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
   }
 
