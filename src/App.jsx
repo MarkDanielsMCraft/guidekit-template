@@ -142,9 +142,9 @@ const styles = `
   }
 
   .glass-card-transparent {
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: none;
     box-shadow: none;
   }
@@ -758,7 +758,7 @@ const RESOURCES = [
 // =======================
 
 const Header = ({ emergencyMode, setEmergencyMode, isPostDetail = false }) => (
-  <header className={`sticky top-0 z-50 border-b ${isPostDetail ? 'glass-card-transparent border-transparent' : 'glass-card border-white/20'}`}>
+  <header className={`sticky top-0 z-50 ${isPostDetail ? 'glass-card-transparent' : 'glass-card border-b border-white/20'}`}>
     <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div className="flex items-center space-x-3">
         <div className="bg-gradient-to-tr from-indigo-600 to-violet-600 text-white p-2.5 rounded-xl shadow-lg shadow-indigo-500/30">
