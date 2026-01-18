@@ -37,11 +37,11 @@ import {
 // =======================
 const META = {
   siteTitle: "Survival Kit",
-  tagline: "The honest, step-by-step guide for nursing scholars in Germany",
+  tagline: "Real talk for international students starting vocational training in Germany",
   lastUpdatedLabel: "Last updated",
   lastUpdatedDate: "2026-01-15",
   disclaimer:
-    "Unofficial guide. Rules, prices, and processes can change. If something conflicts with an official letter, your employer, or your city office, always follow the official instructions.",
+    "I've tested everything here. Rules change though, so always double-check with official sources. When in doubt, trust the official letter over this guide.",
 };
 
 const LINKS = {
@@ -212,7 +212,7 @@ const POSTS = [
   {
     slug: "first-72-hours",
     title: "Arrival: First 72 Hours",
-    subtitle: "From the airport to your bed: A detailed survival guide",
+    subtitle: "Airport to apartment: what actually matters",
     stage: "Arrival",
     readTime: "12 min",
     icon: <Wifi size={24} />,
@@ -220,12 +220,12 @@ const POSTS = [
     shadow: "shadow-blue-500/20",
     accent: "text-blue-600",
     verified: META.lastUpdatedDate,
-    summary: "A complete walkthrough of your first 3 days: avoiding expensive taxis, getting internet, and essential apps.",
+    summary: "Your first 72 hours stripped to essentials: internet, transport, and the apps you actually need.",
     vibeCheck: "You just landed. You are tired, your luggage is heavy, and you don’t have internet. Take a deep breath. We’ll sort this out.",
     content: [
       {
         type: "p",
-        text: "Welcome to Germany! You have just landed, and if you are like most international scholars, you probably feel a mix of excitement and absolute exhaustion. The airport environment is designed to make you spend money you don't need to spend. Let's navigate this calmly."
+        text: "You just landed in Germany. Excited but exhausted. The airport is designed to separate you from your money. Let's not let that happen."
       },
       { type: "h2", text: "1. The Internet Problem (Don't buy at the airport)" },
       {
@@ -305,7 +305,7 @@ const POSTS = [
   {
     slug: "money-paperwork",
     title: "Money & Paperwork: Banks & Bureaucracy",
-    subtitle: "Choosing the right bank and registering your address",
+    subtitle: "The money stuff nobody explains well",
     stage: "Settling In",
     readTime: "15 min",
     icon: <Landmark size={24} />,
@@ -313,8 +313,8 @@ const POSTS = [
     shadow: "shadow-emerald-500/20",
     accent: "text-emerald-600",
     verified: META.lastUpdatedDate,
-    summary: "A deep dive into Sparkasse vs. Revolut, how to book an Anmeldung appointment, and understanding Health Insurance.",
-    vibeCheck: "This is the most confusing part. You need a bank for rent, but an address for the bank. We will break the cycle.",
+    summary: "Banks, registration, taxes, insurance—we break down the catch-22s and show you the smart shortcuts.",
+    vibeCheck: "Yes, it feels impossible. You need a bank for rent, but they want an address. We're gonna untangle this.",
     content: [
       {
         type: "p",
@@ -421,7 +421,7 @@ const POSTS = [
   {
     slug: "housing-neighbors",
     title: "Housing & Finding a Flat",
-    subtitle: "WG Gesucht, Kleinanzeigen, and House Rules",
+    subtitle: "Finding a place to live and not spending all your money on IKEA",
     stage: "Settling In",
     readTime: "12 min",
     icon: <HomeIcon size={24} />,
@@ -429,8 +429,8 @@ const POSTS = [
     shadow: "shadow-orange-500/20",
     accent: "text-orange-600",
     verified: META.lastUpdatedDate,
-    summary: "How to find a flat using WG Gesucht, furnish it for free with Kleinanzeigen, and follow the strict house rules.",
-    vibeCheck: "Finding housing is hard, but furnishing it can be cheap. Let's look at the tools you need.",
+    summary: "Platform reviews (WG Gesucht), free furniture hacks (Kleinanzeigen), and the house rules that matter.",
+    vibeCheck: "Flats are tight and expensive. But furnishing them cheap? That's doable. Here's how.",
     content: [
       { type: "h2", text: "1. Finding a Place: WG Gesucht" },
       {
@@ -495,8 +495,8 @@ const POSTS = [
 
   {
     slug: "nursing-language-resources",
-    title: "Nursing: Resources for Success",
-    subtitle: "Textbooks, Research, and Tools to help you study",
+    title: "Professional Development: Language & Jargon",
+    subtitle: "Learning to talk like a pro in your field",
     stage: "Work & Study",
     readTime: "10 min",
     icon: <Stethoscope size={24} />,
@@ -505,9 +505,9 @@ const POSTS = [
     accent: "text-rose-600",
     verified: "2026-01-15",
     summary:
-      "I am not a nurse, but I have curated a list of resources that successful nursing scholars use to master the language and theory.",
+      "You know your trade. The challenge is saying it in German. Real tools that actually help people pass their licensing exams and talk with colleagues.",
     vibeCheck:
-      "You know the medicine. The challenge is doing it in German. These tools will bridge the gap.",
+      "You're competent in your field. Now you just need the German vocabulary. We've got verified resources.",
     content: [
       {
         type: "p",
@@ -581,8 +581,8 @@ const POSTS = [
 
   {
     slug: "rights-work-culture",
-    title: "Rights & Hierarchy: Protect Yourself",
-    subtitle: "Understanding your contract and getting help",
+    title: "Rights & Hierarchy: Know Your Ground",
+    subtitle: "Contracts, your legal rights, and when to speak up",
     stage: "Work & Study",
     readTime: "12 min",
     icon: <Briefcase size={24} />,
@@ -591,31 +591,31 @@ const POSTS = [
     accent: "text-purple-600",
     verified: "2026-01-15",
     summary:
-      "Understand the strict hospital hierarchy, check your contract for legality, and know who to contact if you are treated unfairly.",
+      "You're a trainee, not a servant. Learn what's legal, what's exploitation, and who to call when something's wrong.",
     vibeCheck:
-      "You are a trainee, but you are also an employee with rights. You should not be exploited.",
+      "German workplaces have clear rules. You have rights. You should know them.",
     content: [
-      { type: "h2", text: "1. The Hierarchy Pyramid" },
+      { type: "h2", text: "1. Workplace Hierarchy" },
       {
         type: "p",
-        text: "In Germany, the hierarchy is often traditional. The **Chefarzt** (Chief Physician) is at the top. As a nursing scholar, you report to your **Praxisanleiter** (Instructor) and **Stationsleitung** (Ward Manager). Always be polite, use 'Sie', and follow the chain of command. Do not bypass your manager to complain to the Chief Physician unless it is a dire emergency."
+        text: "German workplaces have clear structures. You have a direct supervisor (Vorgesetzter) and a chain of command. Always be respectful, use formal 'Sie' when appropriate, and follow proper channels. Don't skip your manager to complain to the top unless it's genuinely urgent. *(This applies across all fields—hospitals, tech companies, offices, apprenticeships.)*"
       },
       { type: "h2", text: "2. Contract Check" },
       {
         type: "p",
-        text: "Before you sign anything you don't understand, or if you feel your current contract is unfair, use **Faire Integration**. They offer free counseling for refugees and migrants about work rights. They can look at your contract and tell you if it is legal."
+        text: "You're an employee, not just a trainee. Your contract matters. If you don't understand something or feel it's unfair, get advice. Use **Faire Integration**—they offer free counseling for refugees and migrants about worker rights. They can review your contract and tell you if it's legal."
       },
-      { type: "h2", text: "3. Your Rights & Probezeit" },
+      { type: "h2", text: "3. Your Legal Rights" },
       {
         type: "p",
-        text: "You are here to learn. Your contract says you are an 'Auszubildender' (trainee). This means you must be supervised. You should not be running a ward alone. **Probezeit (Probation):** The first 3-6 months are probation. During this time, you can be fired (or quit) with 2 weeks' notice without reason. Be punctual and reliable during this time! After probation, it is very hard to fire you."
+        text: "You're in Germany as a 'trainee' (**Auszubildender**) or employee. This comes with legal protections. You should never be unsupervised when learning. **Probezeit (Probation):** During the first 3-6 months, either side can end the contract with 2 weeks' notice, no reason needed. Be reliable during this time. After probation, it's much harder to fire you."
       },
       {
         type: "ul",
         items: [
-          "**Working Hours:** Maximum 10 hours a day (usually 8), with mandatory breaks.",
-          "**Sick Leave:** Inform your employer BEFORE your shift starts. Check when you need a doctor's note (Attest).",
-          "**Vacation:** You have a legal right to paid vacation (usually 25-30 days/year)."
+          "**Working Hours:** Maximum 10 hours/day (usually 8), plus mandatory breaks.",
+          "**Sick Leave:** Tell your employer BEFORE your shift. Ask when you need a doctor's note (Attest).",
+          "**Vacation:** Legally guaranteed. Usually 20-30 days/year."
         ]
       }
     ],
@@ -623,14 +623,13 @@ const POSTS = [
       "If you feel unsafe or exploited, contact 'Faire Integration' or 'Dr. Azubi' immediately.",
     steps: [
       {
-        title: "Understand Hierarchy",
-        text: "Know who reports to whom.",
-        action: "Read the Care Potentials guide.",
+        title: "Know Your Hierarchy",
+        text: "Who's who in your workplace.",
+        action: "Ask on day one.",
         readMore: [
           {
-            title: "Hierarchy Guide",
-            url: "https://care-potentials.com/informationen/hierarchie-krankenpflege",
-            source: "learning",
+            title: "German Workplace Culture Guide",
+            url: "https://www.make-it-in-germany.com/en/looking-for-work/law-regulation/", source: "official",
           },
         ],
       },
@@ -643,9 +642,9 @@ const POSTS = [
         ],
       },
       {
-        title: "Check Contract",
-        text: "Have an expert look at your papers.",
-        action: "Contact Faire Integration.",
+        title: "Get Legal Advice",
+        text: "Have an expert review your contract.",
+        action: "Contact Faire Integration (free).",
         readMore: [
           { title: "Faire Integration", url: "https://www.faire-integration.de/", source: "ngo" },
         ],
@@ -659,8 +658,8 @@ const POSTS = [
 
   {
     slug: "mental-health-community",
-    title: "Mental Health & Friends",
-    subtitle: "Fighting homesickness and building a life",
+    title: "Mental Health & Building Your Life",
+    subtitle: "The emotional side nobody talks about",
     stage: "Health & Social",
     readTime: "9 min",
     icon: <Heart size={24} />,
@@ -669,7 +668,7 @@ const POSTS = [
     accent: "text-cyan-600",
     verified: "2026-01-15",
     summary:
-      "Moving countries is stressful. Learn how to visit friends, join clubs, and get professional support if you feel down.",
+      "Homesickness is real. Loneliness is real. But so are the communities and support systems around you.",
     vibeCheck:
       "It’s normal to feel overwhelmed. You’re not weak — you’re adapting to a new world.",
     content: [
@@ -751,6 +750,30 @@ const RESOURCES = [
   { id: "r5", title: "Mülltrennung Wirkt", url: LINKS.trashGuide, type: "Website", category: "Housing", tags: ["trash"], source: "official" },
   { id: "r6", title: "Ipso Care", url: "https://ipso-care.com/", type: "Website", category: "Health & Social", tags: ["health"], source: "ngo" },
   { id: "r7", title: "Dr. Azubi", url: "https://jugend.dgb.de/ausbildung/beratung/dr-azubi", type: "Website", category: "Rights & Legal", tags: ["rights"], source: "ngo" },
+  
+  // === NURSING SCHOLARS RESOURCES ===
+  { id: "r8", title: "DocCheck Flexikon", url: "https://flexikon.doccheck.com", type: "Website", category: "Nursing & Math", tags: ["nursing", "reference"], source: "learning" },
+  { id: "r9", title: "PflegeTube (YouTube Channel)", url: "https://www.youtube.com/user/PflegeTube", type: "Video", category: "Nursing & Math", tags: ["nursing", "video"], source: "video" },
+  { id: "r10", title: "Thieme Online Store - Medical Books", url: "https://shop.thieme.de", type: "Website", category: "Nursing & Math", tags: ["nursing", "textbooks"], source: "tool" },
+  { id: "r11", title: "ResearchGate - Academic Papers", url: "https://www.researchgate.net", type: "Website", category: "Nursing & Math", tags: ["nursing", "research"], source: "learning" },
+  { id: "r12", title: "Pflege Heute - Nursing Textbook Reference", url: "https://www.elsevier.de/de/buch/pflege-heute", type: "Website", category: "Nursing & Math", tags: ["nursing", "textbooks"], source: "learning" },
+  { id: "r13", title: "Dict.cc - Offline Dictionary", url: "https://www.dict.cc", type: "Tool", category: "Nursing & Math", tags: ["language", "medical"], source: "tool" },
+  
+  // === INTERNATIONAL STUDENTS RESOURCES ===
+  { id: "r14", title: "DAAD - German Academic Exchange Service", url: "https://www.daad.de/en/", type: "Website", category: "Apps & Tools", tags: ["study", "scholarships"], source: "official" },
+  { id: "r15", title: "Handbook Germany - Official Guide", url: "https://handbookgermany.de/en/", type: "Website", category: "Arrival & Setup", tags: ["arrival", "official"], source: "official" },
+  { id: "r16", title: "Together in Germany - Community", url: "https://together-in-germany.org/", type: "Website", category: "Health & Social", tags: ["community", "social"], source: "ngo" },
+  { id: "r17", title: "Integreat - Local Information App", url: "https://integreat.app", type: "App", category: "Arrival & Setup", tags: ["local-info", "languages"], source: "tool" },
+  { id: "r18", title: "DeepL Translator", url: "https://www.deepl.com", type: "Tool", category: "Apps & Tools", tags: ["language", "translation"], source: "tool" },
+  { id: "r19", title: "Too Good To Go - Food App", url: "https://www.toogoodtogo.com/de/de", type: "App", category: "Money & Banking", tags: ["food", "savings"], source: "tool" },
+  { id: "r20", title: "Faire Integration - Worker Rights", url: "https://www.faire-integration.de/", type: "Website", category: "Rights & Legal", tags: ["rights", "workers"], source: "ngo" },
+  { id: "r21", title: "TelefonSeelsorge - Crisis Hotline", url: "https://www.telefonseelsorge.de/", type: "Website", category: "Health & Social", tags: ["mental-health", "crisis"], source: "official" },
+  { id: "r22", title: "DOSB - Sports Clubs Finder", url: "https://bewegt.dosb.de/", type: "Website", category: "Health & Social", tags: ["sports", "clubs", "social"], source: "official" },
+  { id: "r23", title: "Meetup - Events & Groups", url: "https://www.meetup.com/de", type: "Website", category: "Health & Social", tags: ["social", "events"], source: "tool" },
+  { id: "r24", title: "Eventbrite - Events in Germany", url: "https://www.eventbrite.de", type: "Website", category: "Health & Social", tags: ["events", "social"], source: "tool" },
+  { id: "r25", title: "WG Gesucht - Flat Sharing Platform", url: "https://www.wg-gesucht.de/", type: "Website", category: "Housing", tags: ["housing", "flatshare"], source: "tool" },
+  { id: "r26", title: "Kleinanzeigen - Free Classifieds", url: "https://www.kleinanzeigen.de/", type: "Website", category: "Housing", tags: ["furniture", "free"], source: "tool" },
+  { id: "r27", title: "Check24 - Health Insurance Comparison", url: "https://www.check24.de/gesetzliche-krankenversicherung/", type: "Website", category: "Money & Banking", tags: ["insurance", "health"], source: "tool" },
 ];
 
 // =======================
@@ -842,21 +865,10 @@ const Header = ({ emergencyMode, setEmergencyMode, isPostDetail = false }) => (
 const Hero = ({ view, setView, searchTerm, setSearchTerm }) => (
   <div className="relative pt-12 pb-10 px-6 text-center overflow-hidden">
     <div className="max-w-3xl mx-auto relative z-10 animate-float">
-      {/* Mentor Mode Badge */}
-      <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-white/50 rounded-full px-4 py-1.5 shadow-sm mb-6 ring-1 ring-slate-200/50">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-        </span>
-        <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">
-          Mentor Mode
-        </span>
-      </div>
-
       <h2 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-5 tracking-tight leading-tight">
-        Welcome, future <br />
+        Your first steps in <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
-          colleague.
+          Germany.
         </span>
       </h2>
 
