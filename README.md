@@ -82,7 +82,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173/survival-kit/` in your browser.
+Visit `http://localhost:5173` in your browser.
 
 ---
 
