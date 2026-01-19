@@ -10,7 +10,15 @@ export const PostCard = ({ post, index, onOpen, progressPercent }) => (
       className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${post.color} opacity-[0.03] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:opacity-[0.08] transition-opacity duration-500`}
     />
 
-    <div className="flex justify-between items-start mb-4">
+    {/* Background image with overlay */}
+    {post.backgroundImage && (
+      <div
+        className="absolute inset-0 bg-cover bg-center rounded-3xl opacity-15 group-hover:opacity-20 transition-opacity duration-500"
+        style={{ backgroundImage: `url('${post.backgroundImage}')` }}
+      />
+    )}
+
+    <div className="flex justify-between items-start mb-4 relative z-20">
       <div
         className={`relative p-4 rounded-2xl bg-gradient-to-br ${post.color} text-white shadow-lg ${post.shadow} group-hover:scale-110 transition-transform duration-500`}
       >
@@ -28,13 +36,13 @@ export const PostCard = ({ post, index, onOpen, progressPercent }) => (
     </div>
 
     {/* Stage badge */}
-    <div className="mb-3">
+    <div className="mb-3 relative z-20">
       <span className="text-[11px] font-bold text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full inline-block">
         📌 {post.stage}
       </span>
     </div>
 
-    <div className="relative z-10">
+  <div className="relative z-20">
       <div className="flex items-center gap-2 mb-2">
         <Clock size={12} className="text-slate-400" />
         <span className="text-xs font-semibold text-slate-400">{post.readTime}</span>
