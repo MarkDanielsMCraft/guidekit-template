@@ -3,6 +3,32 @@ export const styles = `
 
   body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
 
+  .hero-photo {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-photo::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1473889006385-9c10fc6c2c87?w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.22;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .hero-photo::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(248,250,252,0.9), rgba(248,250,252,0.94));
+    z-index: -1;
+    pointer-events: none;
+  }
+
   .mesh-bg {
     background-color: #f8fafc;
     background-image:
