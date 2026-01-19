@@ -48,7 +48,7 @@ export const POSTS = [
     color: "from-blue-600 to-indigo-600",
     shadow: "shadow-blue-500/20",
     accent: "text-blue-600",
-    verified: "2026-01-15",
+    verified: "2026-01-19",
     summary: "Your first 72 hours stripped to essentials: internet, transport, and the apps you actually need.",
     vibeCheck: "You just landed. You are tired, your luggage is heavy, and you don't have internet. Take a deep breath. We'll sort this out.",
     content: [
@@ -154,7 +154,7 @@ export const POSTS = [
     color: "from-emerald-500 to-teal-600",
     shadow: "shadow-emerald-500/20",
     accent: "text-emerald-600",
-    verified: "2026-01-15",
+    verified: "2026-01-19",
     summary: "Banks, registration, taxes, insurance—we break down the catch-22s and show you the smart shortcuts.",
     vibeCheck: "Yes, it feels impossible. You need a bank for rent, but they want an address. We're gonna untangle this.",
     content: [
@@ -299,7 +299,7 @@ export const POSTS = [
     color: "from-orange-500 to-amber-600",
     shadow: "shadow-orange-500/20",
     accent: "text-orange-600",
-    verified: "2026-01-15",
+    verified: "2026-01-19",
     summary: "Platform reviews (WG Gesucht), free furniture hacks (Kleinanzeigen), and the house rules that matter.",
     vibeCheck: "Flats are tight and expensive. But furnishing them cheap? That's doable. Here's how.",
     content: [
@@ -416,51 +416,75 @@ export const POSTS = [
 
   {
     slug: "nursing-language-resources",
-    title: "Professional Development: Language & Jargon",
-    subtitle: "Learning to talk like a pro in your field",
+    title: "Professional Development: Field-Specific Learning",
+    subtitle: "Reference materials, textbooks, and specialized vocabulary for your Ausbildung",
     stage: "Work & Study",
-    readTime: "10 min",
+    readTime: "8 min",
     icon: <Stethoscope size={24} />,
     color: "from-rose-500 to-pink-600",
     shadow: "shadow-rose-500/20",
     accent: "text-rose-600",
-    verified: "2026-01-15",
+    verified: "2026-01-18",
     summary:
-      "You know your trade. The challenge is saying it in German. Real tools that actually help people pass their licensing exams and talk with colleagues.",
+      "Master your field's vocabulary and theory. Resources to pass licensing exams and talk confidently with colleagues.",
     vibeCheck:
-      "You're competent in your field. Now you just need the German vocabulary. We've got verified resources.",
+      "You're competent in your field. Now you just need the German resources and vocabulary.",
     content: [
       {
         type: "p",
-        text: "The 'Ausbildung' is demanding. You need to learn medical theory in a second language. Don't rely only on your memory. Use these trusted resources to study."
+        text: "The 'Ausbildung' demands learning your field's theory in German. Don't rely on memory—use structured resources. Here's what actually works."
       },
-      { type: "h2", text: "1. Textbooks & Reference" },
+      { type: "h2", text: "1. Textbooks (Buy Smart, Not New)" },
       {
         type: "p",
-        text: "**Thieme 'I Care':** This is often considered the gold standard textbook series for nursing education in Germany. It covers Anatomy, Physiology, and Nursing Practice. Your school might provide it, or you can find used copies on Kleinanzeigen."
+        text: "**Thieme 'I Care' series:** Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
       },
       {
         type: "p",
-        text: "**DocCheck Flexikon:** Think of this as the Wikipedia for medical professionals in Germany. It is free, reliable, and explains terms clearly. If you hear a disease name you don't know, look it up here first."
+        text: "**Pflege Heute:** Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
       },
-      { type: "h2", text: "2. Academic Research" },
+      { type: "h2", text: "2. Free Reference Resources" },
       {
         type: "p",
-        text: "If you need to write papers or want to understand the science deeper, **ResearchGate** is a good source for academic papers. However, for your daily Ausbildung, standard textbooks like 'Pflege Heute' or 'I Care' are usually sufficient."
+        text: "**DocCheck Flexikon:** German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
       },
-      { type: "h2", text: "3. Language Tools" },
       {
         type: "p",
-        text: "**DeepL:** Use this for translating complex texts. It is much more accurate than Google Translate for technical German. **Dict.cc** is excellent for looking up single words offline."
+        text: "**ResearchGate:** For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
+      },
+      { type: "h2", text: "3. Vocabulary Building" },
+      {
+        type: "p",
+        text: "Don't memorize textbooks. Focus on **the top 100-150 terms** your field uses daily. Make flashcards using **Anki** (free app). Add 10 cards daily during your first month."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Example for nursing:** Blutdruck (blood pressure), Fieber (fever), Wunde (wound), Medikament (medication), Infusion, Katheter.",
+          "Use abbreviations healthcare professionals use: RR (blood pressure), HF (heart rate), KG (patient).",
+          "Watch **PflegeTube** on YouTube—real nursing scenarios with German commentary."
+        ]
       }
     ],
     goldenRule:
-      "Don't buy brand new textbooks immediately. Check if the school library has them or buy used on Kleinanzeigen.",
+      "Buy textbooks used on Kleinanzeigen. Create flashcards for field-specific vocabulary. Your trainer is your best resource.",
     steps: [
       {
-        title: "Bookmark References",
-        text: "Save DocCheck Flexikon in your browser.",
-        action: "Bookmark it now.",
+        title: "Get Your Textbook",
+        text: "Ask trainer which textbook the school uses.",
+        action: "Search Kleinanzeigen for used copies.",
+        readMore: [
+          {
+            title: "Thieme Webshop",
+            url: "https://shop.thieme.de/",
+            source: "learning",
+          },
+        ],
+      },
+      {
+        title: "Bookmark Medical Reference",
+        text: "Save DocCheck Flexikon.",
+        action: "Create browser bookmark.",
         readMore: [
           {
             title: "DocCheck Flexikon",
@@ -470,34 +494,24 @@ export const POSTS = [
         ],
       },
       {
-        title: "Get Translation Tools",
-        text: "Install DeepL for accurate translation.",
-        action: "Download App.",
+        title: "Build Vocabulary",
+        text: "Create flashcards of field terms.",
+        action: "Use Anki app (free).",
         readMore: [
           {
-            title: "DeepL Translator",
-            url: "https://www.deepl.com",
+            title: "Anki Flashcards",
+            url: "https://apps.ankiweb.net/",
             source: "tool",
           },
         ],
       },
-      {
-        title: "Explore Textbooks",
-        text: "Look for 'I Care' or 'Pflege Heute'.",
-        action: "Check Kleinanzeigen for used copies.",
-        readMore: [
-          {
-            title: "Thieme Webshop (Reference)",
-            url: "https://shop.thieme.de/I-care-Pflege/9783132418288",
-            source: "learning",
-          },
-        ],
-      },
     ],
-    readMore: [],
-    downloads: [{ title: "Medical Math Worksheet (PDF)", url: null }],
-    videos: [{ title: "PflegeTube Channel", url: "https://youtube.com/@pflegetube?si=V4ECJ1kuFPQjq2hT" }],
-    tags: ["nursing", "books", "research", "study"],
+    readMore: [
+      { title: "PflegeTube (YouTube)", url: "https://www.youtube.com/@PflegeTube", source: "video" }
+    ],
+    downloads: [],
+    videos: [{ title: "Medical German Basics", url: "https://youtu.be/aBc123defgh" }],
+    tags: ["nursing", "learning", "books", "vocabulary", "study"],
   },
 
   {
@@ -510,7 +524,7 @@ export const POSTS = [
     color: "from-purple-500 to-violet-600",
     shadow: "shadow-purple-500/20",
     accent: "text-purple-600",
-    verified: "2026-01-15",
+    verified: "2026-01-19",
     summary:
       "You're a trainee, not a servant. Learn what's legal, what's exploitation, and who to call when something's wrong.",
     vibeCheck:
@@ -587,7 +601,7 @@ export const POSTS = [
     color: "from-cyan-500 to-teal-500",
     shadow: "shadow-cyan-500/20",
     accent: "text-cyan-600",
-    verified: "2026-01-15",
+    verified: "2026-01-19",
     summary:
       "Homesickness is real. Loneliness is real. But so are the communities and support systems around you.",
     vibeCheck:
@@ -757,59 +771,32 @@ export const POSTS = [
 
   {
     slug: "german-language-ausbildung",
-    title: "German Language: B2 & Professional Communication",
-    subtitle: "From B2 to workplace fluency in your field",
+    title: "German Language: B2 & Workplace Communication",
+    subtitle: "From B2 to professional fluency in your field",
     stage: "Work & Study",
-    readTime: "11 min",
+    readTime: "9 min",
     icon: <BookOpen size={24} />,
     color: "from-indigo-500 to-blue-600",
     shadow: "shadow-indigo-500/20",
     accent: "text-indigo-600",
     verified: "2026-01-18",
-    summary: "You have B2 German. Now learn the specific vocabulary and communication style your workplace expects.",
-    vibeCheck: "B2 means you can survive. But your Ausbildung demands precision. Here's how to level up without going crazy.",
+    summary: "You have B2 German. Master workplace communication, field-specific phrases, and communication styles Germans expect.",
+    vibeCheck: "B2 means you can survive. Your Ausbildung demands precision and workplace confidence. Here's how.",
     content: [
       {
         type: "p",
-        text: "Most international students entering vocational training have B2 German (or are expected to reach it). This is 'upper intermediate'—you can understand most conversations, but professional contexts expose gaps. Your Ausbildung won't wait for perfect German. You learn while working."
+        text: "Most international students enter vocational training with B2 German (upper intermediate). This is survival-level language. But your Ausbildung exposes gaps: technical jargon, rapid instructions, informal office communication. **Good news:** Your colleagues will be patient. Germans expect non-native speakers to ask questions."
       },
-      { type: "h2", text: "1. The Reality of B2 in Your Ausbildung" },
+      { type: "h2", text: "1. Understand German Communication Style" },
       {
         type: "p",
-        text: "**What B2 means:** You can understand most meetings, speak in present/past tense, ask for clarification, and handle everyday tasks. **What B2 doesn't mean:** You understand technical jargon, informal office jokes, or your boss's rapid-fire instructions."
-      },
-      {
-        type: "p",
-        text: "**The Good News:** Your colleagues will be patient. Germans know that learning a language while working is hard. They'll speak slower if you ask. Most important: **Ask questions immediately**. Pretending to understand leads to mistakes."
-      },
-      { type: "h2", text: "2. Field-Specific Vocabulary (Self-Study)" },
-      {
-        type: "p",
-        text: "**For Healthcare/Nursing:** Learn the top 100 patient communication phrases. Not grammar—pure vocabulary. Phrases like 'Bitte liegen Sie still' (Please stay still), 'Wo tut es weh?' (Where does it hurt?), and medical abbreviations."
-      },
-      {
-        type: "ul",
-        items: [
-          "**Resource:** [DocCheck Flexikon](https://flexikon.doccheck.com) - Search medical terms in German. Read the explanations.",
-          "**Spaced Repetition:** Use [Anki](https://apps.ankiweb.net/) flashcards. Create 10 cards/day of your field's vocabulary.",
-          "**YouTube:** Search 'Pflege Deutsch' or 'Nursing German' on YouTube for real scenarios.",
-          "**Ask your trainer:** Most trainers will give you a glossary or recommend textbooks."
-        ]
-      },
-      { type: "h2", text: "3. German Communication Styles at Work" },
-      {
-        type: "p",
-        text: "**Direct feedback:** Your boss will tell you directly if something is wrong. This is NOT disrespect—it's efficiency. 'Das ist falsch.' (That's wrong.) They expect you to fix it without taking it personally."
+        text: "**Direct feedback:** Your boss will say 'Das ist falsch' (That's wrong) or 'Das funktioniert nicht' (That doesn't work). This is NOT disrespect—it's efficiency. Germans separate criticism from personal judgment. Don't take it personally."
       },
       {
         type: "p",
-        text: "**Use 'Sie' (formal you)** with everyone except close colleagues. Default to formal. If they say 'Du' (informal you), it means you're accepted into their circle."
+        text: "**Formal language matters:** Use 'Sie' (formal you) with everyone initially. Only use 'Du' (informal) if they invite you to. Written communication (emails) is formal: start with 'Sehr geehrter...' (Dear...)."
       },
-      {
-        type: "p",
-        text: "**Written communication is formal:** Emails use 'Sehr geehrter...' (Dear...). Use Grammarly or ask a colleague to proofread important emails."
-      },
-      { type: "h2", text: "4. Common Phrases for Work" },
+      { type: "h2", text: "2. Essential Workplace Phrases" },
       {
         type: "ul",
         items: [
@@ -820,38 +807,51 @@ export const POSTS = [
           "**Status update:** 'Ich bin fast fertig.' (I'm almost done.)"
         ]
       },
-      { type: "h2", text: "5. Free Resources Beyond Duolingo" },
+      { type: "h2", text: "3. Field-Specific Communication" },
       {
         type: "p",
-        text: "**DW Learn German:** Free courses from Deutsche Welle (Germany's international broadcaster). Levels A1-B2. Videos include medical scenarios."
+        text: "Create a glossary of 50 essential terms your field uses. Not grammar—pure vocabulary. Memorize phrases, not rules."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Use Anki flashcards:** Add 10 terms daily. Review daily for 5 minutes.",
+          "**Practice pronunciation:** Record yourself saying medical terms. Listen to PflegeTube on YouTube for real scenarios.",
+          "**Ask your trainer:** Most will give you a glossary or textbook with terminology."
+        ]
+      },
+      { type: "h2", text: "4. Free Learning Resources" },
+      {
+        type: "p",
+        text: "**DW Learn German:** Free courses from Deutsche Welle (Germany's international broadcaster). Videos with B1/B2 level content."
       },
       {
         type: "p",
-        text: "**Easy German (YouTube):** Authentic interviews with real Germans. Start with B1/B2 level. Subtitles in German + English."
+        text: "**Easy German (YouTube):** Authentic interviews with real Germans. Start with B1/B2 videos. Subtitles in German + English."
       },
       {
         type: "p",
-        text: "**Slow German (Podcast):** Short 5-minute podcasts read slowly. Topics range from culture to current events. Great for listening comprehension."
+        text: "**Slow German (Podcast):** 5-minute podcasts read slowly. Topics from culture to current events. Perfect for listening practice."
       }
     ],
-    goldenRule: "Ask questions at work instead of guessing. Colleagues respect curiosity more than silence.",
+    goldenRule: "Ask questions at work instead of guessing. Germans respect curiosity. Master 50 field-specific terms first—grammar second.",
     steps: [
       {
-        title: "Learn Your Field's Vocabulary",
-        text: "Create a glossary of 50 essential terms.",
-        action: "Use Anki or Google Sheets.",
-        readMore: [{ title: "DocCheck Flexikon", url: "https://flexikon.doccheck.com", source: "learning" }],
+        title: "Gather Field Vocabulary",
+        text: "Create a list of 50 essential terms.",
+        action: "Ask trainer for glossary or use Anki.",
+        readMore: [{ title: "Anki - Flashcard App", url: "https://apps.ankiweb.net/", source: "tool" }],
       },
       {
-        title: "Study Communication Phrases",
-        text: "Memorize 10 work-specific phrases.",
-        action: "Write them down, practice daily.",
+        title: "Study Workplace Phrases",
+        text: "Memorize 10 essential phrases.",
+        action: "Write them down daily.",
         readMore: [{ title: "DW Learn German", url: "https://learngerman.dw.com/en/overview", source: "learning" }],
       },
       {
-        title: "Watch Real German Videos",
+        title: "Watch Real German",
         text: "Build listening comprehension.",
-        action: "Watch Easy German on YouTube.",
+        action: "Watch 1 Easy German video weekly.",
         readMore: [{ title: "Easy German (YouTube)", url: "https://www.youtube.com/@EasyGerman", source: "video" }],
       },
     ],
@@ -860,7 +860,7 @@ export const POSTS = [
       { title: "Dict.cc Dictionary", url: "https://www.dict.cc", source: "tool" },
     ],
     downloads: [],
-    videos: [{ title: "Medical German Basics", url: "https://youtu.be/aBc123defgh" }],
+    videos: [],
     tags: ["language", "german", "b2", "work", "communication"],
   },
 
