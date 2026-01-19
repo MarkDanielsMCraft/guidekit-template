@@ -55,8 +55,9 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1524634126442-357e0eac6b14?w=1600&auto=format&fit=crop')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1552733959-efbed386021a?w=1600&auto=format&fit=crop&q=80')`,
             backgroundPosition: "center",
+            backgroundAttachment: "fixed",
           }}
         />
 

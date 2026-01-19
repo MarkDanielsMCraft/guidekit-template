@@ -90,11 +90,11 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
         {post.backgroundImage && (
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `linear-gradient(180deg, rgba(15,23,42,0.65), rgba(15,23,42,0.75)), url('${post.backgroundImage}')` }}
+            style={{ backgroundImage: `linear-gradient(180deg, rgba(15,23,42,0.4), rgba(15,23,42,0.5)), url('${post.backgroundImage}')` }}
           />
         )}
         {!post.backgroundImage && <div className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-80`} />}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/30 to-slate-900/50" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-5">
           <div className="flex items-center flex-wrap gap-2 text-xs text-slate-200 font-semibold uppercase tracking-wide">
@@ -331,19 +331,6 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
               <div className="bg-white border border-slate-100 rounded-3xl shadow-sm p-4 sm:p-5">
                 <h3 className="text-sm font-black uppercase tracking-wide text-slate-500 mb-3">On this page</h3>
                 <TableOfContents post={post} />
-              </div>
-
-              <div className="bg-gradient-to-br from-indigo-600 to-blue-600 text-white rounded-3xl p-5 sm:p-6 shadow-lg">
-                <h3 className="text-lg font-black mb-2">Need 1:1 help?</h3>
-                <p className="text-sm text-indigo-100 leading-relaxed mb-4">Get personalized answers for your situation. Quick sanity check, paperwork prep, or housing questions.</p>
-                <a
-                  href={LINKS.buyMeACoffee}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center w-full px-4 py-3 rounded-2xl bg-white text-indigo-700 font-bold hover:bg-indigo-50 transition"
-                >
-                  Buy me a coffee
-                </a>
               </div>
 
               <div className="bg-white border border-slate-100 rounded-3xl shadow-sm p-4 sm:p-5">
