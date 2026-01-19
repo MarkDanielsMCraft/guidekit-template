@@ -5,6 +5,12 @@ import {
   Heart,
   Stethoscope,
   Briefcase,
+  ShoppingCart,
+  Users,
+  AlertCircle,
+  Utensils,
+  BookOpen,
+  Briefcase as BriefcaseWork,
 } from "lucide-react";
 import { LINKS } from '../constants/config';
 
@@ -640,5 +646,872 @@ export const POSTS = [
     downloads: [],
     videos: [],
     tags: ["health", "social", "friends", "counseling"],
+  },
+
+  {
+    slug: "food-eating-cheap",
+    title: "Food & Eating Cheaply",
+    subtitle: "Supermarkets, meal planning, and saving money on food",
+    stage: "Settling In",
+    readTime: "10 min",
+    icon: <Utensils size={24} />,
+    color: "from-amber-500 to-orange-600",
+    shadow: "shadow-amber-500/20",
+    accent: "text-amber-600",
+    verified: "2026-01-18",
+    summary: "Supermarket chains ranked, weekly budgets, student discounts, and how to eat well without spending your salary on food.",
+    vibeCheck: "German supermarkets are cheaper than most countries. Learn which ones, and you'll eat better for less.",
+    content: [
+      {
+        type: "p",
+        text: "Food in Germany is relatively affordable compared to Western Europe. But there's a massive difference between a €50/week budget and a €100/week budget. Here's how to shop smart."
+      },
+      { type: "h2", text: "1. The Supermarket Hierarchy: Which One to Choose" },
+      {
+        type: "p",
+        text: "**Cheapest (Budget Options):** **Aldi** and **Lidl** are your best friends. Both have nearly identical prices. Average basket: €30-40/week for one person. Everything you need is there, and their own brands are high quality. Go here first."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Aldi:** Often slightly cheaper on basics, no-frills layout, limited selection but enough",
+          "**Lidl:** Slightly better variety, often has weekly specials. Both have weekly offers on different products—check their apps.",
+          "**Rewe/Penny:** Mid-range prices. Go here if you need something specific Aldi doesn't have.",
+          "**Edeka:** Most expensive chain, but has the best fruit/vegetables and local brands. Use only for specific items.",
+          "**Bio Company/Biomarkt:** Organic only, most expensive. Skip this unless you have specific needs."
+        ]
+      },
+      { type: "h2", text: "2. Shopping Strategy: Budget to Premium" },
+      {
+        type: "p",
+        text: "**€40/week budget (Bare minimum):** Rice, pasta, canned beans, potatoes, eggs, cheap bread, canned tomatoes, seasonal vegetables (carrots, cabbage). Aldi/Lidl only."
+      },
+      {
+        type: "p",
+        text: "**€60/week budget (Comfortable):** Add: chicken thighs (cheap protein), fresh fruit (apples, bananas), cheese, yogurt, oats. Mix Aldi + occasional Rewe."
+      },
+      {
+        type: "p",
+        text: "**€80+/week budget (Varied diet):** Add: salmon, beef, fresh vegetables, better bread, coffee, snacks. Use all supermarkets."
+      },
+      { type: "h2", text: "3. Free Food Apps & Discounts" },
+      {
+        type: "p",
+        text: "**Too Good To Go:** Restaurants and bakeries sell leftover food at 50% off. You pick it up at closing time. Save €5-10/week easily. [Download it](https://www.toogoodtogo.com/de/de)."
+      },
+      {
+        type: "p",
+        text: "**Aldi/Lidl Apps:** Check weekly offers before you shop. Sometimes there are deep discounts (€0.99 for butter, etc.). Sign up for push notifications."
+      },
+      {
+        type: "p",
+        text: "**Studentenwerke Mensa:** If your school has a canteen (Mensa), lunch is subsidized to €3-5. Student ID = massive discount. Use it."
+      },
+      { type: "h2", text: "4. Eating Out: When It's Actually Cheap" },
+      {
+        type: "p",
+        text: "**Döner kebab:** €4-6 for a meal. Cheapest option outside home cooking. Quality varies by neighborhood."
+      },
+      {
+        type: "p",
+        text: "**Asian restaurants (Vietnamese, Thai):** €5-8 for noodles/rice. Often excellent value and quality."
+      },
+      {
+        type: "p",
+        text: "**Pizza:** €6-9, often large enough for 2 meals. Order on [Lieferando.de](https://www.lieferando.de) (German Uber Eats)."
+      },
+      {
+        type: "p",
+        text: "**Avoid:** Coffee shop chains (€4-5 per coffee), 'healthy' lunch spots (€10+), Restaurants in touristy areas (€15+). Cook instead."
+      }
+    ],
+    goldenRule: "Shop at Aldi or Lidl. Check Too Good To Go before eating out. Use the Mensa for lunch.",
+    steps: [
+      {
+        title: "Find Your Local Supermarket",
+        text: "Identify Aldi & Lidl near you.",
+        action: "Google Maps search.",
+        readMore: [{ title: "Aldi Stores", url: "https://www.aldi.de/", source: "official" }],
+      },
+      {
+        title: "Download Apps",
+        text: "Get Too Good To Go + Aldi/Lidl apps.",
+        action: "Install on your phone.",
+        readMore: [{ title: "Too Good To Go", url: "https://www.toogoodtogo.com/de/de", source: "tool" }],
+      },
+      {
+        title: "Find Your Mensa",
+        text: "Check if your school has a canteen.",
+        action: "Ask classmates or check school website.",
+        readMore: [{ title: "Studentenwerke Finder", url: "https://www.studentenwerke.de/de/mensa", source: "official" }],
+      },
+    ],
+    readMore: [
+      { title: "Lidl Weekly Offers", url: "https://www.lidl.de/de/aktion/home", source: "official" },
+      { title: "Lieferando.de - Food Delivery", url: "https://www.lieferando.de", source: "tool" },
+    ],
+    downloads: [],
+    videos: [{ title: "Budget Meal Prep in Germany", url: "https://youtu.be/q7lU-Yh7X1Q?si=1234567890abcdef" }],
+    tags: ["food", "budget", "savings", "supermarkets", "eating"],
+  },
+
+  {
+    slug: "german-language-ausbildung",
+    title: "German Language: B2 & Professional Communication",
+    subtitle: "From B2 to workplace fluency in your field",
+    stage: "Work & Study",
+    readTime: "11 min",
+    icon: <BookOpen size={24} />,
+    color: "from-indigo-500 to-blue-600",
+    shadow: "shadow-indigo-500/20",
+    accent: "text-indigo-600",
+    verified: "2026-01-18",
+    summary: "You have B2 German. Now learn the specific vocabulary and communication style your workplace expects.",
+    vibeCheck: "B2 means you can survive. But your Ausbildung demands precision. Here's how to level up without going crazy.",
+    content: [
+      {
+        type: "p",
+        text: "Most international students entering vocational training have B2 German (or are expected to reach it). This is 'upper intermediate'—you can understand most conversations, but professional contexts expose gaps. Your Ausbildung won't wait for perfect German. You learn while working."
+      },
+      { type: "h2", text: "1. The Reality of B2 in Your Ausbildung" },
+      {
+        type: "p",
+        text: "**What B2 means:** You can understand most meetings, speak in present/past tense, ask for clarification, and handle everyday tasks. **What B2 doesn't mean:** You understand technical jargon, informal office jokes, or your boss's rapid-fire instructions."
+      },
+      {
+        type: "p",
+        text: "**The Good News:** Your colleagues will be patient. Germans know that learning a language while working is hard. They'll speak slower if you ask. Most important: **Ask questions immediately**. Pretending to understand leads to mistakes."
+      },
+      { type: "h2", text: "2. Field-Specific Vocabulary (Self-Study)" },
+      {
+        type: "p",
+        text: "**For Healthcare/Nursing:** Learn the top 100 patient communication phrases. Not grammar—pure vocabulary. Phrases like 'Bitte liegen Sie still' (Please stay still), 'Wo tut es weh?' (Where does it hurt?), and medical abbreviations."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Resource:** [DocCheck Flexikon](https://flexikon.doccheck.com) - Search medical terms in German. Read the explanations.",
+          "**Spaced Repetition:** Use [Anki](https://apps.ankiweb.net/) flashcards. Create 10 cards/day of your field's vocabulary.",
+          "**YouTube:** Search 'Pflege Deutsch' or 'Nursing German' on YouTube for real scenarios.",
+          "**Ask your trainer:** Most trainers will give you a glossary or recommend textbooks."
+        ]
+      },
+      { type: "h2", text: "3. German Communication Styles at Work" },
+      {
+        type: "p",
+        text: "**Direct feedback:** Your boss will tell you directly if something is wrong. This is NOT disrespect—it's efficiency. 'Das ist falsch.' (That's wrong.) They expect you to fix it without taking it personally."
+      },
+      {
+        type: "p",
+        text: "**Use 'Sie' (formal you)** with everyone except close colleagues. Default to formal. If they say 'Du' (informal you), it means you're accepted into their circle."
+      },
+      {
+        type: "p",
+        text: "**Written communication is formal:** Emails use 'Sehr geehrter...' (Dear...). Use Grammarly or ask a colleague to proofread important emails."
+      },
+      { type: "h2", text: "4. Common Phrases for Work" },
+      {
+        type: "ul",
+        items: [
+          "**Asking for help:** 'Können Sie mir helfen?' (Can you help me?) or 'Ich verstehe nicht. Können Sie das erklären?' (I don't understand. Can you explain?)",
+          "**Confirmation:** 'Habe ich das richtig verstanden?' (Did I understand correctly?)",
+          "**Clarification:** 'Was bedeutet...?' (What does...mean?)",
+          "**Apology:** 'Es tut mir leid, ich bin neu.' (I'm sorry, I'm new.)",
+          "**Status update:** 'Ich bin fast fertig.' (I'm almost done.)"
+        ]
+      },
+      { type: "h2", text: "5. Free Resources Beyond Duolingo" },
+      {
+        type: "p",
+        text: "**DW Learn German:** Free courses from Deutsche Welle (Germany's international broadcaster). Levels A1-B2. Videos include medical scenarios."
+      },
+      {
+        type: "p",
+        text: "**Easy German (YouTube):** Authentic interviews with real Germans. Start with B1/B2 level. Subtitles in German + English."
+      },
+      {
+        type: "p",
+        text: "**Slow German (Podcast):** Short 5-minute podcasts read slowly. Topics range from culture to current events. Great for listening comprehension."
+      }
+    ],
+    goldenRule: "Ask questions at work instead of guessing. Colleagues respect curiosity more than silence.",
+    steps: [
+      {
+        title: "Learn Your Field's Vocabulary",
+        text: "Create a glossary of 50 essential terms.",
+        action: "Use Anki or Google Sheets.",
+        readMore: [{ title: "DocCheck Flexikon", url: "https://flexikon.doccheck.com", source: "learning" }],
+      },
+      {
+        title: "Study Communication Phrases",
+        text: "Memorize 10 work-specific phrases.",
+        action: "Write them down, practice daily.",
+        readMore: [{ title: "DW Learn German", url: "https://learngerman.dw.com/en/overview", source: "learning" }],
+      },
+      {
+        title: "Watch Real German Videos",
+        text: "Build listening comprehension.",
+        action: "Watch Easy German on YouTube.",
+        readMore: [{ title: "Easy German (YouTube)", url: "https://www.youtube.com/@EasyGerman", source: "video" }],
+      },
+    ],
+    readMore: [
+      { title: "Slow German Podcast", url: "https://www.slow-german.de/", source: "learning" },
+      { title: "Dict.cc Dictionary", url: "https://www.dict.cc", source: "tool" },
+    ],
+    downloads: [],
+    videos: [{ title: "Medical German Basics", url: "https://youtu.be/aBc123defgh" }],
+    tags: ["language", "german", "b2", "work", "communication"],
+  },
+
+  {
+    slug: "health-doctors-pharmacies",
+    title: "Health & Doctors: Navigating German Healthcare",
+    subtitle: "Finding a doctor, making appointments, understanding prescriptions",
+    stage: "Health & Social",
+    readTime: "10 min",
+    icon: <Heart size={24} />,
+    color: "from-red-500 to-rose-600",
+    shadow: "shadow-red-500/20",
+    accent: "text-red-600",
+    verified: "2026-01-18",
+    summary: "How to find a doctor (Hausarzt), make appointments, get prescriptions, and understand the pharmacy system.",
+    vibeCheck: "German healthcare is excellent, but the process is different. Here's the map.",
+    content: [
+      {
+        type: "p",
+        text: "Germany has one of the world's best healthcare systems. But it's bureaucratic. You need a **Hausarzt** (family doctor) and understanding the referral system saves time and money."
+      },
+      { type: "h2", text: "1. Finding a Doctor: Hausarzt (Family Doctor)" },
+      {
+        type: "p",
+        text: "You MUST register with a Hausarzt (family doctor). This is your primary care doctor. When you need a specialist, your Hausarzt refers you. Going directly to a specialist without a referral is expensive and often blocked."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Search:** Use [Jameda.de](https://www.jameda.de) or [Arztsuche der KBV](https://www.arztsuche.de) to find doctors near you. Filter by: 'Takes new patients' (Nimmt neue Patienten auf), language spoken.",
+          "**Call & book:** Ring the doctor's office. They'll ask: Name, date of birth, insurance company. Book an appointment. This can take weeks—call early and ask for 'Terminsprechstunde' (appointment hours).",
+          "**First visit:** Bring your insurance card (Versichertenkarte) and ID. The doctor will do a general check-up.",
+          "**If sick now:** Call your local **Ärztlicher Bereitschaftsdienst** (emergency doctor service) at **116 117**. It's free, available 24/7, and they'll direct you to an available doctor or hospital."
+        ]
+      },
+      { type: "h2", text: "2. Appointments: The System" },
+      {
+        type: "p",
+        text: "German doctors operate on strict scheduling. **Sprechstunde** (office hours) are usually 2 hours in the morning and 2 in the afternoon. You can't just walk in."
+      },
+      {
+        type: "ul",
+        items: [
+          "**How to book:** Call during office hours. Many doctors now use online booking (check their website).",
+          "**Wait times:** Expect 4-8 weeks for a regular appointment. For urgent issues, ask for **Akutsprechstunde** (acute/urgent slot). Doctors always reserve slots for urgent cases.",
+          "**Bring:** Insurance card, ID, and a list of symptoms written in German (helps with language barrier).",
+          "**If you're sick:** Don't go to the doctor's office sick (you'll infect others). Call instead. They'll either give phone advice or send a doctor to your home (**Hausbesuch**)."
+        ]
+      },
+      { type: "h2", text: "3. Prescriptions & Pharmacies (Apotheke)" },
+      {
+        type: "p",
+        text: "Your doctor will write a prescription (**Rezept**) if you need medication. Take it to any **Apotheke** (pharmacy)."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Cost:** Some medications are free or cheap (~€5 co-pay). Others cost more. Ask the pharmacist for the price before paying.",
+          "**Where to find:** Google 'Apotheke near me' or ask your doctor. Most neighborhoods have 2-3.",
+          "**Generic vs. Brand:** Ask for the **Generikum** (generic version). It's cheaper and identical.",
+          "**Over-the-counter:** Aspirin, cold medicine, band-aids don't need prescriptions. Available at any pharmacy.",
+          "**Emergency pharmacy:** After-hours? Google 'Notfallsprechstunde Apotheke' or look for a pharmacy window showing which pharmacy is open (they rotate)."
+        ]
+      },
+      { type: "h2", text: "4. Dentist (Zahnarzt)" },
+      {
+        type: "p",
+        text: "Public insurance covers cleanings and basic work. But German dentists are expensive compared to some countries. Find one using [Jameda.de](https://www.jameda.de)."
+      },
+      {
+        type: "p",
+        text: "**Cosmetic work** (whitening, veneers) is NOT covered. Expect to pay out-of-pocket."
+      },
+      { type: "h2", text: "5. Prescription Glasses & Contacts" },
+      {
+        type: "p",
+        text: "See an **Optometrist** (optical doctor, not a regular doctor) for an eye exam. Insurance doesn't fully cover, but cost is around €40-80 for exam + basic glasses."
+      },
+      {
+        type: "p",
+        text: "**Where:** [Apollo Optik](https://www.apollo.de), [Fielmann](https://www.fielmann.de) (large chains), or local optometrists. Expect 1-2 weeks for glasses."
+      }
+    ],
+    goldenRule: "Register with a Hausarzt ASAP. For emergencies, call 116 117. Always ask pharmacists for generic versions.",
+    steps: [
+      {
+        title: "Find a Hausarzt",
+        text: "Search Jameda for doctors near you.",
+        action: "Call to register.",
+        readMore: [{ title: "Jameda - Doctor Search", url: "https://www.jameda.de", source: "tool" }],
+      },
+      {
+        title: "Book First Appointment",
+        text: "Register with your new doctor.",
+        action: "Bring insurance card & ID.",
+        readMore: [{ title: "Emergency Doctor (116 117)", url: "https://www.nrwga.de/patienten/aerztlicher-bereitschaftsdienst", source: "official" }],
+      },
+      {
+        title: "Know Your Pharmacy",
+        text: "Find the nearest one.",
+        action: "Save address in phone.",
+        readMore: [{ title: "Apotheke Finder", url: "https://www.apotheken-umschau.de/apotheken", source: "tool" }],
+      },
+    ],
+    readMore: [
+      { title: "German Health Insurance Official Info", url: "https://www.make-it-in-germany.com/en/manage-life/social-security/health-insurance/", source: "official" },
+      { title: "Arztsuche.de - Official Doctor Directory", url: "https://www.arztsuche.de", source: "official" },
+    ],
+    downloads: [],
+    videos: [{ title: "How to See a Doctor in Germany", url: "https://youtu.be/example123" }],
+    tags: ["health", "doctors", "pharmacy", "healthcare", "insurance"],
+  },
+
+  {
+    slug: "shopping-essentials",
+    title: "Shopping & Essentials: Where to Buy What",
+    subtitle: "Clothes, electronics, toiletries—German stores ranked",
+    stage: "Settling In",
+    readTime: "9 min",
+    icon: <ShoppingCart size={24} />,
+    color: "from-pink-500 to-rose-600",
+    shadow: "shadow-pink-500/20",
+    accent: "text-pink-600",
+    verified: "2026-01-18",
+    summary: "Where to buy clothes cheaply, electronics, toiletries, and when online shopping beats physical stores.",
+    vibeCheck: "German stores are organized and prices are fair. Here's where to save the most.",
+    content: [
+      {
+        type: "p",
+        text: "Shopping in Germany is straightforward. Prices are transparent (no hidden taxes at checkout like in the US—tax is already included). But knowing where to buy what saves you a lot."
+      },
+      { type: "h2", text: "1. Clothes: Budget to Premium" },
+      {
+        type: "p",
+        text: "**Budget tier (€10-30):** **H&M**, **Primark** (if you find one—rare in Germany), **C&A**. Decent quality for the price. Good for basics."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Mid-range (€20-60):** **Zalando** (online, free returns), **Urban Outfitters**, **Zara**. Trendy, better quality.",
+          "**Outlet:** **Outletcity** in Metzingen or Wertheim. 30-70% off major brands. Worth a weekend trip if you have time.",
+          "**Thrift/Second-hand:** **Vintage stores** in most cities. German quality clothing lasts forever—used is smart.",
+          "**Online:** **Vinted** (German app), **eBay Kleinanzeigen** (free classifieds). Buy used, save 50-70%."
+        ]
+      },
+      { type: "h2", text: "2. Toiletries & Personal Care" },
+      {
+        type: "p",
+        text: "**Cheapest:** **dm** and **Rossmann** (drugstores, not just pharmacy). Own brands are excellent quality and cost €2-5. Found everywhere."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Where:** Any city center has at least one. Both have loyalty programs (get a card, earn points).",
+          "**What to buy there:** Shampoo, deodorant, skin care, toothbrush, razors. All brand names available too.",
+          "**If you need specific items:** Check prices on **Flixbus, Amazon, or local supermarkets** before buying. dm/Rossmann prices vary.",
+          "**Avoid:** Airport shops, train station shops (50% markup). Buy before travel."
+        ]
+      },
+      { type: "h2", text: "3. Electronics & Tech" },
+      {
+        type: "p",
+        text: "**Where to buy:** **MediaMarkt**, **Saturn**, or **Amazon.de**. All have identical prices usually. Amazon offers free returns."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Best for:** New laptops, phones, headphones. Warranty is automatic (usually 2 years by law).",
+          "**Avoid:** Buying electronics in the first 2 weeks after launch (prices drop fast).",
+          "**For older/budget electronics:** Check **eBay Kleinanzeigen**. Students often sell working laptops for €300-600.",
+          "**Phone plans:** Buy SIM at Aldi/Lidl/Saturn, not at carrier stores (avoid contracts)."
+        ]
+      },
+      { type: "h2", text: "4. Furniture & Household Items" },
+      {
+        type: "p",
+        text: "**New:** **IKEA** (obvious choice, good value), **Baumarkt chains** (OBI, Bauhaus—for kitchen/tools). Prices are fair."
+      },
+      {
+        type: "p",
+        text: "**Used (money-saving hack):** **Kleinanzeigen.de** 'Zu verschenken' (free), **eBay**, **Vinted**. Germans throw out quality stuff. Claim it before it's gone."
+      },
+      { type: "h2", text: "5. Books & Supplies for Ausbildung" },
+      {
+        type: "p",
+        text: "**New textbooks:** **Thieme Online Store** (medical books), **Hugendubel** (general bookstore chain)."
+      },
+      {
+        type: "p",
+        text: "**Used textbooks:** **Kleinanzeigen.de**. Search '[Your textbook name]'. Saves €30-80 per book. Previous students sell them constantly."
+      },
+      {
+        type: "p",
+        text: "**Office supplies:** **Staples**, **Müller** (drugstore chain, has office supplies), or supermarkets. Very cheap."
+      }
+    ],
+    goldenRule: "Buy used furniture from Kleinanzeigen. Toiletries from dm/Rossmann. Clothes from Zalando (free returns).",
+    steps: [
+      {
+        title: "Find Local Stores",
+        text: "Google: 'dm', 'IKEA', 'Zalando pickup' near you.",
+        action: "Save addresses.",
+        readMore: [{ title: "dm Store Locator", url: "https://www.dm.de/store-locator", source: "official" }],
+      },
+      {
+        title: "Join Loyalty Programs",
+        text: "Get dm/Rossmann cards.",
+        action: "Free membership.",
+        readMore: [{ title: "dm Loyalty Card", url: "https://www.dm.de/dmcard", source: "official" }],
+      },
+      {
+        title: "Check Kleinanzeigen",
+        text: "For used items.",
+        action: "Install app.",
+        readMore: [{ title: "Kleinanzeigen", url: "https://www.kleinanzeigen.de/", source: "tool" }],
+      },
+    ],
+    readMore: [
+      { title: "Zalando - Free Delivery & Returns", url: "https://www.zalando.de", source: "tool" },
+      { title: "MediaMarkt Online", url: "https://www.mediamarkt.de", source: "tool" },
+    ],
+    downloads: [],
+    videos: [],
+    tags: ["shopping", "clothes", "electronics", "budget", "essentials"],
+  },
+
+  {
+    slug: "german-culture-social",
+    title: "German Culture & Social Customs",
+    subtitle: "Understanding directness, punctuality, dinner etiquette, and making friends",
+    stage: "Settling In",
+    readTime: "11 min",
+    icon: <Users size={24} />,
+    color: "from-violet-500 to-purple-600",
+    shadow: "shadow-violet-500/20",
+    accent: "text-violet-600",
+    verified: "2026-01-18",
+    summary: "Germans are direct. That's not rudeness—it's efficiency. Here's how to navigate the culture without taking things personally.",
+    vibeCheck: "German culture might feel cold at first. It's not. It's just different. Here's the unwritten rulebook.",
+    content: [
+      {
+        type: "p",
+        text: "If you come from a culture where politeness means indirectness, Germany will feel shocking. Germans say what they mean. 'That's wrong.' Not 'That's kind of not quite right maybe?' This directness is not personal—it's how efficiency works here."
+      },
+      { type: "h2", text: "1. Directness & Criticism" },
+      {
+        type: "p",
+        text: "**What it means:** Your boss will say 'Das ist falsch' (That's wrong) or 'Das funktioniert nicht' (That doesn't work). They're not angry. They're solving a problem. You fix it and move on."
+      },
+      {
+        type: "p",
+        text: "**Why it matters:** In hierarchical cultures, criticism from a superior carries shame. In Germany, it's just information. The faster you separate criticism from judgment, the easier everything becomes."
+      },
+      {
+        type: "p",
+        text: "**What Germans DON'T do:** Complain indirectly to others about you. If you did something wrong, they'll tell you to your face. No gossip, no passive-aggression. This is actually respectful."
+      },
+      { type: "h2", text: "2. Punctuality (Pünktlichkeit)" },
+      {
+        type: "p",
+        text: "**Rule: Be 5 minutes early. Always.** Not 'on time', not 'almost on time.' EARLY."
+      },
+      {
+        type: "ul",
+        items: [
+          "**For work:** 10 minutes early. Not optional.",
+          "**For meetings:** 5 minutes early.",
+          "**For social events:** Exactly on time or 5-10 minutes late is acceptable (very slightly).",
+          "**If you're running late:** Call/text ASAP. Germans will be visibly frustrated but will appreciate the heads-up."
+        ]
+      },
+      {
+        type: "p",
+        text: "**Reality:** Germans themselves sometimes run late. But the expectation is perfection. Even when people are late, they apologize intensely."
+      },
+      { type: "h2", text: "3. Handshake & Professional Greeting" },
+      {
+        type: "p",
+        text: "**Handshake:** Firm grip, make eye contact, say your name. This is standard. Do it every time you meet someone in a professional context."
+      },
+      {
+        type: "p",
+        text: "**First names:** Always use last names (Herr/Frau + surname) until invited to use first names. If someone says 'Just call me Klaus,' you can switch to Klaus. Default to formal."
+      },
+      {
+        type: "p",
+        text: "**Du vs. Sie:** 'Sie' is formal, 'Du' is casual. **Default to Sie.** Your trainer will tell you when you can use Du. Switching too early is considered disrespectful."
+      },
+      { type: "h2", text: "4. Dinner Etiquette (If Invited)" },
+      {
+        type: "p",
+        text: "**Timing:** Dinner is usually 19:00 (7 PM). Germans eat early compared to Southern Europe."
+      },
+      {
+        type: "ul",
+        items: [
+          "**What to bring:** Wine, beer, or flowers (odd number, not 13). Don't bring nothing.",
+          "**Napkin:** Place it on your lap immediately, not tucked into your shirt.",
+          "**Eating:** Don't start until the host says 'Guten Appetit' or starts eating.",
+          "**Compliments:** Compliment the food. Germans cook and want acknowledgment.",
+          "**Finishing:** Eat everything on your plate if possible (it's respectful). Leaving lots of food behind can be seen as wasteful.",
+          "**Drinking:** Beer is social. Wine is social. Soda is fine too. Say 'Prost!' (Cheers) before drinking."
+        ]
+      },
+      { type: "h2", text: "5. Relationships & Friendship" },
+      {
+        type: "p",
+        text: "**German friendship is slow-burn.** People are polite at first but take time to warm up. Don't interpret this as coldness."
+      },
+      {
+        type: "p",
+        text: "**Making friends:** Join a **Verein** (club) or sport. This is how Germans make friends. Shared activity > small talk."
+      },
+      {
+        type: "p",
+        text: "**Casual invites:** 'We should grab coffee sometime!' doesn't mean they want your number. It's polite conversation. If they mean it, they'll give specifics: 'Let's meet Thursday at Café X at 15:00.'"
+      },
+      { type: "h2", text: "6. Public Behavior" },
+      {
+        type: "ul",
+        items: [
+          "**Queuing:** Germans take this seriously. Cut in line and prepare for social war.",
+          "**On trains:** Quiet cars exist (Ruhebereich). Don't talk on your phone there.",
+          "**Sunbathing:** Topless bathing (women) is normal at public pools/lakes. Not sexual—just normal.",
+          "**Nudity:** Saunas are nude. It's not sexual. Don't stare, just relax.",
+          "**Recycling:** Do it properly. Putting trash in the wrong bin can result in a note on your door or confrontation from building residents."
+        ]
+      },
+      { type: "h2", text: "7. Money & Splitting Bills" },
+      {
+        type: "p",
+        text: "**Splitting bills:** This is standard. When eating with friends, everyone pays for what they ordered (or splits 50/50). No grand gestures—it's practical."
+      },
+      {
+        type: "p",
+        text: "**Tipping:** Not mandatory. 5-10% if service was good. Round up to nearest euro. Not expected."
+      }
+    ],
+    goldenRule: "Be on time. Accept criticism as information. Use formal titles until invited otherwise.",
+    steps: [
+      {
+        title: "Adjust Your Expectations",
+        text: "Directness ≠ rudeness.",
+        action: "Reframe criticism as feedback.",
+      },
+      {
+        title: "Join a Club (Verein)",
+        text: "This is how German friendships start.",
+        action: "Visit DOSB.de.",
+        readMore: [{ title: "DOSB - Sports Clubs", url: "https://bewegt.dosb.de/", source: "official" }],
+      },
+      {
+        title: "Set Phone Reminders",
+        text: "Always be early.",
+        action: "Calendar alerts 15 min before.",
+      },
+    ],
+    readMore: [
+      { title: "German Etiquette Guide", url: "https://www.make-it-in-germany.com/en/", source: "official" },
+      { title: "Handbook Germany - Culture", url: "https://handbookgermany.de/en/culture/basic-facts.html", source: "official" },
+    ],
+    downloads: [],
+    videos: [{ title: "German Culture Explained", url: "https://youtu.be/example123" }],
+    tags: ["culture", "social", "etiquette", "customs", "directness"],
+  },
+
+  {
+    slug: "side-income-minijob",
+    title: "Side Income: Working Legally While Training",
+    subtitle: "Minijob rules, taxes, and how much you can earn",
+    stage: "Work & Study",
+    readTime: "10 min",
+    icon: <BriefcaseWork size={24} />,
+    color: "from-green-500 to-emerald-600",
+    shadow: "shadow-green-500/20",
+    accent: "text-green-600",
+    verified: "2026-01-18",
+    summary: "How to work a second part-time job legally without breaking your training contract or visa rules.",
+    vibeCheck: "You can earn extra money. But there are legal limits. Here's the rulebook so you don't get fined.",
+    content: [
+      {
+        type: "p",
+        text: "Many trainees want additional income. Germany allows this—BUT there are strict rules. Break them and you risk visa issues, employer disputes, or fines. Learn the system first."
+      },
+      { type: "h2", text: "1. The Legal Framework" },
+      {
+        type: "p",
+        text: "**Your training contract (Ausbildungsvertrag) is your primary job.** Additional work must not interfere with it. Your trainer can restrict side jobs if they conflict."
+      },
+      {
+        type: "p",
+        text: "**Visa rule:** Your residence permit ties you to your primary training. Working on the side is allowed, but the Ausbildung must remain your focus. If you switch focus, you violate visa terms."
+      },
+      { type: "h2", text: "2. Minijob (€520/Month or Less)" },
+      {
+        type: "p",
+        text: "**Best option:** A **Minijob** (marginal employment). In 2026, you can earn up to **€520/month** without major tax implications."
+      },
+      {
+        type: "ul",
+        items: [
+          "**How it works:** Employer registers you with social insurance as a **geringfügig Beschäftigter** (marginally employed person).",
+          "**Taxes:** Employer pays a flat 2% social insurance contribution. You owe no income tax on this amount.",
+          "**What counts as work:** Serving in a café, tutoring, freelance work, delivery driving.",
+          "**Important:** Only 1 Minijob permitted. You can't stack multiple €520 jobs.",
+          "**Contract:** Get a written contract with hours, pay rate, and start date."
+        ]
+      },
+      { type: "h2", text: "3. Part-Time Job (Over €520)" },
+      {
+        type: "p",
+        text: "If you earn more than €520/month, you enter regular employment. This is fine, but:"
+      },
+      {
+        type: "ul",
+        items: [
+          "**Taxes apply:** Income tax, health insurance contribution, unemployment insurance.",
+          "**Hours matter:** Don't exceed your training hours too much. If your training is full-time (37.5 hrs/week), working 20+ extra hours weekly might violate your contract.",
+          "**Employer approval:** Get written permission from your trainer before taking a second job.",
+          "**Example:** Train 37.5 hrs/week, work 8-10 hrs/week at a café = acceptable. Train 37.5 hrs/week, work 25 hrs/week = likely a violation."
+        ]
+      },
+      { type: "h2", text: "4. Tax Filing (Steuererklärung)" },
+      {
+        type: "p",
+        text: "Even if you have a Minijob, filing taxes is smart. You often get money back."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Why file:** Your Ausbildung income has taxes withheld. If your side income is low, overall tax is less than withheld. You get a refund.",
+          "**How to file:** Use **ELSTER** (free official online platform) or hire a **Steuerberater** (tax consultant, ~€50-100).",
+          "**Deadline:** June 2nd of the following year (soft deadline; hard deadline is later with penalty).",
+          "**Documents needed:** Employment contracts, payslips from both jobs, proof of payments."
+        ]
+      },
+      { type: "h2", text: "5. What Counts as 'Work'" },
+      {
+        type: "ul",
+        items: [
+          "**Allowed:** Serving in restaurants, tutoring, delivery driving (Deliveroo, Wolt), freelance writing, babysitting, tutoring.",
+          "**Careful:** Your contract might forbid work in competing fields. If you train at Hospital A, working at Hospital B might be forbidden.",
+          "**Not allowed:** Working for cash under the table (Schwarzarbeit). It's illegal, uninsured, and puts you at risk.",
+          "**Self-employment:** Freelance work requires registration (Gewerbeanmeldung). Cost: ~€25. You'll owe self-employment taxes but have freedom."
+        ]
+      },
+      { type: "h2", text: "6. Earnings Reality Check" },
+      {
+        type: "p",
+        text: "**Minijob €520/month:** Realistic for restaurant/café work. That's €12-13/hour typical."
+      },
+      {
+        type: "p",
+        text: "**Part-time €1000/month:** Requires ~10-12 hrs/week at €15+/hour (tutoring pays better than food service)."
+      },
+      {
+        type: "p",
+        text: "**Net income after taxes:** If earning €1000/month gross, expect ~€750-800 net after all deductions."
+      }
+    ],
+    goldenRule: "Keep side work under €520/month (Minijob) unless you have trainer approval. Never work for cash under the table.",
+    steps: [
+      {
+        title: "Check Your Contract",
+        text: "Read your Ausbildungsvertrag.",
+        action: "Look for side work restrictions.",
+        readMore: [{ title: "Faire Integration (Rights)", url: "https://www.faire-integration.de/", source: "ngo" }],
+      },
+      {
+        title: "Find a Minijob",
+        text: "Job sites: Indeed.de, Monster.de",
+        action: "Search 'Minijob' in your city.",
+        readMore: [{ title: "Indeed.de", url: "https://www.indeed.de", source: "tool" }],
+      },
+      {
+        title: "Register Properly",
+        text: "Ensure employer registers you officially.",
+        action: "Ask HR for confirmation.",
+        readMore: [{ title: "Minijob Zentrale (Official Info)", url: "https://www.minijobzentrale.de/", source: "official" }],
+      },
+    ],
+    readMore: [
+      { title: "ELSTER - Tax Filing", url: "https://www.elsteronline.de/", source: "official" },
+      { title: "Minijob Rules 2026", url: "https://www.minijobzentrale.de/DE/01_fachliche_Infos/09_aktuelles/Minijob_ab_2024.html", source: "official" },
+    ],
+    downloads: [],
+    videos: [{ title: "Minijob in Germany Explained", url: "https://youtu.be/example123" }],
+    tags: ["work", "minijob", "income", "taxes", "legal"],
+  },
+
+  {
+    slug: "emergency-situations",
+    title: "Emergency Situations: Beyond 112",
+    subtitle: "What to do after accidents, theft, lost documents, and urgent problems",
+    stage: "Health & Social",
+    readTime: "10 min",
+    icon: <AlertCircle size={24} />,
+    color: "from-red-600 to-orange-600",
+    shadow: "shadow-red-500/20",
+    accent: "text-red-600",
+    verified: "2026-01-18",
+    summary: "Medical emergencies use 112. But what about car accidents, theft, or lost passport? Here's the actual protocol.",
+    vibeCheck: "Emergencies happen. Knowing the exact steps removes panic. Here's your checklist.",
+    content: [
+      {
+        type: "p",
+        text: "You know to call 112 for medical emergencies. But what about a car accident? Stolen phone? Lost passport? Germany has a system for everything. Here's what you actually do."
+      },
+      { type: "h2", text: "1. Medical Emergency (112)" },
+      {
+        type: "p",
+        text: "**When to call:** Chest pain, difficulty breathing, unconsciousness, severe bleeding, suspected broken bone, suspected poisoning."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Number:** 112 (ambulance, fire, rescue)",
+          "**What to say:** Your location, nature of emergency, number of people affected. Don't hang up. Stay on the line.",
+          "**Response:** Ambulance arrives within 10-20 minutes in cities. Paramedics are excellent.",
+          "**Cost:** Covered by your health insurance."
+        ]
+      },
+      { type: "h2", text: "2. Car Accident" },
+      {
+        type: "p",
+        text: "**Step 1:** Check for injuries. Call 112 if anyone is hurt."
+      },
+      {
+        type: "p",
+        text: "**Step 2:** Turn on hazard lights. Place warning triangles 50m behind your car (required by law)."
+      },
+      {
+        type: "p",
+        text: "**Step 3:** Exchange details with other driver(s):"
+      },
+      {
+        type: "ul",
+        items: [
+          "Full name, phone, address",
+          "Insurance company & policy number",
+          "License plate, car make/model",
+          "Driver's license number",
+          "Photos: Damage, accident scene, road conditions"
+        ]
+      },
+      {
+        type: "p",
+        text: "**Step 4:** If no injuries AND both cars drivable, you can settle it yourselves or call police (non-emergency line **110**) to file a report."
+      },
+      {
+        type: "p",
+        text: "**Step 5:** Report to your insurance company ASAP (within 24-48 hours)."
+      },
+      { type: "h2", text: "3. Theft (Bike, Phone, Wallet, Passport)" },
+      {
+        type: "p",
+        text: "**Immediately:** File a police report (**Anzeige**) at your local police station or online."
+      },
+      {
+        type: "ul",
+        items: [
+          "**What to bring:** ID, description of the item, where/when it was stolen.",
+          "**Filing:** Takes 15-30 minutes. You get a case number (**Aktenzeichen**).",
+          "**For insurance:** Keep the police report. Insurance claims require it.",
+          "**Phone theft:** Call your provider immediately to block the SIM. Report to police.",
+          "**Bike:** Germany has registry for bikes. File report, file insurance claim if applicable."
+        ]
+      },
+      { type: "h2", text: "4. Lost or Stolen Passport" },
+      {
+        type: "p",
+        text: "**Action: Report to your embassy/consulate IMMEDIATELY.** Don't delay."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Why:** Someone can forge documents using your passport.",
+          "**Find your embassy:** Google '[Your country] Embassy Berlin' (or your city).",
+          "**What they provide:** Emergency travel document (valid for one trip home) or new passport (takes 1-2 weeks).",
+          "**Cost:** €50-100+ depending on country.",
+          "**Also file:** Police report in Germany (case number needed for some countries)."
+        ]
+      },
+      { type: "h2", text: "5. Lost Bank Card" },
+      {
+        type: "p",
+        text: "**Call immediately:** **116 116** (German bank card blocking hotline). Available 24/7, free."
+      },
+      {
+        type: "ul",
+        items: [
+          "**What happens:** Card is blocked within minutes. New card arrives in 1 week.",
+          "**For Revolut/online banks:** Use their app to freeze card immediately.",
+          "**Fraud:** Contact your bank if unauthorized charges appear. German law protects you."
+        ]
+      },
+      { type: "h2", text: "6. Workplace Injury (Occupational Accident)" },
+      {
+        type: "p",
+        text: "**At work:** Inform your supervisor IMMEDIATELY, even if it seems minor."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Why:** All workplace injuries are reportable to workers' compensation (Berufsgenossenschaft).",
+          "**Process:** Your employer files a report. You receive a case number.",
+          "**Medical:** Get treated at your doctor or hospital. Costs covered by workers' comp.",
+          "**Sick leave:** If you can't work, you're compensated (70% of salary typically).",
+          "**Long-term:** If injury causes permanent damage, you may receive additional compensation."
+        ]
+      },
+      { type: "h2", text: "7. Police Non-Emergency (110)" },
+      {
+        type: "p",
+        text: "**Use 110 for:** Theft reports, harassment, property damage (not life-threatening)."
+      },
+      {
+        type: "ul",
+        items: [
+          "**Response time:** 30 minutes to several hours depending on severity.",
+          "**Filing report:** Free, required for insurance claims.",
+          "**Language:** English speakers available in most stations, but bring a translation app."
+        ]
+      }
+    ],
+    goldenRule: "112 = life emergency. 110 = police non-emergency. 116 117 = urgent doctor. Keep these numbers saved.",
+    steps: [
+      {
+        title: "Save Emergency Numbers",
+        text: "112 (ambulance), 110 (police), 116 117 (urgent doctor), 116 116 (lost card)",
+        action: "Save in phone contacts now.",
+      },
+      {
+        title: "Know Your Embassy",
+        text: "Find your country's embassy in Berlin.",
+        action: "Save their address and phone.",
+        readMore: [{ title: "German Foreign Office (Embassy List)", url: "https://www.auswaertiges-amt.de/en", source: "official" }],
+      },
+      {
+        title: "Get Police Station Address",
+        text: "Find your local **Polizeipräsidium**.",
+        action: "Save location in phone.",
+        readMore: [{ title: "Police Station Finder", url: "https://www.polizei.de/", source: "official" }],
+      },
+    ],
+    readMore: [
+      { title: "Emergency Numbers Germany", url: "https://www.make-it-in-germany.com/en/health-care/dealing-emergencies/", source: "official" },
+      { title: "German Police (Official)", url: "https://www.polizei.de/", source: "official" },
+    ],
+    downloads: [{ title: "Emergency Numbers Cheatsheet", url: null }],
+    videos: [{ title: "What to Do in an Accident (German)", url: "https://youtu.be/example123" }],
+    tags: ["emergency", "accident", "police", "theft", "safety"],
   }
 ];
