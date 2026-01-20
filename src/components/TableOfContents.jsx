@@ -1,31 +1,22 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-export const TableOfContents = ({ post }) => {
+export const TableOfContents = ({ sections = [], activeSectionId, onSelect }) => {
   const [isOpen, setIsOpen] = useState(() => {
     if (typeof window === "undefined") return true;
     return window.innerWidth >= 1024;
   });
 
-  // Extract headings from content
-  const headings = post.content
-    ?.filter((block) => block.type === "h2")
-    .map((block, i) => ({
-      id: `h-${i}`,
-      text: block.text,
-      level: 2,
-    })) || [];
+  if (sections.length === 0) return null;
 
-  if (headings.length === 0) return null;
-
-  const scrollToHeading = (text) => {
-    const element = Array.from(document.querySelectorAll("h2")).find(
-      (h) => h.textContent === text
-    );
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      setIsOpen(false);
-    }
+  const scrollToSection = (sectionId) => {
+    if (typeof window === "undefined") return;
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+    element.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    setIsOpen(false);
+    onSelect?.(sectionId);
   };
 
   return (
@@ -47,13 +38,18 @@ export const TableOfContents = ({ post }) => {
 
       {isOpen && (
         <div className="border-t border-slate-200 bg-white px-4 sm:px-5 py-3 sm:py-4 space-y-1.5 max-h-96 overflow-y-auto">
-          {headings.map((heading, i) => (
+          {sections.map((section, i) => (
             <button
               key={i}
-              onClick={() => scrollToHeading(heading.text)}
-              className="block w-full rounded-xl px-2 py-2 text-left text-[13px] font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+              onClick={() => scrollToSection(section.id)}
+              className={`block w-full rounded-xl px-2 py-2 text-left text-[13px] font-medium transition-colors ${
+                activeSectionId === section.id
+                  ? "bg-slate-100 text-slate-900"
+                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+              }`}
+              aria-current={activeSectionId === section.id ? "page" : undefined}
             >
-              {heading.text}
+              {section.title}
             </button>
           ))}
         </div>

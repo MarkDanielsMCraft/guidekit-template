@@ -21,6 +21,39 @@ import { safeOpen } from '../utils/security';
 import { pct } from '../utils/helpers';
 import { POSTS } from "../data/posts";
 
+const stripText = (value) =>
+  String(value || "")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const RelatedThumbnail = ({ post }) => {
+  const [failed, setFailed] = useState(false);
+  if (!post.backgroundImage || failed) {
+    return (
+      <div className="h-12 w-12 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400">
+        {post.icon}
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-12 w-12 rounded-lg bg-slate-100 overflow-hidden">
+      <img
+        src={`${post.backgroundImage}${post.backgroundImage.includes('?') ? '' : '?'}&auto=format&fit=crop&w=160&q=70`}
+        alt={`${post.title} thumbnail`}
+        className="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+      />
+    </div>
+  );
+};
+
 export const PostDetail = ({
   post,
   onBack,
@@ -179,9 +212,30 @@ export const PostDetail = ({
   const handlePageSearch = () => {
     const query = pageSearch.trim().toLowerCase();
     if (!query) return;
-    const match = sections.find((section) =>
-      section.title.toLowerCase().includes(query)
-    );
+    const match = sections.find((section) => {
+      const text = [
+        section.title,
+        section.intro,
+        ...(section.blocks || []).flatMap((block) => {
+          if (block.type === "p") return [block.text];
+          if (block.type === "ul") return block.items || [];
+          return [];
+        }),
+      ]
+        .map(stripText)
+        .join(" ")
+        .toLowerCase();
+      return text.includes(query);
+    });
+    if (!match) {
+      const stepMatch = post.steps.find((step) =>
+        [step.title, step.text, step.action].map(stripText).join(" ").toLowerCase().includes(query)
+      );
+      if (stepMatch && sections.length > 0) {
+        scrollToSection(sections[0].id);
+      }
+      return;
+    }
     if (match) scrollToSection(match.id);
   };
 
@@ -278,7 +332,7 @@ export const PostDetail = ({
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 sm:gap-6">
               <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 sm:p-6">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 mb-4">On this page</h3>
-                <TableOfContents post={post} />
+                <TableOfContents sections={sections} activeSectionId={activeSectionId} onSelect={scrollToSection} />
               </div>
               <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 sm:p-6">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 mb-4">Related reads</h3>
@@ -294,20 +348,8 @@ export const PostDetail = ({
                       className="w-full text-left p-3 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="h-12 w-12 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
-                          {rp.backgroundImage ? (
-                            <img
-                              src={`${rp.backgroundImage}${rp.backgroundImage.includes('?') ? '' : '?'}&auto=format&fit=crop&w=160&q=70`}
-                              alt={`${rp.title} thumbnail`}
-                              className="h-full w-full object-cover"
-                              loading="lazy"
-                              decoding="async"
-                            />
-                          ) : (
-                            <div className="h-full w-full flex items-center justify-center text-slate-400">
-                              {rp.icon}
-                            </div>
-                          )}
+                        <div className="flex-shrink-0">
+                          <RelatedThumbnail post={rp} />
                         </div>
                         <div className="min-w-0">
                           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">{rp.stage}</p>
@@ -544,7 +586,7 @@ export const PostDetail = ({
 
             {/* Navigation */}
             <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
-              <PostNavigation currentPost={post} />
+              <PostNavigation currentPost={post} onOpenPost={onOpenPost} />
             </div>
           </article>
         </div>

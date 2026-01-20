@@ -1,7 +1,9 @@
+import React from "react";
 import { ChevronRight, Clock, Tag } from "lucide-react";
 
 export const PostCard = ({ post, onOpen, progressPercent }) => {
   const cardImage = post.cardImage || post.backgroundImage;
+  const [imageError, setImageError] = React.useState(false);
   const stageStyles = {
     Arrival: {
       pill: "bg-blue-50 text-blue-700 border-blue-200",
@@ -36,13 +38,14 @@ export const PostCard = ({ post, onOpen, progressPercent }) => {
       className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition-colors hover:border-slate-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
     >
       <div className="relative h-44 w-full overflow-hidden bg-slate-100">
-        {cardImage ? (
+        {cardImage && !imageError ? (
           <img
             src={`${cardImage}${cardImage.includes('?') ? '' : '?'}&auto=format&fit=crop&w=900&q=80`}
             alt={`${post.title} guide cover`}
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
             decoding="async"
+            onError={() => setImageError(true)}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-slate-400">

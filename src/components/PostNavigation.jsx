@@ -2,20 +2,24 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { POSTS } from "../data/posts";
 
-export const PostNavigation = ({ currentPost }) => {
+export const PostNavigation = ({ currentPost, onOpenPost }) => {
   const currentIndex = POSTS.findIndex((p) => p.slug === currentPost.slug);
   const prevPost = currentIndex > 0 ? POSTS[currentIndex - 1] : null;
   const nextPost = currentIndex < POSTS.length - 1 ? POSTS[currentIndex + 1] : null;
 
   const goTo = (post) => {
-    window.location.hash = `post-${post.slug}`;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof onOpenPost === "function") {
+      onOpenPost(post.slug);
+    }
+    if (typeof window === "undefined") return;
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
   };
 
   if (!prevPost && !nextPost) return null;
 
   return (
-    <div className="bg-white/80 border border-slate-100 rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm">
+    <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
       <div className="flex flex-col sm:flex-row items-stretch gap-3 sm:gap-4">
         {prevPost ? (
           <button
