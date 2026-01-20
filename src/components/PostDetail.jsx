@@ -12,7 +12,6 @@ import {
   Share2,
 } from "lucide-react";
 import { Header } from './Header';
-import { ReadMoreList } from './ReadMoreList';
 import { SourcePill } from './SourcePill';
 import { TableOfContents } from './TableOfContents';
 import { PostNavigation } from './PostNavigation';
@@ -593,23 +592,31 @@ export const PostDetail = ({
               )}
             </div>
 
-            <ReadMoreList links={post.readMore} />
-
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-600 mb-3">
-                End-of-page summary
-              </h3>
-              <ul className="list-disc list-outside pl-6 space-y-2 text-[16px] text-slate-700">
-                {(sections.length > 0
-                  ? sections.slice(0, 4).map((section) => ({ key: section.id, text: section.title }))
-                  : post.steps.slice(0, 4).map((step, index) => ({ key: `step-${index}`, text: step.title }))
-                ).map((item) => (
-                  <li key={item.key} className="font-medium">
-                    {item.text}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {post.readMore?.length > 0 && (
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-600 mb-3">
+                  Important links
+                </h3>
+                <div className="space-y-2">
+                  {post.readMore.map((link, index) => (
+                    <button
+                      key={`${link.url}-${index}`}
+                      onClick={() => safeOpen(link.url)}
+                      className="w-full flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div className="min-w-0">
+                        <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                          <SourcePill source={link.source} />
+                          <span className="hidden sm:inline">Link</span>
+                        </div>
+                        <p className="truncate text-sm font-semibold text-slate-800">{link.title}</p>
+                      </div>
+                      <ExternalLink size={14} className="flex-shrink-0 text-slate-400" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Navigation */}
             <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">

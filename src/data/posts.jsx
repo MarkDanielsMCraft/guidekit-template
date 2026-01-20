@@ -83,9 +83,9 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**[Google Maps](https://maps.google.com):** Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
-          "**[DeepL](https://www.deepl.com):** This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
-          "**[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator):** This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
+          "**[Google Maps](https://maps.google.com)**: Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
+          "**[DeepL](https://www.deepl.com)**: This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
+          "**[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator)**: This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
         ]
       },
       { type: "h2", text: "3. Getting From Airport to City: Transport vs Taxi" },
@@ -441,20 +441,20 @@ export const POSTS = [
       { type: "h2", text: "1. Textbooks (Buy Smart, Not New)" },
       {
         type: "p",
-        text: "**[Thieme 'I Care' series](https://shop.thieme.de/):** Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
+        text: "**[Thieme 'I Care' series](https://shop.thieme.de/)**: Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
       },
       {
         type: "p",
-        text: "**[Pflege Heute](https://www.elsevier.de/de/buch/pflege-heute):** Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
+        text: "**[Pflege Heute](https://www.elsevier.de/de/buch/pflege-heute)**: Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
       },
       { type: "h2", text: "2. Free Reference Resources" },
       {
         type: "p",
-        text: "**[DocCheck Flexikon](https://flexikon.doccheck.com):** German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
+        text: "**[DocCheck Flexikon](https://flexikon.doccheck.com)**: German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
       },
       {
         type: "p",
-        text: "**[ResearchGate](https://www.researchgate.net):** For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
+        text: "**[ResearchGate](https://www.researchgate.net)**: For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
       },
       { type: "h2", text: "3. Vocabulary Building" },
       {
