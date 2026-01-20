@@ -64,13 +64,13 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "The best local option for students is **Aldi Talk**. It is a prepaid service from the Aldi supermarket chain. It is cheap (~10€ starter set), has no long contract, and uses the reliable O2 network. Why Aldi? Because every German city has an Aldi supermarket, and it's the most accessible option for newcomers."
+        text: "The best local option for students is **[Aldi Talk](https://www.alditalk.de/)**. It is a prepaid service from the Aldi supermarket chain. It is cheap (~10€ starter set), has no long contract, and uses the reliable O2 network. Why Aldi? Because every German city has an Aldi supermarket, and it's the most accessible option for newcomers."
       },
       {
         type: "ul",
         items: [
-          "**Where to buy:** Any 'Aldi Süd' or 'Aldi Nord' supermarket. There is usually one inside or very near major train stations and airports. Pro tip: Aldi is divided into North and South regions, but both Aldi Talk services work nationwide.",
-          "**How to register:** German law requires ID verification before you can use any mobile SIM. You can download the Aldi Talk app and do a 'Video Ident' call—this is a video call where you show your passport to verify who you are. However, you can also finish all this verification withing a webbrowser such as chrome etc. You need good lighting and a clear photo of your passport.",
+          "**Where to buy:** Any [Aldi Süd](https://www.aldi-sued.de/) or [Aldi Nord](https://www.aldi-nord.de/) supermarket. There is usually one inside or very near major train stations and airports. Pro tip: Aldi is divided into North and South regions, but both Aldi Talk services work nationwide.",
+          "**How to register:** German law requires ID verification before you can use any mobile SIM. You can download the [Aldi Talk app](https://www.alditalk.de/registrierung) and do a 'Video Ident' call—this is a video call where you show your passport to verify who you are. However, you can also finish all this verification withing a webbrowser such as chrome etc. You need good lighting and a clear photo of your passport.",
           "**Troubleshooting:** If the video call fails (which happens with bad connection or unclear photos), you can do 'PostIdent' at any post office (Deutsche Post). They will verify you in person for a small fee (~10€).",
           "**Cost breakdown:** The 10€ starter set includes your SIM and about 10€ credit. Monthly plans start at 8.99€, the unlimited option is about 9.99€ as of 19 Jan 2026."
         ]
@@ -83,9 +83,9 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**Google Maps:** Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
-          "**DeepL:** This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
-          "**DB Navigator (Deutsche Bahn):** This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
+          "**[Google Maps](https://maps.google.com):** Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
+          "**[DeepL](https://www.deepl.com):** This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
+          "**[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator):** This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
         ]
       },
       { type: "h2", text: "3. Getting From Airport to City: Transport vs Taxi" },
@@ -95,11 +95,11 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**Here's exactly what to do:** Use the DB Navigator app (you just downloaded it). Type your airport name and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. The app tells you which platform to go to and what time to leave. It's that simple. If this seems confusing, switch to **Google Maps** and do the same search there."
+        text: "**Here's exactly what to do:** Use the [DB Navigator](https://www.bahn.de/service/mobile/db-navigator) app (you just downloaded it). Type your airport name and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. The app tells you which platform to go to and what time to leave. It's that simple. If this seems confusing, switch to **[Google Maps](https://maps.google.com)** and do the same search there."
       },
       {
         type: "p",
-        text: "**About the Deutschlandticket:** This monthly pass costs 63€(as of 19 Jan 2026) and covers ALL local transport nationwide (trains, buses, metros). It does NOT cover long-distance express trains (ICE/IC). But for getting around your city? Perfect. Consider buying one at the airport train station before you leave."
+        text: "**About the [Deutschlandticket](https://www.bahn.de/angebot/regio/deutschland-ticket):** This monthly pass costs 63€(as of 19 Jan 2026) and covers ALL local transport nationwide (trains, buses, metros). It does NOT cover long-distance express trains (ICE/IC). But for getting around your city? Perfect. Consider buying one at the airport train station before you leave."
       },
       { type: "h2", text: "4. Your First Weekend (The Sunday Rule)" },
       {
@@ -108,7 +108,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**The Loophole:** Supermarkets inside big train stations (Hauptbahnhof) and airports are allowed to stay open on Sundays. If you land on Sunday, buy bread, water, juice etc *at the airport supermarket* (usually Rewe or Edeka) before you leave the terminal."
+        text: "**The Loophole:** Supermarkets inside big train stations (Hauptbahnhof) and airports are allowed to stay open on Sundays. If you land on Sunday, buy bread, water, juice etc *at the airport supermarket* (usually [Rewe](https://www.rewe.de/) or [Edeka](https://www.edeka.de/)) before you leave the terminal."
       },
       { type: "h2", text: "5. The Golden Paper: Wohnungsgeberbestätigung" },
       {
@@ -176,15 +176,15 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**Sparkasse / Volksbank (Traditional Banks):** These are the safest and most trusted. Physical branches in every neighborhood. BUT they charge monthly fees (5–10€) and often require your Anmeldung (registration) proof before opening an account. This creates a chicken-and-egg problem.",
-          "**Commerzbank / Deutsche Bank:** Large banks with solid reputations. Problem: They often check your SCHUFA (credit score). If you're new to Germany, you won't have any credit history. They might reject you.",
-          "**N26 (Online Bank):** Fast setup, German IBAN, no fees. Good if it works for your passport, but verification sometimes fails with non-EU documents.",
-          "**Revolut (Game Changer):** Opens in literally 10 minutes through an app using only your passport. Gives you a valid German IBAN immediately. Excellent English-language app. No Anmeldung needed upfront—you update it later. This is your best bet."
+          "**[Sparkasse](https://www.sparkasse.de/) / [Volksbank](https://www.volksbank.de/) (Traditional Banks):** These are the safest and most trusted. Physical branches in every neighborhood. BUT they charge monthly fees (5–10€) and often require your Anmeldung (registration) proof before opening an account. This creates a chicken-and-egg problem.",
+          "**[Commerzbank](https://www.commerzbank.de/) / [Deutsche Bank](https://www.deutsche-bank.de/):** Large banks with solid reputations. Problem: They often check your SCHUFA (credit score). If you're new to Germany, you won't have any credit history. They might reject you.",
+          "**[N26](https://n26.com/) (Online Bank):** Fast setup, German IBAN, no fees. Good if it works for your passport, but verification sometimes fails with non-EU documents.",
+          "**[Revolut](https://www.revolut.com/) (Game Changer):** Opens in literally 10 minutes through an app using only your passport. Gives you a valid German IBAN immediately. Excellent English-language app. No Anmeldung needed upfront—you update it later. This is your best bet."
         ]
       },
       {
         type: "p",
-        text: "**My honest recommendation:** Open Revolut first. Use it to establish your financial presence in Germany. Give the IBAN to your employer and landlord(**if required**, never share your IBAN/bank details anyhow!). Once you have your registration paper (Anmeldung), open a Sparkasse or Volksbank account if you want a physical bank for ATM withdrawals or backup. But Revolut alone is perfectly sufficient."
+        text: "**My honest recommendation:** Open [Revolut](https://www.revolut.com/) first. Use it to establish your financial presence in Germany. Give the IBAN to your employer and landlord(**if required**, never share your IBAN/bank details anyhow!). Once you have your registration paper (Anmeldung), open a [Sparkasse](https://www.sparkasse.de/) or [Volksbank](https://www.volksbank.de/) account if you want a physical bank for ATM withdrawals or backup. But Revolut alone is perfectly sufficient."
       },
       {
         type: "p",
@@ -441,32 +441,32 @@ export const POSTS = [
       { type: "h2", text: "1. Textbooks (Buy Smart, Not New)" },
       {
         type: "p",
-        text: "**Thieme 'I Care' series:** Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
+        text: "**[Thieme 'I Care' series](https://shop.thieme.de/):** Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
       },
       {
         type: "p",
-        text: "**Pflege Heute:** Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
+        text: "**[Pflege Heute](https://www.elsevier.de/de/buch/pflege-heute):** Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
       },
       { type: "h2", text: "2. Free Reference Resources" },
       {
         type: "p",
-        text: "**DocCheck Flexikon:** German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
+        text: "**[DocCheck Flexikon](https://flexikon.doccheck.com):** German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
       },
       {
         type: "p",
-        text: "**ResearchGate:** For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
+        text: "**[ResearchGate](https://www.researchgate.net):** For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
       },
       { type: "h2", text: "3. Vocabulary Building" },
       {
         type: "p",
-        text: "Don't memorize textbooks. Focus on **the top 100-150 terms** your field uses daily. Make flashcards using **Anki** (free app). Add 10 cards daily during your first month."
+        text: "Don't memorize textbooks. Focus on **the top 100-150 terms** your field uses daily. Make flashcards using **[Anki](https://apps.ankiweb.net/)** (free app). Add 10 cards daily during your first month."
       },
       {
         type: "ul",
         items: [
           "**Example for nursing:** Blutdruck (blood pressure), Fieber (fever), Wunde (wound), Medikament (medication), Infusion, Katheter.",
           "Use abbreviations healthcare professionals use: RR (blood pressure), HF (heart rate), KG (patient).",
-          "Watch **PflegeTube** on YouTube—real nursing scenarios with German commentary."
+          "Watch **[PflegeTube](https://www.youtube.com/@PflegeTube)** on YouTube—real nursing scenarios with German commentary."
         ]
       }
     ],
@@ -1559,7 +1559,7 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**Student Residence Halls (Studentenheim/Wohnheim):** Run by universities or student services (Deutsches Studentenwerk). Usually affordable (€150-300/month) but limited availability and can feel institutional. Shared facilities. BEST FOR: Budget-conscious students who don't mind communal living.",
+          "**Student Residence Halls (Studentenheim/Wohnheim):** Run by universities or student services ([Deutsches Studentenwerk](https://www.studentenwerke.de/)). Usually affordable (€150-300/month) but limited availability and can feel institutional. Shared facilities. BEST FOR: Budget-conscious students who don't mind communal living.",
           "**Shared Apartments (WG - Wohngemeinschaft):** 3-4 people sharing an apartment, each with private room, shared kitchen/bathroom. €250-500/month depending on city and room size. Most common for nursing students. BEST FOR: Those wanting independence + affordability.",
           "**Private Studio/1-Bedroom Apartment:** Fully yours. €400-800+/month. More expensive, but total privacy and control. BEST FOR: Those with stable income or employer support.",
           "**Host Family (Gastfamilie):** Live with a German family. €300-500/month including meals. Good for cultural immersion, but less independence. BEST FOR: Those wanting to improve German language rapidly.",
@@ -1577,7 +1577,7 @@ export const POSTS = [
           "**Small Cities (< 200k people):** WG room €200-350/month, private studio €300-500/month",
           "**Medium Cities (200k-1M):** WG room €300-450/month, private studio €450-700/month",
           "**Large Cities (Berlin, Munich, Hamburg):** WG room €350-550/month, private studio €600-900/month",
-          "**Additional Costs:** Utilities (Nebenkosten) €80-150/month, internet €20-40/month, Germany charges Rundfunkbeitrag (TV/radio fee) €18.36/month whether you watch TV or not (shared apartments count as one unit)"
+          "**Additional Costs:** Utilities (Nebenkosten) €80-150/month, internet €20-40/month, Germany charges [Rundfunkbeitrag](https://www.rundfunkbeitrag.de/) (TV/radio fee) €18.36/month whether you watch TV or not (shared apartments count as one unit)"
         ]
       },
       {
@@ -1590,7 +1590,7 @@ export const POSTS = [
           "Rent (WG): €350",
           "Utilities & internet: €100",
           "Food: €60-100",
-          "Transport (Deutschlandticket): €63",
+          "Transport ([Deutschlandticket](https://www.bahn.de/angebot/regio/deutschland-ticket)): €63",
           "Extras (cleaning supplies, toiletries, etc.): €40",
           "**Total:** €613-713/month (very modest, but doable on trainee salary)"
         ]
