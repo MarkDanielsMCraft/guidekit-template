@@ -150,7 +150,7 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
       <main className="max-w-6xl mx-auto px-4 sm:px-6 -mt-10 sm:-mt-14 pb-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Article */}
-          <article className="lg:col-span-2 space-y-8">
+          <article className="lg:col-span-2 space-y-6 sm:space-y-7">
             {post.vibeCheck && (
               <div className="bg-white/90 border border-indigo-50 shadow-sm rounded-3xl p-4 sm:p-5">
                 <p className="text-indigo-900 font-semibold text-sm sm:text-base leading-relaxed">{post.vibeCheck}</p>
@@ -158,18 +158,18 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
             )}
 
             {post.content && (
-              <div className="prose prose-slate max-w-none bg-white p-5 sm:p-7 md:p-9 rounded-3xl border border-slate-100 shadow-sm leading-relaxed text-base sm:text-lg content-block">
+              <div className="prose prose-slate max-w-none bg-white p-5 sm:p-7 md:p-9 rounded-3xl border border-slate-100 shadow-sm content-block space-y-0">
                 {post.content.map((block, i) => {
-                  if (block.type === "h2") return <h2 key={i} className="scroll-mt-40">{block.text}</h2>;
-                  if (block.type === "p") return <p key={i}>{renderRichText(block.text, `p-${i}`)}</p>;
-                  if (block.type === "ul") return <ul key={i}>{block.items.map((item, j) => <li key={j}>{renderRichText(item, `li-${i}-${j}`)}</li>)}</ul>;
+                  if (block.type === "h2") return <h2 key={i} className="scroll-mt-40 font-black text-slate-900 text-2xl sm:text-3xl tracking-tight">{block.text}</h2>;
+                  if (block.type === "p") return <p key={i} className="text-slate-700">{renderRichText(block.text, `p-${i}`)}</p>;
+                  if (block.type === "ul") return <ul key={i} className="list-disc list-outside pl-5 sm:pl-6 space-y-2">{block.items.map((item, j) => <li key={j} className="text-slate-700">{renderRichText(item, `li-${i}-${j}`)}</li>)}</ul>;
                   return null;
                 })}
               </div>
             )}
 
             <div className="bg-amber-50/90 p-5 sm:p-6 rounded-3xl border border-amber-100/60">
-              <div className="flex items-center gap-2 text-amber-700 font-black text-xs uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-2 text-amber-700 font-black text-xs uppercase tracking-wider mb-3">
                 <AlertTriangle size={14} />
                 Golden rule
               </div>

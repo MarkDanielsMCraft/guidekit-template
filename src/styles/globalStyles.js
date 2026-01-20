@@ -104,36 +104,41 @@ export const styles = `
   ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
   ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
   
-  /* Modern prose styling */
+  /* Modern prose styling with consistent spacing */
   .prose h2 { 
     color: #0f172a; 
     font-weight: 800; 
-    font-size: 1.875rem; 
-    margin-top: 3rem; 
-    margin-bottom: 1.25rem; 
-    line-height: 1.25; 
-    letter-spacing: -0.02em;
+    font-size: 1.75rem; 
+    margin-top: 2.5rem; 
+    margin-bottom: 1rem; 
+    line-height: 1.3; 
+    letter-spacing: -0.01em;
   }
   .prose h2:first-child { margin-top: 0; }
   
   .prose p { 
-    margin-bottom: 1.75rem; 
-    line-height: 1.8; 
+    margin-bottom: 1.25rem; 
+    line-height: 1.75; 
     color: #475569; 
-    font-size: 1.075rem; 
+    font-size: 1rem; 
   }
   
   .prose ul { 
-    margin-bottom: 1.75rem; 
-    padding-left: 1.5rem; 
+    margin-bottom: 1.5rem; 
+    margin-top: 0.75rem;
+    padding-left: 1.75rem; 
     list-style-type: disc; 
   }
   
   .prose li { 
-    margin-bottom: 0.875rem; 
+    margin-bottom: 0.75rem; 
     color: #475569; 
-    font-size: 1.075rem; 
-    line-height: 1.7;
+    font-size: 1rem; 
+    line-height: 1.65;
+  }
+  
+  .prose li:last-child {
+    margin-bottom: 0;
   }
   
   .prose a { 
@@ -176,8 +181,26 @@ export const styles = `
     text-transform: uppercase;
   }
 
-  .content-block h2:not(:first-child) {
-    margin-top: 2.25rem;
+  .content-block {
+    word-spacing: 0.02em;
+  }
+
+  .content-block h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-block h2:first-child {
+    margin-top: 0;
+  }
+
+  .content-block p + h2 {
+    margin-top: 2rem;
+  }
+
+  .content-block ul + h2,
+  .content-block ul + p {
+    margin-top: 1.5rem;
   }
 
   /* Enhanced button states */
