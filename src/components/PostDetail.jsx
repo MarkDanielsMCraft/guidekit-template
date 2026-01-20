@@ -262,7 +262,7 @@ export const PostDetail = ({
       {/* Page introduction block with image background */}
       <section className="relative w-full overflow-hidden">
          {/* Background image */}
-         <div className="absolute inset-0 h-full w-full min-h-[500px]">
+         <div className="absolute inset-0 h-full w-full min-h-[520px]">
           <SmartImage
             src={post.backgroundImage}
             alt={`${post.title} header`}
@@ -271,7 +271,7 @@ export const PostDetail = ({
             className="h-full w-full"
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/50"></div>
         </div>
         
         {/* Text content overlay */}
@@ -293,7 +293,7 @@ export const PostDetail = ({
       </section>
 
       {/* Main layout */}
-      <main className="w-full min-h-screen pb-20 relative z-20 bg-white">
+      <main className="w-full min-h-screen pb-20 relative z-20 bg-white/95 backdrop-blur">
         <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 pt-8">
           <article className="space-y-6 sm:space-y-8">
             {post.vibeCheck && (

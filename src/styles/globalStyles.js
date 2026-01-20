@@ -6,9 +6,9 @@ export const styles = `
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #f6f7f9;
+    background-color: #eef2f7;
     background-image:
-      linear-gradient(rgba(246, 247, 249, 0.25), rgba(246, 247, 249, 0.25)),
+      linear-gradient(rgba(238, 242, 247, 0.35), rgba(238, 242, 247, 0.35)),
       url('${IMAGES.globalBg}');
     background-size: cover;
     background-position: center;

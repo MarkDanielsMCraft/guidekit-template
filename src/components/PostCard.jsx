@@ -10,7 +10,7 @@ export const PostCard = ({ post, onOpen, progressPercent }) => {
   return (
     <button
       onClick={() => onOpen(post.slug)}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/70 backdrop-blur-sm text-left shadow-sm transition-colors hover:border-slate-300 hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white/85 backdrop-blur text-left shadow-md transition hover:border-slate-300 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
     >
       <div className="relative h-44 w-full overflow-hidden bg-slate-100">
         <SmartImage
