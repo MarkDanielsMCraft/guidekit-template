@@ -56,6 +56,47 @@ export const styles = `
     animation: gradient-animation 20s ease infinite;
   }
 
+  .hero-animated {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-animated::before {
+    content: "";
+    position: absolute;
+    inset: -20% -15% 10% -15%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Blank_map_of_Germany.svg/1024px-Blank_map_of_Germany.svg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    opacity: 0.15;
+    filter: drop-shadow(0 40px 80px rgba(15, 23, 42, 0.4));
+    transform-origin: center;
+    animation: heroMapDrift 36s ease-in-out infinite;
+  }
+
+  .hero-animated::after {
+    content: "";
+    position: absolute;
+    inset: 10% 20% -30% 20%;
+    background: radial-gradient(circle at center, rgba(129, 140, 248, 0.25), transparent 65%);
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: pulseGlow 28s ease-in-out infinite;
+  }
+
+  @keyframes heroMapDrift {
+    0% { transform: rotate(0deg) scale(1); opacity: 0.12; }
+    35% { transform: rotate(-2deg) scale(1.05); opacity: 0.18; }
+    70% { transform: rotate(2deg) scale(1.03); opacity: 0.16; }
+    100% { transform: rotate(0deg) scale(1); opacity: 0.12; }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 0.45; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+  }
+
   .glass-card {
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
@@ -124,10 +165,10 @@ export const styles = `
   .prose h2:first-child { margin-top: 0; }
   
   .prose p { 
-    margin-bottom: 1.25rem; 
-    line-height: 1.75; 
-    color: #475569; 
-    font-size: 1rem; 
+    margin-bottom: 1.2rem; 
+    line-height: 1.7; 
+    color: #465467; 
+    font-size: 1.02rem; 
     font-family: 'Poppins', 'Inter', sans-serif;
   }
   
@@ -192,6 +233,8 @@ export const styles = `
 
   .content-block {
     word-spacing: 0.02em;
+    max-width: 62ch;
+    margin: 0 auto;
   }
 
   .content-block h2 {

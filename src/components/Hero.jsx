@@ -62,7 +62,7 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-900">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-900 hero-animated">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.35),_transparent_55%),_radial-gradient(circle_at_80%_20%,_rgba(239,246,255,0.18),_transparent_60%)]" />
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-indigo-500/40 blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[420px] h-[420px] rounded-full bg-purple-500/20 blur-3xl" />

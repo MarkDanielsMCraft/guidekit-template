@@ -158,7 +158,7 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
             )}
 
             {post.content && (
-              <div className="prose prose-slate max-w-none bg-gradient-to-br from-white to-slate-50/80 p-6 sm:p-9 md:p-10 rounded-3xl border border-slate-200/60 shadow-xl content-block space-y-0 backdrop-blur-sm">
+              <div className="prose prose-slate max-w-3xl mx-auto bg-gradient-to-br from-white to-slate-50/80 p-6 sm:p-9 md:p-10 rounded-3xl border border-slate-200/60 shadow-xl content-block space-y-0 backdrop-blur-sm">
                 {post.content.map((block, i) => {
                   if (block.type === "h2") return <h2 key={i} className="scroll-mt-40 font-semibold text-slate-900 text-3xl sm:text-4xl tracking-tight">{block.text}</h2>;
                   if (block.type === "p") return <p key={i} className="text-slate-700 text-lg leading-relaxed font-medium">{renderRichText(block.text, `p-${i}`)}</p>;
@@ -183,7 +183,7 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
                 <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Click to mark done</div>
               </div>
 
-              <div className="space-y-4 sm:space-y-5">
+              <div className="space-y-4">
                 {post.steps.map((step, idx) => {
                   const key = `${post.slug}-${idx}`;
                   const isDone = Boolean(progress[key]);
@@ -191,76 +191,90 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
                   return (
                     <div
                       key={key}
-                      className={`border rounded-2xl sm:rounded-3xl p-4 sm:p-5 transition-all duration-300 ${
-                        isDone ? "border-emerald-200 bg-emerald-50/60" : "border-slate-100 bg-white hover:-translate-y-0.5 hover:shadow-md"
+                      className={`rounded-3xl border p-5 sm:p-6 transition-all duration-300 ${
+                        isDone
+                          ? "border-emerald-200 bg-emerald-50/50"
+                          : "border-slate-100 bg-white hover:-translate-y-0.5 hover:shadow-md"
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-3 mb-3">
-                        <div className="flex items-start gap-3 min-w-0 flex-1">
-                          <span className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-semibold ${
-                            isDone ? "bg-emerald-100 text-emerald-600" : "bg-slate-100 text-slate-500"
-                          }`}>
-                            {idx + 1}
-                          </span>
-                          <div className="min-w-0">
-                            <h4 className={`font-bold text-base sm:text-lg leading-snug ${
-                              isDone ? "text-emerald-800 line-through decoration-emerald-500/40" : "text-slate-900"
-                            }`}>
-                              {step.title}
-                            </h4>
-                            <p className={`text-slate-600 text-sm sm:text-base mt-1 leading-relaxed ${isDone ? "opacity-60" : "opacity-100"}`}>
-                              {step.text}
-                            </p>
-                          </div>
-                        </div>
-
-                        <button
-                          onClick={() => onToggle(post.slug, idx)}
-                          className={`p-2 rounded-xl transition-all duration-300 flex-shrink-0 ${
-                            isDone ? "bg-emerald-100 text-emerald-600" : "bg-slate-50 text-slate-300 hover:bg-slate-100 hover:text-indigo-500"
-                          }`}
-                          title="Mark done / not done"
-                        >
-                          {isDone ? <CheckSquare size={20} /> : <Square size={20} />}
-                        </button>
-                      </div>
-
-                      {!isDone && (
-                        <div className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3 ml-1 sm:ml-3">
-                          <div className="flex items-start gap-2">
-                            <span className="text-base">👉</span>
-                            <p className="text-slate-800 text-sm sm:text-base font-semibold leading-snug">{step.action}</p>
-                          </div>
-                        </div>
-                      )}
-
-                      {!isDone && step.readMore && step.readMore.length > 0 && (
-                        <div className="mt-3 space-y-2 ml-1 sm:ml-3">
-                          {step.readMore.map((l, j) => (
-                            <a
-                              key={`${l.url}-${j}`}
-                              href={l.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="w-full text-left bg-white hover:bg-slate-50 border border-slate-100 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 transition flex items-start sm:items-center justify-between gap-2"
+                      <div className="flex flex-col gap-4">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                          <div className="flex items-start gap-3 min-w-0">
+                            <span
+                              className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold ${
+                                isDone ? "bg-emerald-100 text-emerald-600" : "bg-slate-100 text-slate-500"
+                              }`}
                             >
-                              <div className="min-w-0 flex-1">
-                                <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1 flex-wrap">
-                                  <SourcePill source={l.source} />
-                                  <span className="text-xs text-slate-400 font-bold hidden sm:inline">Read more</span>
-                                </div>
-                                <p className="text-xs sm:text-sm font-bold text-slate-800 truncate">{l.title}</p>
+                              {idx + 1}
+                            </span>
+                            <div className="min-w-0 space-y-1">
+                              <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                                Step {idx + 1}
                               </div>
-                              <ExternalLink size={14} className="text-slate-400 flex-shrink-0 ml-2" />
-                            </a>
-                          ))}
+                              <h4
+                                className={`text-lg font-semibold leading-snug ${
+                                  isDone ? "text-emerald-700" : "text-slate-900"
+                                }`}
+                              >
+                                {step.title}
+                              </h4>
+                            </div>
+                          </div>
+
+                          <button
+                            onClick={() => onToggle(post.slug, idx)}
+                            className={`self-start rounded-xl px-3 py-2 text-sm font-semibold transition-all duration-200 ${
+                              isDone
+                                ? "bg-emerald-500/10 text-emerald-600"
+                                : "bg-slate-100 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600"
+                            }`}
+                          >
+                            {isDone ? "Marked done" : "Mark done"}
+                          </button>
                         </div>
-                      )}
+
+                        <p className={`text-sm sm:text-base text-slate-600 leading-relaxed ${isDone ? "opacity-60" : ""}`}>
+                          {step.text}
+                        </p>
+
+                        {!isDone && (
+                          <div className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3">
+                            <div className="flex items-start gap-2">
+                              <span className="text-base">👉</span>
+                              <p className="text-slate-800 text-sm sm:text-base font-semibold leading-snug">{step.action}</p>
+                            </div>
+                          </div>
+                        )}
+
+                        {!isDone && step.readMore && step.readMore.length > 0 && (
+                          <div className="space-y-2 pt-1">
+                            {step.readMore.map((l, j) => (
+                              <a
+                                key={`${l.url}-${j}`}
+                                href={l.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-white px-3 sm:px-4 py-2.5 sm:py-3 text-left text-sm font-semibold text-slate-700 transition hover:border-indigo-100 hover:bg-indigo-50/70"
+                              >
+                                <div className="min-w-0">
+                                  <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                                    <SourcePill source={l.source} />
+                                    <span className="hidden sm:inline">Read more</span>
+                                  </div>
+                                  <p className="truncate text-sm font-semibold text-slate-800">
+                                    {l.title}
+                                  </p>
+                                </div>
+                                <ExternalLink size={14} className="flex-shrink-0 text-slate-400" />
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   );
                 })}
               </div>
-            </div>
 
             {/* Downloads + videos */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -313,6 +327,7 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
             <div className="bg-white border border-slate-100 rounded-3xl p-5 sm:p-6 shadow-sm">
               <PostNavigation currentPost={post} />
             </div>
+          </div>
           </article>
 
           {/* Sidebar */}
