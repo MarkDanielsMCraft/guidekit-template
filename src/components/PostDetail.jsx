@@ -259,28 +259,41 @@ export const PostDetail = ({
         </button>
       </div>
 
-      {/* Page introduction block */}
-      <section className="bg-white border-b border-slate-200">
-        <HeroImage post={post} />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-12 space-y-5">
-          <h1 className="text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-slate-900 leading-tight">
+      {/* Page introduction block with image background */}
+      <section className="relative w-full overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 h-full w-full">
+          <SmartImage
+            src={post.backgroundImage}
+            alt={`${post.title} header`}
+            fallbackIcon={post.icon}
+            width={2000}
+            className="h-full w-full"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+        </div>
+        
+        {/* Text content overlay */}
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-32 space-y-5">
+          <h1 className="text-[34px] sm:text-[40px] md:text-[48px] font-semibold text-white leading-tight drop-shadow-lg">
             {post.title}
           </h1>
-          <p className="text-[18px] text-slate-700 font-medium leading-relaxed">
+          <p className="text-[18px] text-white/90 font-medium leading-relaxed drop-shadow-md">
             {post.subtitle || post.summary}
           </p>
-          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-            <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 ${stageStyle.pill}`}>{post.stage}</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1">{post.readTime} read</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1">
-              <CheckCircle size={12} className={stageStyle.accent} /> Verified {post.verified}
+          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/80">
+            <span className={`inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 backdrop-blur-sm`}>{post.stage}</span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 backdrop-blur-sm">{post.readTime} read</span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 backdrop-blur-sm">
+              <CheckCircle size={12} className="text-white" /> Verified {post.verified}
             </span>
           </div>
         </div>
       </section>
 
       {/* Main layout */}
-      <main className="w-full min-h-screen pb-20 relative z-20 bg-transparent">
+      <main className="w-full min-h-screen pb-20 relative z-20 bg-white">
         <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 pt-8">
           <article className="space-y-6 sm:space-y-8">
             {post.vibeCheck && (
