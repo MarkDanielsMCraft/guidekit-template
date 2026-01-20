@@ -1,6 +1,7 @@
 import { Search, Grid, Info } from "lucide-react";
 import { META } from '../constants/config';
 import { CategoryFilter } from './CategoryFilter';
+import { IMAGES } from '../constants/assets';
 
 export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, setSelectedStage, postsSectionRef }) => {
   const handleExploreClick = () => {
@@ -64,7 +65,7 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
       <section className="relative overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0">
           <img
-            src="https://pixabay.com/images/download/skyscraper-7360222_1920.jpg"
+            src={IMAGES.hero}
             alt="German skyline"
             className="h-full w-full object-cover"
             loading="lazy"

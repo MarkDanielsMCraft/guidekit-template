@@ -1,3 +1,5 @@
+import { IMAGES } from '../constants/assets';
+
 export const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -7,7 +9,7 @@ export const styles = `
     background-color: #f6f7f9;
     background-image:
       linear-gradient(rgba(246, 247, 249, 0.85), rgba(246, 247, 249, 0.85)),
-      url('https://pixabay.com/images/download/frankfurt-5377161_1920.jpg');
+      url('${IMAGES.globalBg}');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
