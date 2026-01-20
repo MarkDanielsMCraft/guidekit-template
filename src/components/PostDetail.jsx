@@ -38,6 +38,53 @@ export const PostDetail = ({
   const [copied, setCopied] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState(null);
   const [pageSearch, setPageSearch] = useState("");
+  const stageStyles = {
+    Arrival: {
+      pill: "bg-blue-50 text-blue-700 border-blue-200",
+      accent: "text-blue-700",
+      doneBg: "bg-blue-50/60",
+      doneBorder: "border-blue-200",
+      doneText: "text-blue-700",
+      doneChip: "bg-blue-100 text-blue-700",
+      doneButton: "bg-blue-100 text-blue-700",
+    },
+    "Settling In": {
+      pill: "bg-emerald-50 text-emerald-700 border-emerald-200",
+      accent: "text-emerald-700",
+      doneBg: "bg-emerald-50/60",
+      doneBorder: "border-emerald-200",
+      doneText: "text-emerald-700",
+      doneChip: "bg-emerald-100 text-emerald-700",
+      doneButton: "bg-emerald-100 text-emerald-700",
+    },
+    "Work & Study": {
+      pill: "bg-amber-50 text-amber-700 border-amber-200",
+      accent: "text-amber-700",
+      doneBg: "bg-amber-50/60",
+      doneBorder: "border-amber-200",
+      doneText: "text-amber-700",
+      doneChip: "bg-amber-100 text-amber-700",
+      doneButton: "bg-amber-100 text-amber-700",
+    },
+    "Health & Social": {
+      pill: "bg-rose-50 text-rose-700 border-rose-200",
+      accent: "text-rose-700",
+      doneBg: "bg-rose-50/60",
+      doneBorder: "border-rose-200",
+      doneText: "text-rose-700",
+      doneChip: "bg-rose-100 text-rose-700",
+      doneButton: "bg-rose-100 text-rose-700",
+    },
+  };
+  const stageStyle = stageStyles[post.stage] || {
+    pill: "bg-slate-50 text-slate-700 border-slate-200",
+    accent: "text-slate-700",
+    doneBg: "bg-slate-50",
+    doneBorder: "border-slate-200",
+    doneText: "text-slate-700",
+    doneChip: "bg-slate-100 text-slate-700",
+    doneButton: "bg-slate-100 text-slate-700",
+  };
 
   const sections = useMemo(() => {
     const result = [];
@@ -209,10 +256,10 @@ export const PostDetail = ({
             {post.subtitle || post.summary}
           </p>
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1">{post.stage}</span>
+            <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 ${stageStyle.pill}`}>{post.stage}</span>
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1">{post.readTime} read</span>
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1">
-              <CheckCircle size={12} className="text-indigo-700" /> Verified {post.verified}
+              <CheckCircle size={12} className={stageStyle.accent} /> Verified {post.verified}
             </span>
           </div>
         </div>
@@ -246,9 +293,28 @@ export const PostDetail = ({
                       }}
                       className="w-full text-left p-3 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition"
                     >
-                      <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">{rp.stage}</p>
-                      <p className="text-sm font-semibold text-slate-800 line-clamp-2">{rp.title}</p>
-                      <p className="text-xs text-slate-500 mt-1">{rp.readTime}</p>
+                      <div className="flex items-start gap-3">
+                        <div className="h-12 w-12 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
+                          {rp.backgroundImage ? (
+                            <img
+                              src={`${rp.backgroundImage}${rp.backgroundImage.includes('?') ? '' : '?'}&auto=format&fit=crop&w=160&q=70`}
+                              alt={`${rp.title} thumbnail`}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          ) : (
+                            <div className="h-full w-full flex items-center justify-center text-slate-400">
+                              {rp.icon}
+                            </div>
+                          )}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">{rp.stage}</p>
+                          <p className="text-sm font-semibold text-slate-800 line-clamp-2">{rp.title}</p>
+                          <p className="text-xs text-slate-500 mt-1">{rp.readTime}</p>
+                        </div>
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -329,7 +395,7 @@ export const PostDetail = ({
                       key={key}
                       className={`rounded-2xl border p-5 sm:p-6 transition-colors ${
                         isDone
-                          ? "border-indigo-200 bg-indigo-50/40"
+                          ? `${stageStyle.doneBorder} ${stageStyle.doneBg}`
                           : "border-slate-200 bg-white"
                       }`}
                     >
@@ -338,7 +404,7 @@ export const PostDetail = ({
                           <div className="flex items-start gap-3 min-w-0">
                             <span
                               className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold ${
-                                isDone ? "bg-indigo-100 text-indigo-700" : "bg-slate-100 text-slate-500"
+                                isDone ? stageStyle.doneChip : "bg-slate-100 text-slate-500"
                               }`}
                             >
                               {idx + 1}
@@ -349,7 +415,7 @@ export const PostDetail = ({
                               </div>
                               <h4
                                 className={`text-lg font-semibold leading-snug ${
-                                  isDone ? "text-indigo-700" : "text-slate-900"
+                                  isDone ? stageStyle.doneText : "text-slate-900"
                                 }`}
                               >
                                 {step.title}
@@ -361,7 +427,7 @@ export const PostDetail = ({
                             onClick={() => onToggle(post.slug, idx)}
                             className={`self-start rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
                               isDone
-                                ? "bg-indigo-100 text-indigo-700"
+                                ? stageStyle.doneButton
                                 : "bg-slate-100 text-slate-500 hover:bg-slate-200"
                             }`}
                           >
