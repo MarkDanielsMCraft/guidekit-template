@@ -54,6 +54,32 @@ const RelatedThumbnail = ({ post }) => {
   );
 };
 
+const HeroImage = ({ post }) => {
+  const imageUrl = post.cardImage || post.backgroundImage;
+  const [failed, setFailed] = useState(false);
+
+  if (!imageUrl || failed) {
+    return (
+      <div className="h-48 sm:h-56 w-full bg-slate-100 flex items-center justify-center text-slate-400">
+        {post.icon}
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-48 sm:h-56 w-full overflow-hidden bg-slate-100">
+      <img
+        src={`${imageUrl}${imageUrl.includes('?') ? '' : '?'}&auto=format&fit=crop&w=1600&q=80`}
+        alt={`${post.title} header`}
+        className="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+      />
+    </div>
+  );
+};
+
 export const PostDetail = ({
   post,
   onBack,
@@ -302,6 +328,7 @@ export const PostDetail = ({
 
       {/* Page introduction block */}
       <section className="bg-white border-b border-slate-200">
+        <HeroImage post={post} />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-12 space-y-5">
           <h1 className="text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-slate-900 leading-tight">
             {post.title}
