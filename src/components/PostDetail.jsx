@@ -12,7 +12,6 @@ import {
   PlayCircle,
   RotateCcw,
   Share2,
-  Copy,
 } from "lucide-react";
 import { Header } from './Header';
 import { ReadMoreList } from './ReadMoreList';
@@ -89,12 +88,12 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
       <section className="relative overflow-hidden article-hero">
         {post.backgroundImage && (
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center pointer-events-none"
             style={{ backgroundImage: `linear-gradient(180deg, rgba(15,23,42,0.4), rgba(15,23,42,0.5)), url('${post.backgroundImage}')` }}
           />
         )}
-        {!post.backgroundImage && <div className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-80`} />}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/30 to-slate-900/50" />
+        {!post.backgroundImage && <div className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-80 pointer-events-none`} />}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/30 to-slate-900/50 pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-5">
           <div className="flex items-center flex-wrap gap-2 text-xs text-slate-200 font-semibold uppercase tracking-wide">
@@ -310,18 +309,8 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
 
             <ReadMoreList links={post.readMore} />
 
-            {/* Share + navigation */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-5 sm:p-6 shadow-sm space-y-4">
-              <div className="flex items-center justify-between gap-3 flex-wrap">
-                <h3 className="text-lg font-black text-slate-800">Share this guide</h3>
-                <button
-                  onClick={handleShare}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-indigo-50 hover:border-indigo-100 transition"
-                >
-                  <Copy size={14} />
-                  {copied ? "Link copied" : "Copy link"}
-                </button>
-              </div>
+            {/* Navigation */}
+            <div className="bg-white border border-slate-100 rounded-3xl p-5 sm:p-6 shadow-sm">
               <PostNavigation currentPost={post} />
             </div>
           </article>
