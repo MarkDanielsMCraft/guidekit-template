@@ -10,7 +10,7 @@ export const Header = ({
   onBack,
   backLabel = "Back",
 }) => (
-  <header className={`sm:sticky top-0 z-50 ${isPostDetail ? 'glass-card-transparent liquid-glass' : 'glass-card border-b border-white/20 liquid-glass'}`}>
+  <header className={`sm:sticky top-0 z-50 header-with-map ${isPostDetail ? 'glass-card-transparent liquid-glass' : 'glass-card border-b border-white/20 liquid-glass'}`}>
     <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <div className="flex items-center gap-3">
         {showBack && Boolean(onBack) && (
@@ -29,7 +29,7 @@ export const Header = ({
         <button
           type="button"
           onClick={onNavigateHome}
-          className={`text-left ${onNavigateHome ? 'cursor-pointer' : 'cursor-default'}`}
+          className={`text-left transition-transform duration-200 hover:-translate-y-0.5 ${onNavigateHome ? 'cursor-pointer' : 'cursor-default'}`}
           aria-label={onNavigateHome ? 'Go to Survival Kit home' : undefined}
           title={onNavigateHome ? 'Back to Survival Kit home' : undefined}
         >

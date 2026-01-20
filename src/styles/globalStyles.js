@@ -231,23 +231,23 @@ export const styles = `
   .prose h2:first-child { margin-top: 0; }
   
   .prose p { 
-    margin-bottom: 1.35rem; 
-    line-height: 1.78; 
-    color: #415066; 
-    font-size: 1.03rem; 
+    margin-bottom: 1.55rem; 
+    line-height: 1.82; 
+    color: #3b4a60; 
+    font-size: 1.05rem; 
     font-family: 'Poppins', 'Inter', sans-serif;
   }
   
   .prose ul { 
-    margin-bottom: 1.5rem; 
-    margin-top: 0.75rem;
+    margin-bottom: 1.8rem; 
+    margin-top: 1rem;
     padding-left: 1.75rem; 
     list-style-type: disc; 
   }
   
   .prose li { 
-    margin-bottom: 0.75rem; 
-    color: #475569; 
+    margin-bottom: 0.9rem; 
+    color: #3f4858; 
     font-size: 1rem; 
     line-height: 1.65;
   }
@@ -275,6 +275,10 @@ export const styles = `
     color: #111928; 
     font-weight: 600; 
     font-family: 'Poppins', 'Inter', sans-serif;
+  }
+
+  .prose ul + p {
+    margin-top: 1.2rem;
   }
 
   .article-hero {
@@ -307,6 +311,39 @@ export const styles = `
   }
 
   .article-hero > * {
+    position: relative;
+    z-index: 10;
+  }
+
+  .header-with-map {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-with-map::before {
+    content: "";
+    position: absolute;
+    inset: -140% 10% 20% auto;
+    width: 420px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Blank_map_of_Germany.svg/1024px-Blank_map_of_Germany.svg.png');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    opacity: 0.14;
+    filter: drop-shadow(0 24px 48px rgba(79,70,229,0.25));
+    animation: heroMapDrift 38s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .header-with-map::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+    pointer-events: none;
+  }
+
+  .header-with-map > * {
     position: relative;
     z-index: 10;
   }

@@ -32,7 +32,7 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
 
           <div className="max-w-lg mx-auto mb-8 relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative flex items-center bg-white rounded-2xl shadow-xl">
+            <div className="relative flex items-center liquid-glass-card rounded-2xl border border-white/40 shadow-xl">
               <Search className="ml-4 text-slate-400" size={20} />
               <input
                 type="text"
@@ -100,7 +100,7 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
               </div>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-md shadow-[0_40px_120px_-60px_rgba(99,102,241,0.9)] p-6 sm:p-7 lg:p-8 flex flex-col gap-6 text-white/90 max-w-md">
+            <div className="liquid-glass-card border border-white/30 rounded-3xl backdrop-blur-md shadow-[0_40px_120px_-60px_rgba(99,102,241,0.9)] p-6 sm:p-7 lg:p-8 flex flex-col gap-6 text-white/90 max-w-md">
               <div>
                 <p className="text-xs uppercase tracking-[0.25em] text-indigo-200 font-semibold mb-2">What to expect</p>
                 <h2 className="text-2xl font-semibold leading-snug text-white">Step-by-step essentials from Anmeldung to your first pay slip</h2>
@@ -131,7 +131,7 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
             {/* Search */}
             <div className="max-w-md mx-auto relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all duration-500"></div>
-              <div className="relative flex items-center bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="relative flex items-center liquid-glass-card rounded-2xl shadow-2xl overflow-hidden border border-white/40">
                 <Search className="ml-4 text-indigo-400" size={20} />
                 <input
                   type="text"
@@ -147,7 +147,7 @@ export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, 
             <CategoryFilter selectedStage={selectedStage} setSelectedStage={setSelectedStage} />
 
             {/* Disclaimer */}
-            <div className="bg-gradient-to-r from-indigo-50/80 to-blue-50/80 border border-indigo-100/60 rounded-2xl sm:rounded-3xl p-4 sm:p-5 text-left shadow-sm backdrop-blur-sm">
+            <div className="liquid-glass-card border border-white/40 rounded-2xl sm:rounded-3xl p-4 sm:p-5 text-left shadow-sm backdrop-blur-sm">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="mt-0.5 text-indigo-600 flex-shrink-0">
                   <Info size={20} />
