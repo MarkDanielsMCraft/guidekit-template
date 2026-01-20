@@ -261,8 +261,8 @@ export const PostDetail = ({
 
       {/* Page introduction block with image background */}
       <section className="relative w-full overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 h-full w-full">
+         {/* Background image */}
+         <div className="absolute inset-0 h-full w-full min-h-[500px]">
           <SmartImage
             src={post.backgroundImage}
             alt={`${post.title} header`}

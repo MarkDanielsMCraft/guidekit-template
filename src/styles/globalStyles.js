@@ -8,7 +8,7 @@ export const styles = `
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: #f6f7f9;
     background-image:
-      linear-gradient(rgba(246, 247, 249, 0.85), rgba(246, 247, 249, 0.85)),
+      linear-gradient(rgba(246, 247, 249, 0.25), rgba(246, 247, 249, 0.25)),
       url('${IMAGES.globalBg}');
     background-size: cover;
     background-position: center;
