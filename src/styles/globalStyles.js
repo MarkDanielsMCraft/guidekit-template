@@ -5,6 +5,12 @@ export const styles = `
   body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: #f6f7f9;
+    background-image:
+      linear-gradient(rgba(246, 247, 249, 0.92), rgba(246, 247, 249, 0.92)),
+      url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-weight: 400;
     letter-spacing: 0;
     font-size: 17px;
@@ -14,29 +20,7 @@ export const styles = `
 
   .app-shell {
     position: relative;
-    background-color: #f6f7f9;
-    isolation: isolate;
-  }
-
-  .app-shell::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=2000&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.06;
-    pointer-events: none;
-    z-index: -2;
-  }
-
-  .app-shell::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(246, 247, 249, 0.92);
-    pointer-events: none;
-    z-index: -1;
+    background-color: transparent;
   }
 
   h1, h2, h3, .display-heading {
