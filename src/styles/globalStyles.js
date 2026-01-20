@@ -1,8 +1,14 @@
 export const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+  body { font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #f8fafc; font-weight: 400; letter-spacing: 0.2px; font-size: 16.5px; line-height: 1.65; color: #0f172a; }
+
+  h1, h2, h3, .display-heading {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
 
   .hero-photo {
     position: relative;
@@ -107,20 +113,22 @@ export const styles = `
   /* Modern prose styling with consistent spacing */
   .prose h2 { 
     color: #0f172a; 
-    font-weight: 800; 
-    font-size: 1.75rem; 
+    font-family: 'Space Grotesk', 'Geist', 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700; 
+    font-size: 1.85rem; 
     margin-top: 2.5rem; 
     margin-bottom: 1rem; 
-    line-height: 1.3; 
-    letter-spacing: -0.01em;
+    line-height: 1.25; 
+    letter-spacing: -0.015em;
   }
   .prose h2:first-child { margin-top: 0; }
   
   .prose p { 
-    margin-bottom: 1.25rem; 
-    line-height: 1.75; 
-    color: #475569; 
-    font-size: 1rem; 
+    margin-bottom: 1.3rem; 
+    line-height: 1.8; 
+    color: #455468; 
+    font-size: 1.05rem; 
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   }
   
   .prose ul { 
@@ -131,10 +139,10 @@ export const styles = `
   }
   
   .prose li { 
-    margin-bottom: 0.75rem; 
-    color: #475569; 
-    font-size: 1rem; 
-    line-height: 1.65;
+    margin-bottom: 0.8rem; 
+    color: #455468; 
+    font-size: 1.05rem; 
+    line-height: 1.7;
   }
   
   .prose li:last-child {
@@ -157,8 +165,9 @@ export const styles = `
   }
   
   .prose strong { 
-    color: #0f172a; 
+    color: #111928; 
     font-weight: 700; 
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
   }
 
   .article-hero {

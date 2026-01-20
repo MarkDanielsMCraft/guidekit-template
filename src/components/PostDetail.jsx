@@ -147,40 +147,41 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
       </section>
 
       {/* Main layout */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 -mt-10 sm:-mt-14 pb-20 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+      <main className="w-full min-h-screen pb-20 relative z-20" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #ede9fe 100%)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-10 sm:-mt-14">
+          <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 sm:gap-8">
           {/* Article */}
-          <article className="lg:col-span-2 space-y-6 sm:space-y-7">
+          <article className="xl:col-span-3 space-y-6 sm:space-y-7">
             {post.vibeCheck && (
-              <div className="bg-white/90 border border-indigo-50 shadow-sm rounded-3xl p-4 sm:p-5">
-                <p className="text-indigo-900 font-semibold text-sm sm:text-base leading-relaxed">{post.vibeCheck}</p>
+              <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200/60 shadow-md rounded-3xl p-5 sm:p-6 backdrop-blur-sm">
+                <p className="text-indigo-900 font-semibold text-base sm:text-lg leading-relaxed">{post.vibeCheck}</p>
               </div>
             )}
 
             {post.content && (
-              <div className="prose prose-slate max-w-none bg-white p-5 sm:p-7 md:p-9 rounded-3xl border border-slate-100 shadow-sm content-block space-y-0">
+              <div className="prose prose-slate max-w-none bg-gradient-to-br from-white to-slate-50/80 p-6 sm:p-9 md:p-10 rounded-3xl border border-slate-200/60 shadow-xl content-block space-y-0 backdrop-blur-sm">
                 {post.content.map((block, i) => {
-                  if (block.type === "h2") return <h2 key={i} className="scroll-mt-40 font-black text-slate-900 text-2xl sm:text-3xl tracking-tight">{block.text}</h2>;
-                  if (block.type === "p") return <p key={i} className="text-slate-700">{renderRichText(block.text, `p-${i}`)}</p>;
-                  if (block.type === "ul") return <ul key={i} className="list-disc list-outside pl-5 sm:pl-6 space-y-2">{block.items.map((item, j) => <li key={j} className="text-slate-700">{renderRichText(item, `li-${i}-${j}`)}</li>)}</ul>;
+                  if (block.type === "h2") return <h2 key={i} className="scroll-mt-40 font-black text-slate-900 text-3xl sm:text-4xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">{block.text}</h2>;
+                  if (block.type === "p") return <p key={i} className="text-slate-700 text-lg leading-relaxed font-medium">{renderRichText(block.text, `p-${i}`)}</p>;
+                  if (block.type === "ul") return <ul key={i} className="list-disc list-outside pl-6 sm:pl-8 space-y-3">{block.items.map((item, j) => <li key={j} className="text-slate-700 text-lg leading-relaxed font-medium">{renderRichText(item, `li-${i}-${j}`)}</li>)}</ul>;
                   return null;
                 })}
               </div>
             )}
 
-            <div className="bg-amber-50/90 p-5 sm:p-6 rounded-3xl border border-amber-100/60">
-              <div className="flex items-center gap-2 text-amber-700 font-black text-xs uppercase tracking-wider mb-3">
-                <AlertTriangle size={14} />
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 sm:p-7 rounded-3xl border border-amber-200/60 shadow-md backdrop-blur-sm">
+              <div className="flex items-center gap-2 text-amber-800 font-black text-xs uppercase tracking-wider mb-3">
+                <AlertTriangle size={16} />
                 Golden rule
               </div>
-              <p className="text-slate-800 font-semibold text-sm sm:text-base leading-relaxed">{post.goldenRule}</p>
+              <p className="text-amber-900 font-bold text-base sm:text-lg leading-relaxed">{post.goldenRule}</p>
             </div>
 
             {/* Checklist */}
-            <div className="bg-white border border-slate-100 rounded-3xl shadow-sm p-5 sm:p-6 space-y-5">
+            <div className="bg-gradient-to-br from-white to-slate-50/90 border border-slate-200/60 rounded-3xl shadow-lg p-6 sm:p-8 space-y-6 backdrop-blur-sm">
               <div className="flex items-center justify-between flex-wrap gap-3">
-                <h3 className="text-lg sm:text-xl font-black text-slate-800">Key steps checklist</h3>
-                <div className="text-xs font-semibold text-slate-500">Click to mark done</div>
+                <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Key steps checklist</h3>
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">Click to mark done</div>
               </div>
 
               <div className="space-y-4 sm:space-y-5">
@@ -354,6 +355,7 @@ export const PostDetail = ({ post, onBack, progress, onToggle, onReset, emergenc
               </div>
             </div>
           </aside>
+        </div>
         </div>
       </main>
     </div>

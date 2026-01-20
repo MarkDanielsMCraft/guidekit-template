@@ -111,11 +111,11 @@ export default function App() {
               setSelectedStage={setSelectedStage}
             />
 
-            <main className="max-w-6xl mx-auto px-6 py-8 pb-32">
+            <main className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-10 pb-36">
               {view === "posts" ? (
                 <>
                   {filteredPosts.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-8 xl:gap-10">
                       {filteredPosts.map((post, index) => (
                         <PostCard
                           key={post.slug}

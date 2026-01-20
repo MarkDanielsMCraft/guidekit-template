@@ -4,85 +4,95 @@ export const PostCard = ({ post, index, onOpen, progressPercent }) => (
   <button
     onClick={() => onOpen(post.slug)}
     style={{ animationDelay: `${index * 100}ms` }}
-    className="fade-in-up group relative bg-white hover:bg-slate-50/80 p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-100 hover:border-indigo-100 shadow-md hover:shadow-2xl transition-all duration-500 text-left flex flex-col h-full overflow-hidden transform hover:-translate-y-2"
+    className="fade-in-up group relative w-full overflow-hidden rounded-3xl border border-slate-200/60 bg-white/70 backdrop-blur-xl text-left shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
   >
-    {/* Background accent */}
+    {/* Ambient gradient */}
     <div
-      className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${post.color} opacity-[0.06] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:opacity-[0.12] transition-opacity duration-500`}
+      className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-[0.08] group-hover:opacity-[0.14] transition-opacity duration-500`}
     />
 
-    {/* Background image with overlay */}
+    {/* Background image subtle overlay */}
     {post.backgroundImage && (
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-3xl opacity-10 group-hover:opacity-15 transition-opacity duration-500"
+        className="absolute inset-0 bg-cover bg-center opacity-15 group-hover:opacity-20 transition-opacity duration-500"
         style={{ backgroundImage: `url('${post.backgroundImage}')` }}
       />
     )}
 
-    {/* Header with icon and progress */}
-    <div className="flex justify-between items-start mb-4 relative z-20">
-      <div
-        className={`relative p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${post.color} text-white shadow-lg ${post.shadow} group-hover:scale-110 transition-transform duration-500`}
-      >
-        {post.icon}
+    {/* Glass veil for readability */}
+    <div className="absolute inset-0 bg-white/85 group-hover:bg-white/80 transition-colors duration-500" />
+
+    <div className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col gap-6 sm:gap-8">
+      <div className="flex flex-wrap items-start justify-between gap-6">
+        <div className="flex items-start gap-5">
+          <div
+            className={`relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${post.color} text-white shadow-2xl ${post.shadow} group-hover:shadow-[0_25px_45px_-20px_rgba(79,70,229,0.55)] group-hover:scale-110 transition-transform duration-500`}
+          >
+            {post.icon}
+          </div>
+          <div className="space-y-4 max-w-3xl">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-[11px] font-black uppercase tracking-[0.18em] text-slate-900 bg-white/70 border border-white/60 px-3 py-1.5 rounded-full shadow-sm backdrop-blur">
+                {post.stage}
+              </span>
+              <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide bg-white/50 border border-white/70 px-3 py-1.5 rounded-full backdrop-blur">
+                <Clock size={14} className="text-indigo-500" />
+                {post.readTime}
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 leading-tight tracking-tight group-hover:text-indigo-700 transition-colors">
+              {post.title}
+            </h3>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium max-w-3xl">
+              {post.summary}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-end gap-3">
+          <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50/90 border border-emerald-100 px-3 py-1.5 rounded-full shadow-sm whitespace-nowrap">
+            {progressPercent}% completed
+          </span>
+        </div>
       </div>
 
-      <div className="flex items-center gap-2 flex-wrap justify-end max-w-[120px]">
-        <span className="text-[11px] font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 px-2.5 py-1 rounded-full whitespace-nowrap shadow-sm">
-          {progressPercent}% done
-        </span>
-      </div>
-    </div>
-
-    {/* Stage badge */}
-    <div className="mb-4 relative z-20">
-      <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-3 py-1.5 rounded-full inline-block uppercase tracking-wider">
-        {post.stage}
-      </span>
-    </div>
-
-    {/* Main content */}
-    <div className="relative z-20 flex-1 space-y-3 sm:space-y-4">
-      <div className="flex items-center gap-2">
-        <Clock size={14} className="text-slate-400 flex-shrink-0" />
-        <span className="text-xs font-semibold text-slate-500">{post.readTime}</span>
-      </div>
-      
-      <div>
-        <h3 className="font-bold text-slate-900 text-base sm:text-lg mb-2 group-hover:text-indigo-600 leading-snug transition-colors line-clamp-3">
-          {post.title}
-        </h3>
-        <p className="text-sm text-slate-600 font-medium leading-relaxed line-clamp-2">
-          {post.summary}
-        </p>
-      </div>
-
-      {/* Tags preview */}
       {post.tags && post.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 pt-2">
-          {post.tags.slice(0, 2).map((tag, i) => (
-            <span key={i} className="text-[9px] font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded-full flex items-center gap-1 uppercase tracking-wide">
-              <Tag size={8} className="opacity-60" />
+        <div className="flex flex-wrap gap-2 pt-2">
+          {post.tags.slice(0, 4).map((tag, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500 bg-white/70 border border-white/60 px-3 py-1.5 rounded-full backdrop-blur"
+            >
+              <Tag size={10} className="text-indigo-400" />
               {tag}
             </span>
           ))}
-          {post.tags.length > 2 && (
-            <span className="text-[9px] font-bold text-slate-400 px-2 py-1">
-              +{post.tags.length - 2}
+          {post.tags.length > 4 && (
+            <span className="text-[11px] font-semibold text-slate-400 px-2 py-1">
+              +{post.tags.length - 4}
             </span>
           )}
         </div>
       )}
-    </div>
 
-    {/* Progress bar + CTA */}
-    <div className="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-slate-100 group-hover:border-indigo-100 transition-colors">
-      <div className="flex items-center justify-between gap-2">
-        <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-          <div className={`h-full bg-gradient-to-r ${post.color} transition-all duration-500`} style={{ width: `${progressPercent}%` }} />
+      <div className="pt-4 border-t border-white/60 flex flex-col sm:flex-row sm:items-center gap-4">
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="h-2 w-full sm:w-48 bg-white/70 rounded-full overflow-hidden shadow-inner">
+            <div
+              className={`h-full bg-gradient-to-r ${post.color} transition-all duration-500`}
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 whitespace-nowrap">
+            Progress tracker
+          </span>
         </div>
-        <div className="bg-slate-50 group-hover:bg-indigo-50 text-slate-400 group-hover:text-indigo-600 p-1.5 rounded-lg transition-all">
-          <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+
+        <div className="flex items-center gap-3 text-indigo-600 font-semibold text-sm">
+          <span>Open full guide</span>
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-600 group-hover:bg-indigo-500/20 transition-colors">
+            <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+          </div>
         </div>
       </div>
     </div>
