@@ -19,13 +19,8 @@ export const SmartImage = ({
     );
   }
 
-  // Optimize Unsplash or similar URLs if needed
-  const optimizedSrc = src.includes('?') 
-    ? `${src}&auto=format&fit=crop&w=${width}&q=80`
-    : `${src}?auto=format&fit=crop&w=${width}&q=80`;
-
-    // Note: If you have local images, this logic might need adjustment, 
-    // but the project seems to rely on external URLs.
+  // Use the src as-is since Unsplash URLs already have optimization parameters
+  const optimizedSrc = src;
 
   return (
     <img
