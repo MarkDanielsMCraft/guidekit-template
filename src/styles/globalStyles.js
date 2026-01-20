@@ -23,7 +23,7 @@ export const styles = `
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1473889006385-9c10fc6c2c87?w=2000&auto=format&fit=crop');
+    background-image: url('https://images.unsplash.com/photo-1560969184-10fe8719e047?w=2000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     opacity: 0.6;
