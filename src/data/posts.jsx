@@ -70,22 +70,22 @@ export const POSTS = [
         type: "p",
         text: "You just landed in Germany. Excited but exhausted. The airport is designed to separate you from your money. Let's not let that happen."
       },
-      { type: "h2", text: "1. The Internet Problem (Don't buy at the airport)" },
+      { type: "h2", text: "1. The Internet Problem" },
       {
         type: "p",
-        text: "You will see shops selling SIM cards in the arrivals hall. **Avoid them.** They often sell tourist contracts that are overpriced (e.g., 50€ for 10GB). You don't need that. Use the free airport WiFi to download the essential apps listed below."
+        text: "You will see shops selling SIM cards in the arrivals hall. **Avoid them.** They often sell tourist contracts that are overpriced (e.g., 50€ for 10GB or even higher).You don't need that. Use the free airport WiFi to download the essential apps I'll discuss below."
       },
       {
         type: "p",
-        text: "The best local option for students is [Aldi Talk](https://www.alditalk.de/). It is a prepaid service from the Aldi supermarket chain. It is cheap (~10€ starter set), has no long contract, and uses the reliable O2 network. Why Aldi? Because every German city has an Aldi supermarket, and it's the most accessible option for newcomers."
+        text: "The best local option for students or trainees is [Aldi Talk](https://www.alditalk.de/). It is a prepaid service from the Aldi supermarket chain. It is cheap (~10€ starter set), has no long contract, and uses the reliable O2 network. Why Aldi? Because every German city has an Aldi supermarket, and it's the most accessible and most affordable option for newcomers."
       },
       {
         type: "ul",
         items: [
           "**Where to buy:** Any [Aldi Süd](https://www.aldi-sued.de/) or [Aldi Nord](https://www.aldi-nord.de/) supermarket. There is usually one inside or very near major train stations and airports.",
-          "**How to register:** German law requires ID verification. You can download the [Aldi Talk app](https://www.alditalk.de/registrierung) and do a 'Video Ident' call. You need good lighting and a clear photo of your passport.",
-          "**Troubleshooting:** If video call fails (bad connection), you can do 'PostIdent' at any post office (Deutsche Post) for a small fee (~10€).",
-          "**Cost:** The 10€ starter set includes your SIM and ~10€ credit. Monthly plans start at 8.99€ (Verified 19 Jan 2026)."
+          "**How to register:** German law requires ID verification. You can download the [Aldi Talk app](https://www.alditalk.de/registrierung) and do a 'Video Ident' call. You can also complete the video verification within the browser e.g Chrome etc. You need good lighting and a stable internet connection for this. Alternatively, you can do 'PostIdent' at a Deutsche Post office (takes a bit longer).",
+          "**Troubleshooting:** If video call fails (bad connection), you can do 'PostIdent' at any post office (Deutsche Post) for a small fee.",
+          "**Cost:** The 10€ starter set includes your SIM and ~10€ credit. Monthly plans start at 8.99€ or choosing the unlimited plan for 9.99€(as of Jan 2026)."
         ]
       },
       { type: "h2", text: "2. Essential Apps: Maps, Translator & Transport" },
@@ -96,55 +96,59 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "[Google Maps](https://maps.google.com): Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
-          "[DeepL](https://www.deepl.com): This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
-          "[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator): This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
+          "[Google Maps](https://maps.google.de): Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's almost 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
+          "[DeepL](https://www.deepl.com/en/translator): This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download. It's the perfect alternative to Google Translator for German.",
+          "[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator): This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app. If this seems confusing, just use Google Maps for transport directions. Note that every city in Germany has its own local transport system (Stadtverkehr) integrated into DB Navigator, so you can use it for buses and metros as well. You can check which app is used withing your city at a later time though!",
+          "[Integreat App](https://integreat-app.de/en/): This app provides localized information for newcomers in various German cities. It includes tips on registration, housing, healthcare, and cultural norms specific to your city. Download it and select your city for tailored advice.",
+          "[Buy the Deutschland ticket here]: From May 2023, Germany introduced the 'Deutschlandticket', a flat-rate monthly ticket for 63€(as of January 2026) that allows unlimited travel on all local and regional public transport across Germany. You can purchase this ticket [from here] (https://www.bahn.de/en/view/offers/railpasses/deutschland-ticket.shtml), the DB Navigator app, or at train stations. It's a cost-effective way to explore Germany by public transport."
         ]
       },
       { type: "h2", text: "3. Getting From Airport to City: Transport vs Taxi" },
       {
         type: "p",
-        text: "This is where many newcomers waste their first 50€–80€. A taxi from a major airport (Berlin, Munich, Frankfurt) to the city center costs between 50€ and 80€ approximately. A train ticket costs about 6€–12€. In Germany, trains are safe, clean, and everyone uses them—including wealthy locals. Do not take a taxi unless there are extraordinary circumstances."
+        text: "This is where many newcomers waste their first 50€–80€. A taxi from a major airport (Düsseldorf,Berlin, Munich, Frankfurt) to the city center costs between 50€ and 80€ approximately. A train ticket for that journey can cost about 6€–12€. In Germany, trains generally are safe, clean, and everyone uses them—including wealthy locals. Do not take a taxi unless there are extraordinary circumstances such as emergencies."
       },
       {
         type: "p",
-        text: "**Here's exactly what to do:** Use the [DB Navigator](https://www.bahn.de/service/mobile/db-navigator) app (you just downloaded it). Type your airport name and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. The app tells you which platform to go to and what time to leave. It's that simple. If this seems confusing, switch to [Google Maps](https://maps.google.com) and do the same search there."
+        text: "**Here's exactly what to do:** Use the DB Navigator app (you just downloaded it). Type your airport name, or you can just select 'current position' and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. If it seeems confusing, switch to [Google Maps](https://maps.google.de) and do the same search there."
       },
-      {
-        type: "p",
-        text: "**About the [Deutschlandticket](https://www.bahn.de/angebot/regio/deutschland-ticket):** This monthly pass costs 63€(as of 19 Jan 2026) and covers ALL local transport nationwide (trains, buses, metros). It does NOT cover long-distance express trains (ICE/IC). But for getting around your city? Perfect. Consider buying one at the airport train station before you leave."
-      },
+      
       { type: "h2", text: "4. Your First Weekend (The Sunday Rule)" },
       {
         type: "p",
-        text: "If you arrive on a Saturday evening or a Sunday, you must know this: **Germany closes on Sundays.** Supermarkets, pharmacies, and clothing stores are closed. It is the 'Ruhetag' (rest day). If you do not buy food on Saturday, you will not eat until Monday."
+        text: "If you arrive on a Saturday evening or a Sunday, you must know this: **Germany closes on Sundays.** Supermarkets, pharmacies, and clothing stores are closed. It is the 'Ruhetag' (rest day). If you do not buy food on Saturday, you will probably not eat until Monday."
       },
       {
         type: "p",
-        text: "**The Loophole:** Supermarkets inside big train stations (Hauptbahnhof) and airports are allowed to stay open on Sundays. If you land on Sunday, buy bread, water, juice etc *at the airport supermarket* (usually [Rewe](https://www.rewe.de/) or [Edeka](https://www.edeka.de/)) before you leave the terminal."
+        text: "**The Loophole:** Supermarkets inside big train stations (Hauptbahnhof) and airports are allowed to stay open on Sundays. If you land on Sunday, buy bread, water, juice etc *at the airport supermarket* (usually Rewe or Edeka) before you leave the terminal."
       },
-      { type: "h2", text: "5. The Golden Paper: Wohnungsgeberbestätigung" },
+      { type: "h2", text: "5. Wohnungsgeberbestätigung" },
       {
         type: "p",
-        text: "When you arrive at your housing, ask your landlord or host for the **Wohnungsgeberbestätigung** (Landlord Confirmation). This is a single sheet of paper that confirms you moved in. You **cannot** register your address at the city office without this specific paper. Your rental contract is *not* enough. I have added a [PDF Template](https://formular-service.augsburg.de/intelliform/forms/stadt_augsburg/extern/330/extern/330/meldewesen/wohnungsgeberbestaetigung/download;jsessionid=uZF3OT69kpWC24HWyAC_aL-HL-MeLo73RHTISBvd.IF0) below—if they don't have one, print this and make them sign it."
+        text: "**The Timeline:** Within 2 weeks of moving into your permanent address, you must register. If you don't do this, you're technically in violation of German law and can face fines."
+      },
+      {
+        type: "p",
+        text: "When you arrive at your housing, ask your landlord or host for the **Wohnungsgeberbestätigung** (Landlord Confirmation). This is a single sheet of paper that confirms you moved in. You **cannot** register your address at the city office without this specific paper. Your rental contract is *not* enough. I have added a [PDF Template](https://formular-service.augsburg.de/intelliform/forms/stadt_augsburg/extern/330/extern/330/meldewesen/wohnungsgeberbestaetigung/download;jsessionid=uZF3OT69kpWC24HWyAC_aL-HL-MeLo73RHTISBvd.IF0). If you don't have one, print this and make them sign it."
       },
       { type: "h2", text: "6. Documents to keep on you" },
       {
         type: "p",
-        text: "For the first days, carry your passport and a copy of your entry visa or residence permit. Non EU scholars are sometimes asked for proof at hotels, banks, or SIM registration. Keep a clear photo set on your phone and one printed copy in your bag."
+        text: "For the first days, carry your passport and a copy of your entry visa or residence permit. Non EU scholars are sometimes asked for proof at hotels, banks and trains. Keep a clear photo set on your phone and one printed copy in your bag. But handle them with extreme care so that you don't lose them."
       },
       {
         type: "ul",
         items: [
-          "**Carry daily:** Passport and visa copy, address of your housing, and your phone number.",
-          "**Keep safe:** Original admission letter or employment contract, and your university or hospital contact details.",
-          "**Proof of funds:** If a bank or landlord asks, show your latest bank statement or scholarship letter."
+          "**Carry daily:** Passport(not always due to risks of losing it), Residence Permit(it can be from your home country), Student ID.",
+          "**Keep safe:** Original admission letter or employment contract, Identity documents, and your university or hospital contact details. Make sure you scan and save them in your personal cloud storage as backup.",
+          "**Proof of funds:** If a bank or landlord asks, show your latest bank statement, scholarship letter, your work or training contract.",
+          "**Liability insurance:** Sometimes Landlords ask for proof of liability insurance (Haftpflichtversicherung). It protects you when you accidentally cause damage to someone else or their property. It costs around 3 to 5 euros per month. However, it's not mandatory, if your landlord asks for it, you can apply for it at platforms like [Get Safe](https://www.hellogetsafe.com/en-de)."
         ]
       },
       { type: "h2", text: "7. Cash and cards in your first week" },
       {
         type: "p",
-        text: "Germany still uses cash more than many countries. In January 2026, many bakeries and small shops accept cards, but not all do. Plan to keep at least 50 to 100 euros in cash during your first week."
+        text: "Germany still uses cash more than many countries. In January 2026, many bakeries and small shops accept cards, but not all do. Plan to keep at least 20 to 50 euros in cash during your first week."
       },
       {
         type: "p",
@@ -153,12 +157,12 @@ export const POSTS = [
       { type: "h2", text: "8. What to do on day two" },
       {
         type: "p",
-        text: "Once you have internet and transport sorted, set up the next steps. Book your Anmeldung appointment, check your university or hospital onboarding email, and locate the nearest supermarket and pharmacy. These three actions reduce stress fast."
+        text: "Once you have internet and transport sorted, set up the next steps. Book your Anmeldung appointment, check your university or work place onboarding email, and locate the nearest supermarket and pharmacy. These three actions reduce stress fast."
       },
       {
         type: "ul",
         items: [
-          "**Book the Anmeldung:** Appointments often appear early in the morning. Check the city website daily.",
+          "**Book the Anmeldung:** Appointments often appear early in the morning. Check the city website daily. Some cities don't need appointments, you can ask your landlord for more guidance.",
           "**Confirm onboarding time:** Email your department or training office and confirm the first day and required documents.",
           "**Stock basics:** Water, bread, simple meals, and any daily medication."
         ]
@@ -166,8 +170,8 @@ export const POSTS = [
       { type: "h2", text: "9. Quick reality check for non EU scholars" },
       {
         type: "p",
-        text: "As of January 2026, non EU scholars must respect the visa purpose and registration rules. If you entered for study or training, keep documents that show your program status. Do not assume that a tourist stay allows training work. Verify with your university or local foreigners office if you are unsure."
-      }
+        text: "As of January 2026, non EU scholars must respect the visa purpose and registration rules. If you entered for study or training, you must stick to that, maybe if you have acquired permission from the relevant immigration office(Ausländerbehörde). Working outside the visa purpose can lead to fines or deportation."
+      },
     ],
     goldenRule: "Do NOT sign a 24-month contract at the airport. Buy a prepaid SIM.",
     steps: [
@@ -190,8 +194,8 @@ export const POSTS = [
       },
     ],
     readMore: [
-      { title: "Integreat App (Local Info)", url: "https://integreat.app", source: "tool" },
-      { title: "DeepL Translator", url: "https://www.deepl.com", source: "tool" },
+      { title: "Integreat App (Local Info)", url: "https://integreat-app.de/en/", source: "tool" },
+      { title: "DeepL Translator", url: "https://www.deepl.com/en/translator", source: "tool" },
     ],
     downloads: [{ title: "Wohnungsgeberbestätigung Template (PDF)", url: "https://formular-service.augsburg.de/intelliform/forms/stadt_augsburg/extern/330/extern/330/meldewesen/wohnungsgeberbestaetigung/download;jsessionid=uZF3OT69kpWC24HWyAC_aL-HL-MeLo73RHTISBvd.IF0" }],
     videos: [{ title: "How to buy a train ticket in Germany", url: "https://youtu.be/q1Qpa07wPb0?si=p_imqa6j9tq6Xz0z" }],
@@ -215,12 +219,9 @@ export const POSTS = [
     content: [
       {
         type: "p",
-        text: "Germany runs on bureaucracy and paperwork. But it's not as chaotic as it seems—it's actually very organized once you understand the system. To function here, you need three main things: (1) A registered address (**Anmeldung**), (2) A German Bank Account (IBAN), and (3) A Tax ID. The catch? They often require each other."
+        text: "Germany runs on bureaucracy and paperwork. But it's not as chaotic as it seems. It's actually very organized once you understand the system. To function here, you need three main things: (1) A registered address (**Anmeldung**), (2) A German Bank Account (IBAN), and (3) A Tax ID. The catch? They often require each other."
       },
-      {
-        type: "p",
-        text: "**⚠️ Important Disclaimer:** Laws and procedures change frequently. Always verify the current requirements on the [official Make It In Germany portal](https://www.make-it-in-germany.com/en/) and check with your local Bürgeramt (city office) for your specific city's requirements. This guide is current as of January 2026."
-      },
+
       { type: "h2", text: "1. Banking: Which Bank Should You Choose?" },
       {
         type: "p",
@@ -229,41 +230,22 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "[Sparkasse](https://www.sparkasse.de/) / [Volksbank](https://www.volksbank.de/) (Traditional Banks): These are the safest and most trusted. Physical branches in every neighborhood. BUT they charge monthly fees (5–10€) and often require your Anmeldung (registration) proof before opening an account. This creates a chicken-and-egg problem.",
-          "[Commerzbank](https://www.commerzbank.de/) / [Deutsche Bank](https://www.deutsche-bank.de/): Large banks with solid reputations. Problem: They often check your SCHUFA (credit score). If you're new to Germany, you won't have any credit history. They might reject you.",
+          "[Sparkasse](https://www.sparkasse.de/) / [Volksbank](https://www.volksbank.de/) (Traditional Banks): These are the safest and most trusted. Physical branches in every neighborhood. BUT they sometimes charge monthly fees especially for those above 25 years, however, this varies by branch and often require your Anmeldung (registration) proof before opening an account. This creates a chicken-and-egg problem.",
+          "[Commerzbank](https://www.commerzbank.de/) / [Deutsche Bank](https://www.deutsche-bank.de/): Large banks with solid reputations. Problem: They sometimes check your SCHUFA (credit score). If you're new to Germany, you won't have any credit history. They might reject you.",
           "[N26](https://n26.com/) (Online Bank): Fast setup, German IBAN, no fees. Good if it works for your passport, but verification sometimes fails with non-EU documents.",
-          "[Revolut](https://www.revolut.com/) (Game Changer): Opens in literally 10 minutes through an app using only your passport. Gives you a valid German IBAN immediately. Excellent English-language app. No Anmeldung needed upfront—you update it later. This is your best bet."
+          "[C24](https://c24.de/) (Online Bank): Similar to N26, but with better support for international documents. Still, some users report verification issues.",
+          "[Revolut](https://www.revolut.com/) (Online Bank): Similar to N26 and C24 but with better support for international documents. Gives you a valid German IBAN after verification. It has a user friendly app in many languages, English inclusive. No Anmeldung needed."
         ]
       },
       {
         type: "p",
-        text: "**My honest recommendation:** Open [Revolut](https://www.revolut.com/) first. Use it to establish your financial presence in Germany. Give the IBAN to your employer and landlord(**if required**, never share your IBAN/bank details anyhow!). Once you have your registration paper (Anmeldung), open a [Sparkasse](https://www.sparkasse.de/) or [Volksbank](https://www.volksbank.de/) account if you want a physical bank for ATM withdrawals or backup. But Revolut alone is perfectly sufficient."
+        text: "**My honest recommendation:** Open [Revolut](https://www.revolut.com/) first. Once you get to the website, enter your German phone number, download the app, login with your phone numer, enter your personal details including the address where you are currently living and finish a video verification using your passport. After verification, your account will be verified and you'll be able to use your account. You can choose to order for a physical Revolut card(it for free, only ) Use it to establish your financial presence in Germany. Give the IBAN to your employer and landlord(**if required**, never share your IBAN/bank details anyhow!). Once you have your registration paper (Anmeldung), open a [Sparkasse](https://www.sparkasse.de/) or [Volksbank](https://www.volksbank.de/) account if you want a physical bank for backup. But Revolut alone is perfectly sufficient."
       },
       {
         type: "p",
         text: "You can open a free Revolut account using this link: [Open Revolut Account](https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect). Full transparency: this is a referral link (I might get a small bonus), but I genuinely recommend it because it solves the biggest headache for newcomers. You only need your German phone number, address(where you are currently living), and passport to get started. You'll need to do a video ID verification as well. After verifying your account, you can order for a phyical bank card(it's free), you only pay around 7€ for shipping."
       },
-      { type: "h2", text: "2. Anmeldung: Your Most Important Piece of Paper" },
-      {
-        type: "p",
-        text: "**What is Anmeldung?** It's your official registration with the city. Once you register at your local [Bürgeramt](https://service.berlin.de/dienstleistung/120686/) (citizen's office), you are legally documented as living at that address. This piece of paper unlocks everything: tax ID, health insurance, voting rights, and most job contracts. Without it, you're invisible to the German system."
-      },
-      {
-        type: "p",
-        text: "**The Timeline:** Within 2 weeks of moving into your permanent address, you must register. If you don't do this, you're technically in violation of German law and can face fines. Check your city's website for the deadline in your specific city."
-      },
-      {
-        type: "p",
-        text: "**The Practical Problem:** Appointments are notoriously hard to get. Websites show no availability for months. But here's the hack that actually works: **Check the booking portal at 7:00 AM or 8:00 AM sharp**. That's when cancelled appointments get released back into the system. Be flexible about the date and time—take whatever is available."
-      },
-      {
-        type: "p",
-        text: "**What to Bring:** Your passport and the [**Wohnungsgeberbestätigung**](https://www.wohnungsboerse.net/files/Wohnungsgeberbestaetigung_Muster.pdf) (landlord's confirmation that you moved in). If your landlord doesn't have this form, use this official template and ask them to fill it out and sign it."
-      },
-      {
-        type: "p",
-        text: "**Official Info:** [Check your city's Bürgeramt page](https://service.berlin.de/dienstleistung/120686/) for exact procedures and appointment booking links. Each city might have slightly different requirements, so verify locally."
-      },
+      
       { type: "h2", text: "3. Health Insurance (Krankenkasse): It's Mandatory" },
       {
         type: "p",
