@@ -77,7 +77,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "The best local option for students is **[Aldi Talk](https://www.alditalk.de/)**. It is a prepaid service from the Aldi supermarket chain. It is cheap (~10€ starter set), has no long contract, and uses the reliable O2 network. Why Aldi? Because every German city has an Aldi supermarket, and it's the most accessible option for newcomers."
+        text: "The best local option for students is [Aldi Talk](https://www.alditalk.de/). It is a prepaid service from the Aldi supermarket chain. It is cheap (~10€ starter set), has no long contract, and uses the reliable O2 network. Why Aldi? Because every German city has an Aldi supermarket, and it's the most accessible option for newcomers."
       },
       {
         type: "ul",
@@ -96,9 +96,9 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**[Google Maps](https://maps.google.com)**: Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
-          "**[DeepL](https://www.deepl.com)**: This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
-          "**[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator)**: This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
+          "[Google Maps](https://maps.google.com): Works perfectly in Germany. It shows you real-time public transport schedules, train platforms, and walking times. It's 100% accurate. However, this seems confusing to many new comers! Just type your destination address, and it will show you exactly how to get there using buses, trains, or walking.",
+          "[DeepL](https://www.deepl.com): This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download.",
+          "[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator): This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app."
         ]
       },
       { type: "h2", text: "3. Getting From Airport to City: Transport vs Taxi" },
@@ -108,7 +108,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**Here's exactly what to do:** Use the [DB Navigator](https://www.bahn.de/service/mobile/db-navigator) app (you just downloaded it). Type your airport name and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. The app tells you which platform to go to and what time to leave. It's that simple. If this seems confusing, switch to **[Google Maps](https://maps.google.com)** and do the same search there."
+        text: "**Here's exactly what to do:** Use the [DB Navigator](https://www.bahn.de/service/mobile/db-navigator) app (you just downloaded it). Type your airport name and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. The app tells you which platform to go to and what time to leave. It's that simple. If this seems confusing, switch to [Google Maps](https://maps.google.com) and do the same search there."
       },
       {
         type: "p",
@@ -229,10 +229,10 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**[Sparkasse](https://www.sparkasse.de/) / [Volksbank](https://www.volksbank.de/) (Traditional Banks):** These are the safest and most trusted. Physical branches in every neighborhood. BUT they charge monthly fees (5–10€) and often require your Anmeldung (registration) proof before opening an account. This creates a chicken-and-egg problem.",
-          "**[Commerzbank](https://www.commerzbank.de/) / [Deutsche Bank](https://www.deutsche-bank.de/):** Large banks with solid reputations. Problem: They often check your SCHUFA (credit score). If you're new to Germany, you won't have any credit history. They might reject you.",
-          "**[N26](https://n26.com/) (Online Bank):** Fast setup, German IBAN, no fees. Good if it works for your passport, but verification sometimes fails with non-EU documents.",
-          "**[Revolut](https://www.revolut.com/) (Game Changer):** Opens in literally 10 minutes through an app using only your passport. Gives you a valid German IBAN immediately. Excellent English-language app. No Anmeldung needed upfront—you update it later. This is your best bet."
+          "[Sparkasse](https://www.sparkasse.de/) / [Volksbank](https://www.volksbank.de/) (Traditional Banks): These are the safest and most trusted. Physical branches in every neighborhood. BUT they charge monthly fees (5–10€) and often require your Anmeldung (registration) proof before opening an account. This creates a chicken-and-egg problem.",
+          "[Commerzbank](https://www.commerzbank.de/) / [Deutsche Bank](https://www.deutsche-bank.de/): Large banks with solid reputations. Problem: They often check your SCHUFA (credit score). If you're new to Germany, you won't have any credit history. They might reject you.",
+          "[N26](https://n26.com/) (Online Bank): Fast setup, German IBAN, no fees. Good if it works for your passport, but verification sometimes fails with non-EU documents.",
+          "[Revolut](https://www.revolut.com/) (Game Changer): Opens in literally 10 minutes through an app using only your passport. Gives you a valid German IBAN immediately. Excellent English-language app. No Anmeldung needed upfront—you update it later. This is your best bet."
         ]
       },
       {
@@ -358,7 +358,7 @@ export const POSTS = [
       { type: "h2", text: "1. Finding a Place: WG Gesucht & ImmobilienScout24" },
       {
         type: "p",
-        text: "Finding housing in Germany is competitive. You need to act fast and know the platforms. **[WG-Gesucht.de](https://www.wg-gesucht.de/)** is THE platform for shared flats (WGs) and student housing. 'WG' means **Wohngemeinschaft** (shared living community). It's how most young people in Germany live—usually 3-4 people sharing an apartment, each with their own room but shared kitchen and bathroom."
+        text: "Finding housing in Germany is competitive. You need to act fast and know the platforms. [WG-Gesucht.de](https://www.wg-gesucht.de/) is THE platform for shared flats (WGs) and student housing. 'WG' means **Wohngemeinschaft** (shared living community). It's how most young people in Germany live—usually 3-4 people sharing an apartment, each with their own room but shared kitchen and bathroom."
       },
       {
         type: "p",
@@ -490,32 +490,32 @@ export const POSTS = [
       { type: "h2", text: "1. Textbooks (Buy Smart, Not New)" },
       {
         type: "p",
-        text: "**[Thieme 'I Care' series](https://shop.thieme.de/)**: Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
+        text: "[Thieme 'I Care' series](https://shop.thieme.de/): Gold standard for nursing education in Germany. Covers Anatomy, Physiology, Nursing Practice. Usually provided by school, or find used copies on Kleinanzeigen for €15-40 (vs. €80+ new)."
       },
       {
         type: "p",
-        text: "**[Pflege Heute](https://www.elsevier.de/de/buch/pflege-heute)**: Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
+        text: "[Pflege Heute](https://www.elsevier.de/de/buch/pflege-heute): Alternative textbook used by many programs. Both I Care and Pflege Heute cover similar content—ask your trainer which one your school uses."
       },
       { type: "h2", text: "2. Free Reference Resources" },
       {
         type: "p",
-        text: "**[DocCheck Flexikon](https://flexikon.doccheck.com)**: German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
+        text: "[DocCheck Flexikon](https://flexikon.doccheck.com): German medical Wikipedia. Free, reliable, explanations written by professionals. When you hear an unfamiliar medical term, search here first."
       },
       {
         type: "p",
-        text: "**[ResearchGate](https://www.researchgate.net)**: For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
+        text: "[ResearchGate](https://www.researchgate.net): For deeper understanding of concepts. Use when writing papers or researching specific diseases. Most papers available free."
       },
       { type: "h2", text: "3. Vocabulary Building" },
       {
         type: "p",
-        text: "Don't memorize textbooks. Focus on **the top 100-150 terms** your field uses daily. Make flashcards using **[Anki](https://apps.ankiweb.net/)** (free app). Add 10 cards daily during your first month."
+        text: "Don't memorize textbooks. Focus on **the top 100-150 terms** your field uses daily. Make flashcards using [Anki](https://apps.ankiweb.net/) (free app). Add 10 cards daily during your first month."
       },
       {
         type: "ul",
         items: [
           "**Example for nursing:** Blutdruck (blood pressure), Fieber (fever), Wunde (wound), Medikament (medication), Infusion, Katheter.",
           "Use abbreviations healthcare professionals use: RR (blood pressure), HF (heart rate), KG (patient).",
-          "Watch **[PflegeTube](https://www.youtube.com/@PflegeTube)** on YouTube—real nursing scenarios with German commentary."
+          "Watch [PflegeTube](https://www.youtube.com/@PflegeTube) on YouTube—real nursing scenarios with German commentary."
         ]
       }
     ],
@@ -592,7 +592,7 @@ export const POSTS = [
       { type: "h2", text: "2. Contract Check" },
       {
         type: "p",
-        text: "You're an employee, not just a trainee. Your contract matters. If you don't understand something or feel it's unfair, get advice. Use **[Faire Integration](https://www.faire-integration.de/)**—they offer free counseling for refugees and migrants about worker rights. They can review your contract and tell you if it's legal."
+        text: "You're an employee, not just a trainee. Your contract matters. If you don't understand something or feel it's unfair, get advice. Use [Faire Integration](https://www.faire-integration.de/)—they offer free counseling for refugees and migrants about worker rights. They can review your contract and tell you if it's legal."
       },
       { type: "h2", text: "3. Your Legal Rights" },
       {
@@ -679,11 +679,11 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**[Ipso Care](https://ipso-care.com/) (The Best Option):** This organization specializes in helping people who have moved cultures. They offer **free**, video-based counseling in many languages (Arabic, Farsi, Ukrainian, Russian, French, English, etc.). You speak to counselors who understand your cultural background. You can book an appointment anonymously on their website. I have linked it below."
+        text: "[Ipso Care](https://ipso-care.com/) (The Best Option): This organization specializes in helping people who have moved cultures. They offer **free**, video-based counseling in many languages (Arabic, Farsi, Ukrainian, Russian, French, English, etc.). You speak to counselors who understand your cultural background. You can book an appointment anonymously on their website. I have linked it below."
       },
       {
         type: "p",
-        text: "**[TelefonSeelsorge](https://www.telefonseelsorge.de/) (Crisis Line):** If you are in a crisis at 3:00 AM and have nobody to talk to, you can call **0800 111 0 111** or **0800 111 0 222**. It is free, available 24/7, and completely anonymous. They also offer chat support online if you prefer typing."
+        text: "[TelefonSeelsorge](https://www.telefonseelsorge.de/) (Crisis Line): If you are in a crisis at 3:00 AM and have nobody to talk to, you can call **0800 111 0 111** or **0800 111 0 222**. It is free, available 24/7, and completely anonymous. They also offer chat support online if you prefer typing."
       }
     ],
     goldenRule: "Do not isolate yourself. Speak early if you feel unwell.",
@@ -739,16 +739,16 @@ export const POSTS = [
       { type: "h2", text: "1. The Supermarket Hierarchy: Which One to Choose" },
       {
         type: "p",
-        text: "**Cheapest (Budget Options):** **[Aldi](https://www.aldi.de/)** and **[Lidl](https://www.lidl.de/)** are your best friends. Both have nearly identical prices. Average basket: €30-40/week for one person. Everything you need is there, and their own brands are high quality. Go here first."
+        text: "**Cheapest (Budget Options):** [Aldi](https://www.aldi.de/) and [Lidl](https://www.lidl.de/) are your best friends. Both have nearly identical prices. Average basket: €30-40/week for one person. Everything you need is there, and their own brands are high quality. Go here first."
       },
       {
         type: "ul",
         items: [
-          "**[Aldi](https://www.aldi.de/):** Often slightly cheaper on basics, no-frills layout, limited selection but enough",
-          "**[Lidl](https://www.lidl.de/):** Slightly better variety, often has weekly specials. Both have weekly offers on different products—check their apps.",
-          "**[Rewe](https://www.rewe.de/)/[Penny](https://www.penny.de/):** Mid-range prices. Go here if you need something specific Aldi doesn't have.",
-          "**[Edeka](https://www.edeka.de/):** Most expensive chain, but has the best fruit/vegetables and local brands. Use only for specific items.",
-          "**[Bio Company](https://www.biocompany.de/) / Biomarkt:** Organic only, most expensive. Skip this unless you have specific needs."
+          "[Aldi](https://www.aldi.de/): Often slightly cheaper on basics, no-frills layout, limited selection but enough",
+          "[Lidl](https://www.lidl.de/): Slightly better variety, often has weekly specials. Both have weekly offers on different products—check their apps.",
+          "[Rewe](https://www.rewe.de/)/[Penny](https://www.penny.de/): Mid-range prices. Go here if you need something specific Aldi doesn't have.",
+          "[Edeka](https://www.edeka.de/): Most expensive chain, but has the best fruit/vegetables and local brands. Use only for specific items.",
+          "[Bio Company](https://www.biocompany.de/) / Biomarkt: Organic only, most expensive. Skip this unless you have specific needs."
         ]
       },
       { type: "h2", text: "2. Shopping Strategy: Budget to Premium" },
@@ -880,15 +880,15 @@ export const POSTS = [
       { type: "h2", text: "4. Free Learning Resources" },
       {
         type: "p",
-        text: "**[DW Learn German](https://learngerman.dw.com/en/overview):** Free courses from Deutsche Welle (Germany's international broadcaster). Videos with B1/B2 level content."
+        text: "[DW Learn German](https://learngerman.dw.com/en/overview): Free courses from Deutsche Welle (Germany's international broadcaster). Videos with B1/B2 level content."
       },
       {
         type: "p",
-        text: "**[Easy German (YouTube)](https://www.youtube.com/@EasyGerman):** Authentic interviews with real Germans. Start with B1/B2 videos. Subtitles in German + English."
+        text: "[Easy German (YouTube)](https://www.youtube.com/@EasyGerman): Authentic interviews with real Germans. Start with B1/B2 videos. Subtitles in German + English."
       },
       {
         type: "p",
-        text: "**[Slow German (Podcast)](https://www.slow-german.de/):** 5-minute podcasts read slowly. Topics from culture to current events. Perfect for listening practice."
+        text: "[Slow German (Podcast)](https://www.slow-german.de/): 5-minute podcasts read slowly. Topics from culture to current events. Perfect for listening practice."
       }
     ],
     goldenRule: "Ask questions at work instead of guessing. Germans respect curiosity. Master 50 field-specific terms first—grammar second.",
@@ -1054,21 +1054,21 @@ export const POSTS = [
       { type: "h2", text: "1. Clothes: Budget to Premium" },
       {
         type: "p",
-        text: "**Budget tier (€10-30):** **[H&M](https://www2.hm.com/de_de/index.html)**, **[Primark](https://www.primark.com/de)** (if you find one—rare in Germany), **[C&A](https://www.c-and-a.com/de/de/shop)**. Decent quality for the price. Good for basics."
+        text: "**Budget tier (€10-30):** [H&M](https://www2.hm.com/de_de/index.html), [Primark](https://www.primark.com/de) (if you find one—rare in Germany), [C&A](https://www.c-and-a.com/de/de/shop). Decent quality for the price. Good for basics."
       },
       {
         type: "ul",
         items: [
-          "**Mid-range (€20-60):** **[Zalando](https://www.zalando.de/)** (online, free returns), **[Urban Outfitters](https://www.urbanoutfitters.com/de-de)**, **[Zara](https://www.zara.com/de/)**. Trendy, better quality.",
-          "**Outlet:** **[Outletcity Metzingen](https://www.outletcity.com/en/metzingen/)** or **[Wertheim Village](https://www.wertheimvillage.com/en/home/)**. 30-70% off major brands. Worth a weekend trip if you have time.",
+          "**Mid-range (€20-60):** [Zalando](https://www.zalando.de/) (online, free returns), [Urban Outfitters](https://www.urbanoutfitters.com/de-de), [Zara](https://www.zara.com/de/). Trendy, better quality.",
+          "**Outlet:** [Outletcity Metzingen](https://www.outletcity.com/en/metzingen/) or [Wertheim Village](https://www.wertheimvillage.com/en/home/). 30-70% off major brands. Worth a weekend trip if you have time.",
           "**Thrift/Second-hand:** **Vintage stores** in most cities. German quality clothing lasts forever—used is smart.",
-          "**Online:** **[Vinted](https://www.vinted.de/)** (German app), **[eBay Kleinanzeigen](https://www.kleinanzeigen.de/)** (free classifieds). Buy used, save 50-70%."
+          "**Online:** [Vinted](https://www.vinted.de/) (German app), [eBay Kleinanzeigen](https://www.kleinanzeigen.de/) (free classifieds). Buy used, save 50-70%."
         ]
       },
       { type: "h2", text: "2. Toiletries & Personal Care" },
       {
         type: "p",
-        text: "**Cheapest:** **[dm](https://www.dm.de/)** and **[Rossmann](https://www.rossmann.de/)** (drugstores, not just pharmacy). Own brands are excellent quality and cost €2-5. Found everywhere."
+        text: "**Cheapest:** [dm](https://www.dm.de/) and [Rossmann](https://www.rossmann.de/) (drugstores, not just pharmacy). Own brands are excellent quality and cost €2-5. Found everywhere."
       },
       {
         type: "ul",
@@ -1082,38 +1082,38 @@ export const POSTS = [
       { type: "h2", text: "3. Electronics & Tech" },
       {
         type: "p",
-        text: "**Where to buy:** **[MediaMarkt](https://www.mediamarkt.de/)**, **[Saturn](https://www.saturn.de/)**, or **[Amazon.de](https://www.amazon.de/)**. All have identical prices usually. Amazon offers free returns."
+        text: "**Where to buy:** [MediaMarkt](https://www.mediamarkt.de/), [Saturn](https://www.saturn.de/), or [Amazon.de](https://www.amazon.de/). All have identical prices usually. Amazon offers free returns."
       },
       {
         type: "ul",
         items: [
           "**Best for:** New laptops, phones, headphones. Warranty is automatic (usually 2 years by law).",
           "**Avoid:** Buying electronics in the first 2 weeks after launch (prices drop fast).",
-          "**For older/budget electronics:** Check **[eBay Kleinanzeigen](https://www.kleinanzeigen.de/)**. Students often sell working laptops for €300-600.",
+          "**For older/budget electronics:** Check [eBay Kleinanzeigen](https://www.kleinanzeigen.de/). Students often sell working laptops for €300-600.",
           "**Phone plans:** Buy SIM at Aldi/Lidl/Saturn, not at carrier stores (avoid contracts)."
         ]
       },
       { type: "h2", text: "4. Furniture & Household Items" },
       {
         type: "p",
-        text: "**New:** **[IKEA](https://www.ikea.com/de/de/)** (obvious choice, good value), **Baumarkt chains** ([OBI](https://www.obi.de/), [Bauhaus](https://www.bauhaus.info/) for kitchen/tools). Prices are fair."
+        text: "**New:** [IKEA](https://www.ikea.com/de/de/) (obvious choice, good value), **Baumarkt chains** ([OBI](https://www.obi.de/), [Bauhaus](https://www.bauhaus.info/) for kitchen/tools). Prices are fair."
       },
       {
         type: "p",
-        text: "**Used (money-saving hack):** **[Kleinanzeigen.de](https://www.kleinanzeigen.de/)** 'Zu verschenken' (free), **[eBay](https://www.ebay.de/)**, **[Vinted](https://www.vinted.de/)**. Germans throw out quality stuff. Claim it before it's gone."
+        text: "**Used (money-saving hack):** [Kleinanzeigen.de](https://www.kleinanzeigen.de/) 'Zu verschenken' (free), [eBay](https://www.ebay.de/), [Vinted](https://www.vinted.de/). Germans throw out quality stuff. Claim it before it's gone."
       },
       { type: "h2", text: "5. Books & Supplies for Ausbildung" },
       {
         type: "p",
-        text: "**New textbooks:** **[Thieme Online Store](https://shop.thieme.de/)** (medical books), **[Hugendubel](https://www.hugendubel.de/)** (general bookstore chain)."
+        text: "**New textbooks:** [Thieme Online Store](https://shop.thieme.de/) (medical books), [Hugendubel](https://www.hugendubel.de/) (general bookstore chain)."
       },
       {
         type: "p",
-        text: "**Used textbooks:** **[Kleinanzeigen.de](https://www.kleinanzeigen.de/)**. Search '[Your textbook name]'. Saves €30-80 per book. Previous students sell them constantly."
+        text: "**Used textbooks:** [Kleinanzeigen.de](https://www.kleinanzeigen.de/). Search '[Your textbook name]'. Saves €30-80 per book. Previous students sell them constantly."
       },
       {
         type: "p",
-        text: "**Office supplies:** **[Staples](https://www.staples.de/)**, **[Müller](https://www.mueller.de/)** (drugstore chain, has office supplies), or supermarkets. Very cheap."
+        text: "**Office supplies:** [Staples](https://www.staples.de/), [Müller](https://www.mueller.de/) (drugstore chain, has office supplies), or supermarkets. Very cheap."
       }
     ],
     goldenRule: "Buy used furniture from Kleinanzeigen. Toiletries from dm/Rossmann. Clothes from Zalando (free returns).",
@@ -1652,9 +1652,9 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**[WG Gesucht](https://www.wg-gesucht.de/):** THE platform for shared apartments. Create account, filter by city and price range, apply to listings. Write professional, concise messages. Most rooms go within 24-48 hours.",
-          "**[Kleinanzeigen](https://www.kleinanzeigen.de/):** For private apartments and also WG rooms. Less curated than WG Gesucht, so scams exist. NEVER transfer money before seeing apartment in person.",
-          "**[ImmobilienScout24](https://www.immobilienscout24.de/):** For larger, more 'official' listings. Good for private apartments, often more expensive.",
+          "[WG Gesucht](https://www.wg-gesucht.de/): THE platform for shared apartments. Create account, filter by city and price range, apply to listings. Write professional, concise messages. Most rooms go within 24-48 hours.",
+          "[Kleinanzeigen](https://www.kleinanzeigen.de/): For private apartments and also WG rooms. Less curated than WG Gesucht, so scams exist. NEVER transfer money before seeing apartment in person.",
+          "[ImmobilienScout24](https://www.immobilienscout24.de/): For larger, more 'official' listings. Good for private apartments, often more expensive.",
           "**University Housing Office:** Contact your nursing school's international office. Many schools have lists of recommended housing or partnerships with landlords.",
           "**Facebook Groups:** Search '[Your City Name] + Wohnung suchen' or '[Your City] + housing'. Many locals post here, sometimes bypassing platforms.",
           "**Direct Contact:** Ask your employer (hospital, care facility) if they have relationships with landlords or housing programs for trainees."
