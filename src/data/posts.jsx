@@ -275,7 +275,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**Which company should you choose?** The major providers are [AOK](https://www.aok.de/), [Techniker Krankenkasse (TK)](https://www.tk.de/), and [DAK-Gesundheit](https://www.dak.de/). All provide identical basic coverage (required by law). The differences are in small 'extras' like dental cleaning or preventive programs. **TK is often recommended for English speakers** because they have good international support. **Compare options on [Check24](https://www.check24.de/gesetzliche-krankenversicherung/) or [Getsafe](https://www.getsafe.de/)**."
+        text: "**Which company should you choose?** The major providers are [AOK](https://www.aok.de/), [Techniker Krankenkasse (TK)](https://www.tk.de/), and [DAK-Gesundheit](https://www.dak.de/). All provide identical basic coverage (required by law). The differences are in small 'extras' like dental cleaning or preventive programs. **TK is often recommended for English speakers** because they have good international support. Compare options on [Check24](https://www.check24.de/gesetzliche-krankenversicherung/) or [Getsafe](https://www.getsafe.de/)."
       },
       {
         type: "p",
