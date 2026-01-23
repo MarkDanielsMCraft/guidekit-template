@@ -22,7 +22,7 @@ It covers everything from the first 72 hours after arrival to understanding work
 - We wanted to create a friendly, honest resource that actually helps
 - Practical tips that aren't found in official guides
 
-### 📅 **Content Verified as of January 19, 2026**
+### 📅 **Content Verified as of January 23, 2026**
 ✅ All prices, timelines, and procedures are current and verified  
 ✅ Written specifically for complete beginners with no unexplained German jargon  
 ✅ Every complex concept explained thoroughly with real examples  
@@ -34,12 +34,16 @@ It covers everything from the first 72 hours after arrival to understanding work
 ## ✨ Key Features
 
 ### 📚 **Comprehensive Blog Guides**
+- **Mindset & Culture** - Expectations, quiet hours, Coconut Culture, direct feedback
 - **Arrival (First 72 Hours)** - From airport to bed: internet, transport, essentials
-- **Money & Paperwork** - Banking, registration (Anmeldung), taxes, health insurance
+- **Money & Paperwork** - Banking, Anmeldung, taxes, health insurance
 - **Housing** - Finding flats, furnishing for free, house rules and neighborly culture
-- **Nursing Resources** - Textbooks, study tools, language support (+ transferable to other fields)
-- **Rights & Workplace Culture** - Understanding your contract, hierarchy, and employee rights
-- **Mental Health & Community** - Fighting isolation, counseling resources, making friends
+- **Career & Language** - Workplace German, Aus­bildung study support
+- **Rights & Workplace Culture** - Contracts, hierarchy, and employee rights
+- **Health & Emergencies** - Doctors, insurance, what to do beyond 112
+- **Daily Life & Food** - Shopping, eating cheaply, city hacks
+- **Legal/Financial Defense** - Rundfunkbeitrag, liability insurance, subscription traps
+- **Community & Wellbeing** - Mental health, discrimination, building friendships
 
 ### 🔍 **Smart Resource Library**
 - Curated links to tools, apps, and websites
@@ -111,22 +115,26 @@ npm run preview
 npm run lint
 ```
 
-### Project Structure
+### Project Structure (data-first)
 
 ```
 survival-kit/
 ├── src/
-│   ├── App.jsx              # Main app component
-│   ├── App.css              # App styles
-│   ├── main.jsx             # Entry point
-│   ├── index.css            # Global styles
-│   └── assets/              # Images and static files
-├── public/                  # Static files
-├── index.html               # HTML entry point
-├── vite.config.js           # Vite configuration
-├── tailwind.config.js       # Tailwind CSS config
-├── postcss.config.js        # PostCSS config
-└── package.json             # Dependencies
+│   ├── data/
+│   │   ├── posts.jsx         # All blog posts (JSX content blocks)
+│   │   └── resources.js      # Curated external links
+│   ├── components/           # UI components (cards, detail, filters, navigation)
+│   ├── constants/            # Stage styles, config, assets
+│   ├── utils/                # text renderer, helpers, security
+│   ├── styles/               # globalStyles injection
+│   ├── App.jsx               # App shell (view toggles, filters)
+│   └── main.jsx              # Entry point
+├── public/                   # Static files
+├── index.html                # HTML entry point
+├── vite.config.js            # Vite configuration (base /survival-kit/)
+├── tailwind.config.js        # Tailwind CSS config
+├── postcss.config.js         # PostCSS config
+└── package.json              # Dependencies
 ```
 
 ---
@@ -146,10 +154,10 @@ survival-kit/
 ## 🎯 Features Explained
 
 ### Content Management
-All content is structured in the `App.jsx` file:
-- `POSTS` array contains all blog guides with rich content
-- `RESOURCES` array powers the resource library
-- `SOURCE_BADGE` defines link categorization
+- Blog posts live in `src/data/posts.jsx` (structured blocks: `type: "p"|"h2"|"ul"` with `items`)
+- Resources live in `src/data/resources.js` and categories map to `RESOURCE_CATEGORIES` in `src/constants/config.js`
+- Stage styles live in `src/constants/ui.js` (pills, bars, accents)
+- Background/hero images imported at the top of `posts.jsx`; each post references a specific image
 
 ### State Management
 - **localStorage** for progress tracking
@@ -157,10 +165,10 @@ All content is structured in the `App.jsx` file:
 - Custom search and filter logic
 
 ### Styling
-- **Tailwind CSS** for utility-first styling
+- **Tailwind CSS** utility-first
 - Responsive breakpoints: `sm`, `md`, `lg`
-- Custom animations (`animate-float`, `animate-coffee-pulse`)
-- Glass-morphism effects
+- Global styles/animations injected from `src/styles/globalStyles.js`
+- Post detail hero uses a softened overlay (from-black/40 → via-black/22 → to-black/36) so background photos stay visible
 
 ---
 
@@ -181,19 +189,17 @@ Each blog post includes:
 
 ### GitHub Pages
 
-The app is configured for GitHub Pages with base path `/survival-kit/`:
+The app is configured for GitHub Pages with base path `/survival-kit/` (see `vite.config.js`).
 
 ```bash
 # Build production version
 npm run build
 
-# The dist/ folder is ready for deployment
+# Deploy (GitHub Actions on push to main)
+git push origin main
 ```
 
-**GitHub Actions** handles automatic deployment:
-1. Push to `main` branch
-2. GitHub Actions builds the app
-3. Deploys to GitHub Pages automatically
+**GitHub Actions** handles automatic deployment on every push to `main`.
 
 ---
 
