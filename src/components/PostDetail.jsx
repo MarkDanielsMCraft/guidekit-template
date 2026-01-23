@@ -52,7 +52,7 @@ const HeroImage = ({ post }) => {
         alt={`${post.title} header`}
         fallbackIcon={post.icon}
         width={2000}
-        className="h-full w-full"
+        className="h-full w-full object-cover"
       />
     </div>
   );
@@ -267,7 +267,7 @@ export const PostDetail = ({
             className="h-full w-full"
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/22 to-black/36"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/28"></div>
         </div>
         
         {/* Text content overlay */}
