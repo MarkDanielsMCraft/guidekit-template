@@ -267,7 +267,7 @@ export const PostDetail = ({
             className="h-full w-full"
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/22 to-black/36"></div>
         </div>
         
         {/* Text content overlay */}

@@ -21,11 +21,15 @@ import img5 from '../alliance-5201816.jpg';
 import img6 from '../augsburg-3080437.jpg';
 import img7 from '../cologne-cathedral-6664664.jpg';
 import img8 from '../hamburg-2255755.jpg';
-import img9 from '../hamburg-2383200.jpg';
 import img10 from '../munich-2516492.jpg';
 import img11 from '../munich-3521933.jpg';
 import img12 from '../port-4851408.jpg';
-import img13 from '../ryanair-5249631.jpg';
+import img14 from '../ambulance-970037.jpg';
+import img15 from '../lady-justice-677945.jpg';
+import img16 from '../surgery-1807541.jpg';
+import img17 from '../german-6030980.jpg';
+import img18 from '../city-2189720.jpg';
+import img19 from '../oktoberfest-4566791.jpg';
 
 /**
  * BLOG POSTS DATA
@@ -36,6 +40,12 @@ import img13 from '../ryanair-5249631.jpg';
  * - slug: unique URL identifier (lowercase, hyphens)
  * - title: main heading
  * - subtitle: short description
+
+      { type: "h2", text: "1.1 Digital Access & TAN Codes" },
+      {
+        type: "p",
+        text: "German digital life runs on SMS/TAN codes. Many banks, health insurers, and city portals send one-time codes to a **German phone number** or mail you an activation letter. If you change SIMs or lose your phone, you can get locked out of bank apps and insurance portals until you re-verify. Keep your German SIM active, avoid swapping numbers casually, and expect paper letters for first-time logins." 
+      },
  * - stage: category (Arrival, Settling In, Work & Study, Health & Social)
  * - readTime: estimated reading time
  * - icon: JSX icon component from lucide-react
@@ -52,17 +62,77 @@ import img13 from '../ryanair-5249631.jpg';
 
 export const POSTS = [
   {
+    slug: "curious-about-germany",
+    title: "Curious About Germany?",
+    subtitle: "Culture, norms, and what shocks newcomers",
+    stage: "Mindset",
+    readTime: "6 min",
+    icon: <BookOpen size={24} />,
+    color: "from-purple-600 to-indigo-600",
+    shadow: "shadow-purple-500/20",
+    accent: "text-purple-600",
+    verified: "2026-01-23",
+      backgroundImage: img7,
+    summary: "Set your expectations: direct communication, quiet Sundays, card vs. cash, and the weather curveballs.",
+    vibeCheck: "Germany rewards preparation. A few mindset shifts upfront will save you awkward moments and late fees.",
+    content: [
+      { type: "p", text: "You hear Germany and think efficiency. Reality: it's efficient when you play by the rules. Learn the norms and you'll avoid friction in housing, work, and daily life." },
+      { type: "h2", text: "1) Communication: direct, not rude" },
+      { type: "p", text: "People say exactly what they mean. Feedback is often blunt, especially at work. Don't take it personally; it's about the task, not you." },
+      { type: "ul", items: [
+        "**Punctuality matters:** 3–5 minutes late is already late. Text if you'll slip.",
+        "**Silence is normal:** Small talk is short. Clarity beats charm.",
+        "**Plans are firm:** Cancelling last minute is frowned on; give notice early."
+      ]},
+      { type: "h2", text: "2) Quiet hours & Sundays" },
+      { type: "p", text: "Sunday is a rest day. No drilling, loud music, or vacuuming early. Most shops are closed except small stores in main train stations and airports." },
+      { type: "ul", items: [
+        "**Quiet hours:** Typically 10pm–7am. Check your building rules (Hausordnung).",
+        "**Plan ahead:** Buy groceries on Saturday; pharmacies may run limited hours on Sunday.",
+        "**Neighbors first:** A quick intro to your neighbors prevents friction later." 
+      ]},
+      { type: "h2", text: "3) Money habits" },
+      { type: "p", text: "Cash is still common. Many places take cards, but small bakeries or kiosks might not. Always keep 20–50€ cash your first weeks." },
+      { type: "ul", items: [
+        "**Rundfunkbeitrag:** A mandatory broadcast fee will arrive by mail (~18€ per month). It's per household, not per person. Budget for it.",
+        "**Keep receipts:** Returns often require the paper receipt."
+      ]},
+      { type: "h2", text: "4) Weather reality" },
+      { type: "p", text: "Layers are your friend. Even in summer, evenings can be cool and rain is frequent. A compact umbrella and a waterproof jacket are essentials." },
+      { type: "h2", text: "5) Coconut Culture" },
+      { type: "p", text: "Friendships can start slow. People may seem distant at first, but once you are in, you are in. Expect a longer warm-up and deeper loyalty over time." },
+      { type: "h2", text: "6) Sound of Silence" },
+      { type: "p", text: "Honking without danger is rude here. Trains have quiet cars; even in regular cars people keep voices low. Keep calls short and use headphones." },
+      { type: "h2", text: "7) Winter Blues" },
+      { type: "p", text: "In winter, daylight can be roughly 08:00–16:00. It can affect mood. Carry a warm hat, plan indoor hobbies, and consider Vitamin D after talking to a doctor." },
+    ],
+    goldenRule: "Assume structure: be on time, read the rules, and say things plainly.",
+    steps: [
+      { title: "Bookmark quiet hours", text: "Note your building's quiet hours and the Sunday rule." },
+      { title: "Keep small cash", text: "Carry 20–50€ for kiosks, bakeries, and deposits." },
+      { title: "Prep weather kit", text: "Pack layers + compact umbrella for daily carry." },
+    ],
+    readMore: [
+      { title: "Rundfunkbeitrag (Official)", url: "https://www.rundfunkbeitrag.de/welcome/index_ger.html", source: "official" },
+      { title: "Quiet hours explained", url: "https://www.make-it-in-germany.com/en/living-in-germany/everyday-life/house-rules", source: "official" },
+    ],
+    downloads: [{ title: "Quiet hours cheat sheet", url: null }],
+    videos: [],
+    tags: ["culture", "quiet-hours", "cash", "rundfunkbeitrag"],
+  },
+
+  {
     slug: "first-72-hours",
-    title: "Arrival: First 72 Hours",
+    title: "First 72 Hours",
     subtitle: "Airport to apartment: what actually matters",
-    stage: "Arrival",
+    stage: "Survival",
     readTime: "12 min",
     icon: <Wifi size={24} />,
     color: "from-blue-600 to-indigo-600",
     shadow: "shadow-blue-500/20",
     accent: "text-blue-600",
     verified: "2026-01-19",
-      backgroundImage: img13,
+      backgroundImage: img12,
     summary: "Your first 72 hours stripped to essentials: internet, transport, and the apps you actually need.",
     vibeCheck: "You just landed. You are tired, your luggage is heavy, and you don't have internet. Take a deep breath. We'll sort this out.",
     content: [
@@ -100,7 +170,8 @@ export const POSTS = [
           "[DeepL](https://www.deepl.com/en/translator): This is NOT Google Translate. DeepL is specifically trained on German and produces natural translations. Point your phone camera at a German sign or menu, and DeepL will translate it instantly. Free version works offline after download. It's the perfect alternative to Google Translator for German.",
           "[DB Navigator (Deutsche Bahn)](https://www.bahn.de/service/mobile/db-navigator): This is the official German railway app. It shows you every bus, train, and metro option. It tells you which platform (Gleis) to go to, when the train departs, and if it's running late. You'll use this constantly. You can also buy tickets directly in the app. If this seems confusing, just use Google Maps for transport directions. Note that every city in Germany has its own local transport system (Stadtverkehr) integrated into DB Navigator, so you can use it for buses and metros as well. You can check which app is used withing your city at a later time though!",
           "[Integreat App](https://integreat-app.de/en/): This app provides localized information for newcomers in various German cities. It includes tips on registration, housing, healthcare, and cultural norms specific to your city. Download it and select your city for tailored advice.",
-          "[Buy the Deutschland ticket here](https://www.bahn.de/en/view/offers/railpasses/deutschland-ticket.shtml): From May 2023, Germany introduced the 'Deutschlandticket', a flat-rate monthly ticket for 63€(as of January 2026) that allows unlimited travel on all local and regional public transport across Germany. You can purchase this ticket from here, the DB Navigator app, or at train stations. It's a cost-effective way to explore Germany by public transport."
+          "**[Buy the Deutschlandticket](https://www.bahn.de/en/view/offers/railpasses/deutschland-ticket.shtml):** Flat-rate ticket costing **€63 per month** (2026 price). Unlimited local and regional trains/buses nationwide (no ICE/IC). Buy in DB Navigator or at stations.",
+          "**Student/Trainee Discount:** STOP! Before buying the full €63 ticket, ask your school or employer about the **'Ermäßigtes Deutschlandticket'**. In many states (like Bavaria or NRW), trainees get it for **~€29/month**. This saves you €400+ a year."
         ]
       },
       { type: "h2", text: "3. Getting From Airport to City: Transport vs Taxi" },
@@ -112,6 +183,16 @@ export const POSTS = [
         type: "p",
         text: "**Here's exactly what to do:** Use the DB Navigator app (you just downloaded it). Type your airport name, or you can just select 'current position' and your destination address. It will show you the cheapest and fastest route. Usually it's a regional train (S-Bahn) followed by a metro (U-Bahn) or bus. If it seeems confusing, switch to [Google Maps](https://maps.google.de) and do the same search there."
       },
+
+      { type: "h2", text: "3.5 Transport Etiquette (Avoid Fines)" },
+      {
+        type: "ul",
+        items: [
+          "**Escalators:** Stand on the right, walk on the left. Blocking the left side gets you shouted at.",
+          "**Trains/Trams:** Let people exit first. Don't rush in. Validate paper tickets where required.",
+          "**Bike lanes:** NEVER walk or stand in red/asphalt bike lanes. Cyclists have right of way and will ring/yell."
+        ]
+      },
       
       { type: "h2", text: "4. Your First Weekend (The Sunday Rule)" },
       {
@@ -122,7 +203,16 @@ export const POSTS = [
         type: "p",
         text: "**The Loophole:** Supermarkets inside big train stations (Hauptbahnhof) and airports are allowed to stay open on Sundays. If you land on Sunday, buy bread, water, juice etc *at the airport supermarket* (usually Rewe or Edeka) before you leave the terminal."
       },
-      { type: "h2", text: "5. Wohnungsgeberbestätigung" },
+      { type: "h2", text: "5. Local Basics: Water, Pfand, Mailbox" },
+      {
+        type: "ul",
+        items: [
+          "**Tap water is safe:** Germany's tap water is drinkable everywhere unless marked otherwise. Save money and refill bottles instead of buying water.",
+          "**Pfand (bottle deposit):** Many plastic and glass bottles have a €0.25 deposit. Return them to the machine in supermarkets (Pfandautomat) and get your deposit back at checkout.",
+          "**Name on mailbox:** Add your exact name to the letter box (briefkasten) immediately. Without it, your official mail (Anmeldung, bank, residence card) gets returned."
+        ]
+      },
+      { type: "h2", text: "6. Wohnungsgeberbestätigung" },
       {
         type: "p",
         text: "**The Timeline:** Within 2 weeks of moving into your permanent address, you must register. If you don't do this, you're technically in violation of German law and can face fines."
@@ -131,7 +221,7 @@ export const POSTS = [
         type: "p",
         text: "When you arrive at your housing, ask your landlord or host for the **Wohnungsgeberbestätigung** (Landlord Confirmation). This is a single sheet of paper that confirms you moved in. You **cannot** register your address at the city office without this specific paper. Your rental contract is *not* enough. I have added a [PDF Template](https://formular-service.augsburg.de/intelliform/forms/stadt_augsburg/extern/330/extern/330/meldewesen/wohnungsgeberbestaetigung/download;jsessionid=uZF3OT69kpWC24HWyAC_aL-HL-MeLo73RHTISBvd.IF0). If you don't have one, print this and make them sign it."
       },
-      { type: "h2", text: "6. Documents to keep on you" },
+      { type: "h2", text: "7. Documents to keep on you" },
       {
         type: "p",
         text: "For the first days, carry your passport and a copy of your entry visa or residence permit. Non EU scholars are sometimes asked for proof at hotels, banks and trains. Keep a clear photo set on your phone and one printed copy in your bag. But handle them with extreme care so that you don't lose them."
@@ -145,7 +235,7 @@ export const POSTS = [
           "**Liability insurance:** Sometimes Landlords ask for proof of liability insurance (Haftpflichtversicherung). It protects you when you accidentally cause damage to someone else or their property. It costs around 3 to 5 euros per month. However, it's not mandatory, if your landlord asks for it, you can apply for it at platforms like [Get Safe](https://www.hellogetsafe.com/en-de)."
         ]
       },
-      { type: "h2", text: "7. Cash and cards in your first week" },
+      { type: "h2", text: "8. Cash and cards in your first week" },
       {
         type: "p",
         text: "Germany still uses cash more than many countries. In January 2026, many bakeries and small shops accept cards, but not all do. Plan to keep at least 20 to 50 euros in cash during your first week."
@@ -154,7 +244,7 @@ export const POSTS = [
         type: "p",
         text: "If you have no German account yet, use an international debit card for ATM withdrawals. Avoid airport exchange counters since their rates are poor."
       },
-      { type: "h2", text: "8. What to do on day two" },
+      { type: "h2", text: "9. What to do on day two" },
       {
         type: "p",
         text: "Once you have internet and transport sorted, set up the next steps. Book your Anmeldung appointment, check your university or work place onboarding email, and locate the nearest supermarket and pharmacy. These three actions reduce stress fast."
@@ -163,11 +253,12 @@ export const POSTS = [
         type: "ul",
         items: [
           "**Book the Anmeldung:** Appointments often appear early in the morning. Check the city website daily. Some cities don't need appointments, you can ask your landlord for more guidance.",
+          "**Know the offices:** **Bürgeramt = City Hall for address registration (Anmeldung). Ausländerbehörde = Foreigners Office for residence permits.** Different locations, separate appointments, and the Ausländerbehörde is usually slower.",
           "**Confirm onboarding time:** Email your department or training office and confirm the first day and required documents.",
           "**Stock basics:** Water, bread, simple meals, and any daily medication."
         ]
       },
-      { type: "h2", text: "9. Quick reality check for non EU scholars" },
+      { type: "h2", text: "10. Quick reality check for non EU scholars" },
       {
         type: "p",
         text: "As of January 2026, non EU scholars must respect the visa purpose and registration rules. If you entered for study or training, you must stick to that, maybe if you have acquired permission from the relevant immigration office(Ausländerbehörde). Working outside the visa purpose can lead to fines or deportation."
@@ -204,15 +295,15 @@ export const POSTS = [
 
   {
     slug: "money-paperwork",
-    title: "Money & Paperwork: Banks & Bureaucracy",
-    subtitle: "The money stuff nobody explains well",
-    stage: "Settling In",
+    title: "Paperwork & Banks",
+    subtitle: "Legal identity, IBAN, insurance, and fees",
+    stage: "Bureaucracy",
     readTime: "15 min",
     icon: <Landmark size={24} />,
     color: "from-emerald-500 to-teal-600",
     shadow: "shadow-emerald-500/20",
     accent: "text-emerald-600",
-      backgroundImage: img5,
+      backgroundImage: img18,
     verified: "2026-01-19",
     summary: "Banks, registration, taxes, insurance—we break down the catch-22s and show you the smart shortcuts.",
     vibeCheck: "Yes, it feels impossible. You need a bank for rent, but they want an address. We're gonna untangle this.",
@@ -245,6 +336,26 @@ export const POSTS = [
         type: "p",
         text: "You can open a free Revolut account using this link: [Open Revolut Account](https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect)."
       },
+
+      { type: "h2", text: "1.5 The Visa Timer (Ausländerbehörde)" },
+      {
+        type: "p",
+        text: "Entry visas are often valid for 3–6 months. You must convert this to a residence permit (**Aufenthaltstitel**) before it expires. Book your Ausländerbehörde appointment immediately after arrival."
+      },
+      {
+        type: "p",
+        text: "**Don't Panic:** If your appointment is *after* your visa expires, you are still legal **IF** you applied before the expiry. You will receive a **'Fiktionsbescheinigung'** (fictional certificate). This piece of paper extends your legal status until your actual appointment. Keep it safe; it proves you are not illegal."
+      },
+      {
+        type: "p",
+        text: "**Shortcut:** Bürgeramt = City Hall for address registration (Anmeldung). Ausländerbehörde = Foreigners Office for residence permits. Different offices, different booking systems—and the Ausländerbehörde is slower."
+      },
+
+      { type: "h2", text: "2. Social Security Number (Sozialversicherungsnummer)" },
+      {
+        type: "p",
+        text: "After your employer registers you with public health insurance, you receive a **Sozialversicherungsnummer** by mail. This is separate from the Tax ID. Store it with your payslips; you'll need it for every job and for pension records."
+      },
       
       { type: "h2", text: "3. Health Insurance (Krankenkasse): It's Mandatory" },
       {
@@ -253,7 +364,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**How much does it cost?** Approximately 16% of your gross salary. But here's the good part: your employer pays half (8%) and you pay half (8%). So if you earn 2,000€ gross, you contribute ~160€ for health insurance—your employer contributes another 160€. It's automatically deducted from your salary by your employer."
+        text: "**How much does it cost?** Rates rose in 2026. The total is ~17.3% of your gross salary (14.6% base + ~2.7% Zusatzbeitrag). Your employer pays half, so **~8.65%** is deducted from your pay. On a €1,200 trainee salary, that's about €103/month." 
       },
       {
         type: "p",
@@ -267,6 +378,28 @@ export const POSTS = [
       {
         type: "p",
         text: "You do not apply for this separately. It comes automatically by mail about 2-3 weeks after your Anmeldung. It contains your 11-digit Tax ID. Give this to your employer immediately. If you don't, you will be taxed at **Tax Class 6**, which is the highest rate (you lose ~50% of net income). Don't panic—you get the money back later via a tax return, but it's better to avoid it."
+      },
+
+      { type: "h2", text: "5. The Schufa Score (Credit Rating)" },
+      {
+        type: "p",
+        text: "Newcomers start with **no Schufa score**, which can block apartment rentals and mobile phone contracts. Schufa tracks whether you pay bills on time (rent, phone, electricity, loans). Paying on time builds a clean record; missed payments or debt collection hurts it."
+      },
+      {
+        type: "p",
+        text: "**Proof for landlords/contracts:** You can request one free **Schufa-Auskunft (data copy)** per year (Datenkopie nach Art. 15 DSGVO) via the official Schufa site. Landlords often want the paid certificate (~€30) because it's formatted for them."
+      },
+
+      { type: "h2", text: "6. The 'Black Tax' (Remittances)" },
+      {
+        type: "p",
+        text: "Sending money home is generous but can destroy your German budget. Cover your own rent, insurance, transport, and groceries **first**. Only send money for true emergencies. If you must send, compare fees and exchange rates on apps like Taptap Send, Remitly, or WorldRemit, and pick the cheapest. Avoid borrowing in Germany to fund remittances—it creates debt and hurts your Schufa."
+      },
+
+      { type: "h2", text: "7. The Church Tax (Kirchensteuer)" },
+      {
+        type: "p",
+        text: "Important for Christians: When you register your address (Anmeldung), the form asks your religion. If you tick 'Roman Catholic' or 'Evangelical (Protestant)', the government will **automatically deduct 8-9% of your Income Tax** (not gross salary) from your monthly payslip and send it to the church. This is mandatory. If you do not want this deduction, you must leave the field blank or officially leave the church (Kirchenaustritt), which costs ~€30."
       }
     ],
     goldenRule:
@@ -307,13 +440,13 @@ export const POSTS = [
     slug: "housing-neighbors",
     title: "Housing & Finding a Flat",
     subtitle: "Finding a place to live and not spending all your money on IKEA",
-    stage: "Settling In",
+    stage: "Housing",
     readTime: "12 min",
     icon: <HomeIcon size={24} />,
     color: "from-orange-500 to-amber-600",
     shadow: "shadow-orange-500/20",
     accent: "text-orange-600",
-      backgroundImage: img8,
+      backgroundImage: img6,
     verified: "2026-01-19",
     summary: "Platform reviews (WG Gesucht), free furniture hacks (Kleinanzeigen), and the house rules that matter.",
     vibeCheck: "Flats are tight and expensive. But furnishing them cheap? That's doable. Here's how.",
@@ -330,6 +463,11 @@ export const POSTS = [
       {
         type: "p",
         text: "**How to write a good message:** Landlords receive 50+ inquiries per listing. Stand out by being genuine and professional. Say: your name, your profession/field, your start date, that you have steady income or are employed, and ask to view the apartment. DO NOT include personal stories unless asked. Keep it short."
+      },
+      { type: "h2", text: "1.5 The Reality of Foreign Names" },
+      {
+        type: "p",
+        text: "The housing market is tough, and unfortunately, discrimination happens. It can be harder to get a response with a non-German name. **Strategy:** Write your messages in German (use DeepL), include a friendly, professional photo in your application, and mention your scholarship/job status in the *first sentence* to prove financial stability."
       },
       {
         type: "p",
@@ -368,6 +506,11 @@ export const POSTS = [
       {
         type: "p",
         text: "**When you move out:** You get the deposit back, minus deductions for actual damages (not normal wear and tear). The landlord must return it within 1 month of you moving out. If they don't, or if they make unfair deductions, you can pursue them in small claims court. Keep your receipts and move-in photos."
+      },
+      { type: "h2", text: "3.5 Electricity & Internet Setup (Don't Overpay)" },
+      {
+        type: "p",
+        text: "If you don't pick an electricity provider, you're put in **Grundversorgung** (default supply) at expensive rates. Choose a contract (12 months is common) and set your own monthly prepayment (Abschlag) so there's no surprise back-bill. Bills often settle **quarterly**—budget for it. Internet is separate (DSL/Cable). Set it up in your name, and calendar the cancellation date 1 month before the end to avoid auto-renewal." 
       },
       { type: "h2", text: "4. House Rules: Quiet Hours & Trash Separation" },
       {
@@ -433,7 +576,7 @@ export const POSTS = [
     slug: "nursing-language-resources",
     title: "Professional Development: Field-Specific Learning",
     subtitle: "Reference materials, textbooks, and specialized vocabulary for your Ausbildung",
-    stage: "Work & Study",
+    stage: "Career",
     readTime: "8 min",
     icon: <Stethoscope size={24} />,
     color: "from-rose-500 to-pink-600",
@@ -480,6 +623,21 @@ export const POSTS = [
           "Use abbreviations healthcare professionals use: RR (blood pressure), HF (heart rate), KG (patient).",
           "Watch [PflegeTube](https://www.youtube.com/@PflegeTube) on YouTube—real nursing scenarios with German commentary."
         ]
+      },
+      { type: "h2", text: "4. Shadow Vocabulary on Shift" },
+      {
+        type: "p",
+        text: "Wards use shorthand you won't find in textbooks. Common: RR (blood pressure), SpO2 (oxygen saturation), BZ (blood sugar), AZ (general condition), Z.n. (status post). Keep a small notebook and add every abbreviation you hear." 
+      },
+      { type: "h2", text: "5. Continuing Education Matters" },
+      {
+        type: "p",
+        text: "Supervisors notice trainees who take short courses (wound care, hygiene, documentation). Add certificates to your personnel file; it helps when asking for better rotations or future contracts." 
+      },
+      { type: "h2", text: "6. What if I Fail an Exam?" },
+      {
+        type: "p",
+        text: "Failing a Zwischenprüfung or module exam is stressful but not the end. In the dual training system, contracts usually extend to allow a retake. Speak with your school and employer early, document your study plan, and request extra language support—visa status is not lost because of one failed attempt." 
       }
     ],
     goldenRule:
@@ -534,13 +692,13 @@ export const POSTS = [
     slug: "rights-work-culture",
     title: "Rights & Hierarchy: Know Your Ground",
     subtitle: "Contracts, your legal rights, and when to speak up",
-    stage: "Work & Study",
+    stage: "Work",
     readTime: "12 min",
     icon: <Briefcase size={24} />,
     color: "from-purple-500 to-violet-600",
     shadow: "shadow-purple-500/20",
     accent: "text-purple-600",
-    backgroundImage: img5,
+    backgroundImage: img17,
     verified: "2026-01-19",
     summary:
       "You're a trainee, not a servant. Learn what's legal, what's exploitation, and who to call when something's wrong.",
@@ -569,6 +727,44 @@ export const POSTS = [
           "**Sick Leave:** Tell your employer BEFORE your shift. Ask when you need a doctor's note (Attest).",
           "**Vacation:** Legally guaranteed. Usually 20-30 days/year."
         ]
+      },
+      {
+        type: "p",
+        text: "Probation is real: repeated lateness, skipping shifts, or ignoring supervisor instructions can end your contract fast. Show up early, communicate delays immediately, and document when you inform supervisors."
+      },
+      {
+        type: "p",
+        text: "Pay floor in care is higher than general minimum wage: as of Jan 2026, nursing assistants earn at least **€16.10/hour** (Pflegemindestlohn), rising to €16.52 in July 2026."
+      },
+      { type: "h2", text: "6. Cultural Trap: Silence vs. Respect" },
+      {
+        type: "p",
+        text: "In many African cultures, listening quietly to a boss is respect. **In Germany, silence can hurt you.** If you don't ask, supervisors assume you understood 100%. If you then make a mistake, they'll blame you. Fix: ask questions. Say 'Habe ich das richtig verstanden?' (Did I get that right?). It shows motivation, not disrespect." 
+      },
+      { type: "h2", text: "4. Hygiene Rules (Health & Food jobs)" },
+      {
+        type: "ul",
+        items: [
+          "**Hands:** Disinfect before and after every patient/food contact. Gloves do not replace hand hygiene.",
+          "**Hair & nails:** Hair tied back; no long or acrylic nails in care/food settings; no rings or bracelets on shift.",
+          "**Uniform:** Clean uniform each shift if possible; follow color-coded zones (OP, ICU) strictly.",
+          "**Infections:** Report symptoms early; coming sick to a ward or kitchen can get you sent home." 
+        ]
+      },
+      { type: "h2", text: "5. Uniform & Hygiene Code" },
+      {
+        type: "ul",
+        items: [
+          "**Shoes:** Hospitals often supply tunics/pants but not shoes. Buy washable, non-slip clogs or Birkenstock-style work shoes (~€50-80). Cheap sneakers = back pain in 2 weeks.",
+          "**Below the elbow:** No watches, bracelets, rings, gel/acrylic nails, or nail polish. Remove all before Day 1 to avoid being sent home.",
+          "**Spare set:** Keep a backup pair of work shoes and socks in your locker for spills.",
+          "**Budget now:** Plan this cost before arrival to avoid scrambling on your first shift." 
+        ]
+      },
+      { type: "h2", text: "7. Long-Term Mindset: Germany Rewards Patience" },
+      {
+        type: "p",
+        text: "Progress here is steady, not explosive. Showing up on time, asking questions, and improving each month matters more than flashy speed. Promotions, better shifts, and trust come from consistency over 6–18 months. Play the long game." 
       }
     ],
     goldenRule:
@@ -612,12 +808,12 @@ export const POSTS = [
     slug: "mental-health-community",
     title: "Mental Health & Building Your Life",
     subtitle: "The emotional side nobody talks about",
-    stage: "Health & Social",
+    stage: "Health",
     readTime: "9 min",
     icon: <Heart size={24} />,
     color: "from-cyan-500 to-teal-500",
     shadow: "shadow-cyan-500/20",
-    backgroundImage: img9,
+    backgroundImage: img8,
     accent: "text-cyan-600",
     verified: "2026-01-19",
     summary:
@@ -647,6 +843,26 @@ export const POSTS = [
       {
         type: "p",
         text: "[TelefonSeelsorge](https://www.telefonseelsorge.de/) (Crisis Line): If you are in a crisis at 3:00 AM and have nobody to talk to, you can call **0800 111 0 111** or **0800 111 0 222**. It is free, available 24/7, and completely anonymous. They also offer chat support online if you prefer typing."
+      },
+      { type: "h2", text: "4. Dealing with Discrimination" },
+      {
+        type: "p",
+        text: "Racism exists here. You may experience 'The German Stare' (people staring at you on trains). It is usually curiosity/rudeness, not aggression, but it is exhausting. **Know your rights:** If you face discrimination at work, you are protected by law. Contact the 'Antidiskriminierungsstelle' (Anti-Discrimination Agency). Find safe spaces in community groups like **ISD Bund** (Initiative of Black People in Germany)."
+      },
+      { type: "h2", text: "5. Faith Communities as Support" },
+      {
+        type: "p",
+        text: "Church or mosque is often a social lifeline. Look for **International Churches** or **Freikirchen** (Pentecostal/Evangelical) if you want lively services in English. For mosques, many are Turkish/Arab-run—ask if sermons are in English or Arabic before you go so you don't feel lost." 
+      },
+      { type: "h2", text: "6. Time Pressure & Calendar Fatigue" },
+      {
+        type: "p",
+        text: "German life runs on schedules. Constant deadlines and punctuality can feel like you're always 'almost late'. Use a calendar app with alerts, batch errands, and plan buffer time. Feeling stressed by the clock is normal at first—it eases as routines settle." 
+      },
+      { type: "h2", text: "7. The Lonely Success Phase" },
+      {
+        type: "p",
+        text: "Months 3–9 can feel empty: you're following rules, earning, and surviving, but joy is missing. This is common. Add one weekly social ritual (club, faith group, coffee with a friend) and one future goal to work toward. The phase passes when you build routine + community." 
       }
     ],
     goldenRule: "Do not isolate yourself. Speak early if you feel unwell.",
@@ -684,11 +900,11 @@ export const POSTS = [
     slug: "food-eating-cheap",
     title: "Food & Eating Cheaply",
     subtitle: "Supermarkets, meal planning, and saving money on food",
-    stage: "Settling In",
+    stage: "Daily Life",
     readTime: "10 min",
     icon: <Utensils size={24} />,
     color: "from-amber-500 to-orange-600",
-      backgroundImage: img6,
+      backgroundImage: img19,
     shadow: "shadow-amber-500/20",
     accent: "text-amber-600",
     verified: "2026-01-19",
@@ -756,6 +972,16 @@ export const POSTS = [
       {
         type: "p",
         text: "**Avoid:** Coffee shop chains (€4-5 per coffee), 'healthy' lunch spots (€10+), Restaurants in touristy areas (€15+). Cook instead."
+      },
+      { type: "h2", text: "5. Finding 'Home' Food" },
+      {
+        type: "p",
+        text: "Miss Ugali or Posho? German supermarkets sell **Polenta** (yellow maize) which is similar. For white maize meal, plantains/Matooke, or Berbere/Pilau/Shito spices, go to an **Afro Shop** or large Asian supermarket. German food is mild—bring your spice mix if you can. And don't be shocked if roommates eat cold bread/cheese (**Abendbrot**) for dinner—that's normal here." 
+      },
+      { type: "h2", text: "6. Food Culture Shock: Cold Dinners & Once-a-Day Cooking" },
+      {
+        type: "p",
+        text: "Many Germans eat one hot meal (usually lunch) and a cold dinner (Abendbrot: bread, cheese, cold cuts). People often cook 2-3 times a week and eat leftovers. Daily rice is rare. If you need hot dinners for comfort, meal-prep on weekends and reheat—it's normal to microwave at work or home." 
       }
     ],
     goldenRule: "Shop at Aldi or Lidl. Check Too Good To Go before eating out. Use the Mensa for lunch.",
@@ -792,7 +1018,7 @@ export const POSTS = [
     slug: "german-language-ausbildung",
     title: "German Language: B2 & Workplace Communication",
     subtitle: "From B2 to professional fluency in your field",
-    stage: "Work & Study",
+    stage: "Career",
     readTime: "9 min",
     icon: <BookOpen size={24} />,
     color: "from-indigo-500 to-blue-600",
@@ -853,6 +1079,12 @@ export const POSTS = [
         type: "p",
         text: "[Slow German (Podcast)](https://www.slow-german.de/): 5-minute podcasts read slowly. Topics from culture to current events. Perfect for listening practice."
       }
+      ,
+      { type: "h2", text: "5. Why Germans Sound Different From Your Teacher" },
+      {
+        type: "p",
+        text: "Real-life German = accents + speed. Bavarian, Saxon, and Swabian dialects drop endings and swallow consonants; Ruhrpott speaks fast; Berliners are direct. If you only learned textbook Hochdeutsch, it's normal to miss words. Ask 'Können Sie das bitte langsamer sagen?' and listen for context words, not every syllable." 
+      }
     ],
     goldenRule: "Ask questions at work instead of guessing. Germans respect curiosity. Master 50 field-specific terms first—grammar second.",
     steps: [
@@ -888,13 +1120,13 @@ export const POSTS = [
     slug: "health-doctors-pharmacies",
     title: "Health & Doctors: Navigating German Healthcare",
     subtitle: "Finding a doctor, making appointments, understanding prescriptions",
-    stage: "Health & Social",
+    stage: "Health",
     readTime: "10 min",
     icon: <Heart size={24} />,
     color: "from-red-500 to-rose-600",
     shadow: "shadow-red-500/20",
     accent: "text-red-600",
-    backgroundImage: img12,
+    backgroundImage: img16,
     verified: "2026-01-19",
     summary: "How to find a doctor (Hausarzt), make appointments, get prescriptions, and understand the pharmacy system.",
     vibeCheck: "German healthcare is excellent, but the process is different. Here's the map.",
@@ -930,6 +1162,11 @@ export const POSTS = [
           "**Bring:** Insurance card, ID, and a list of symptoms written in German (helps with language barrier).",
           "**If you're sick:** Don't go to the doctor's office sick (you'll infect others). Call instead. They'll either give phone advice or send a doctor to your home (**Hausbesuch**)."
         ]
+      },
+      { type: "h2", text: "2.5 The 'Telemedicine' Hack" },
+      {
+        type: "p",
+        text: "Need a sick note (Krankschreibung) for a simple cold or flu but don't want to sit in a waiting room for 3 hours? Use apps like **TeleClinic** or **Doctor.ly**. You video chat with a doctor, and they send the sick note directly to your phone and employer. It is covered by public insurance."
       },
       { type: "h2", text: "3. Prescriptions & Pharmacies (Apotheke)" },
       {
@@ -999,7 +1236,7 @@ export const POSTS = [
     slug: "shopping-essentials",
     title: "Shopping & Essentials: Where to Buy What",
     subtitle: "Clothes, electronics, toiletries—German stores ranked",
-    stage: "Settling In",
+    stage: "Daily Life",
     readTime: "9 min",
     icon: <ShoppingCart size={24} />,
     color: "from-pink-500 to-rose-600",
@@ -1042,6 +1279,11 @@ export const POSTS = [
           "**Avoid:** Airport shops, train station shops (50% markup). Buy before travel."
         ]
       },
+      { type: "h2", text: "2.5 The 'Hard Water' Warning (Hair & Skin)" },
+      {
+        type: "p",
+        text: "Germany has very 'hard' water (high calcium). This is a shock for Afro-textured hair and skin. **Hair:** The water can cause breakage and dryness. Use a 'chelating' shampoo once a month to remove mineral buildup. **Skin:** You may get 'ashy' or dry skin faster here. Standard lotions aren't enough in winter. Look for body lotions with **'Urea'** (5-10%) at dm or Rossmann—it retains moisture better than standard cocoa butter alone."
+      },
       { type: "h2", text: "3. Electronics & Tech" },
       {
         type: "p",
@@ -1065,7 +1307,12 @@ export const POSTS = [
         type: "p",
         text: "**Used (money-saving hack):** [Kleinanzeigen.de](https://www.kleinanzeigen.de/) 'Zu verschenken' (free), [eBay](https://www.ebay.de/), [Vinted](https://www.vinted.de/). Germans throw out quality stuff. Claim it before it's gone."
       },
-      { type: "h2", text: "5. Books & Supplies for Ausbildung" },
+      { type: "h2", text: "5. Winter Survival: The 'Onion' Strategy" },
+      {
+        type: "p",
+        text: "Coming from East Africa? The cold here is humid and bites your bones. **Rule 1:** Buy a winter coat that covers your bum (Parka style). Short jackets are useless in January. **Rule 2:** Buy 'Thermowäsche' (thermal underwear) at C&A or Decathlon to wear under your jeans. **Rule 3:** Use the 'Zwiebelprinzip' (onion principle): T-shirt + sweater + coat so you can peel layers off indoors." 
+      },
+      { type: "h2", text: "6. Books & Supplies for Ausbildung" },
       {
         type: "p",
         text: "**New textbooks:** [Thieme Online Store](https://shop.thieme.de/) (medical books), [Hugendubel](https://www.hugendubel.de/) (general bookstore chain)."
@@ -1113,13 +1360,13 @@ export const POSTS = [
     slug: "german-culture-social",
     title: "German Culture & Social Customs",
     subtitle: "Understanding directness, punctuality, dinner etiquette, and making friends",
-    stage: "Settling In",
+    stage: "Social",
     readTime: "11 min",
     icon: <Users size={24} />,
     color: "from-violet-500 to-purple-600",
     shadow: "shadow-violet-500/20",
     accent: "text-violet-600",
-    backgroundImage: img7,
+    backgroundImage: img2,
     verified: "2026-01-19",
     summary: "Germans are direct. That's not rudeness—it's efficiency. Here's how to navigate the culture without taking things personally.",
     vibeCheck: "German culture might feel cold at first. It's not. It's just different. Here's the unwritten rulebook.",
@@ -1141,7 +1388,12 @@ export const POSTS = [
         type: "p",
         text: "**What Germans DON'T do:** Complain indirectly to others about you. If you did something wrong, they'll tell you to your face. No gossip, no passive-aggression. This is actually respectful."
       },
-      { type: "h2", text: "2. Punctuality (Pünktlichkeit)" },
+      { type: "h2", text: "3. Sober Socializing" },
+      {
+        type: "p",
+        text: "Social life often revolves around beer. If you don't drink, say clearly: 'Ich trinke keinen Alkohol.' People will respect it. Suggest alternatives: **Kaffee und Kuchen** (coffee + cake) or a walk in the park instead of 'going for a beer.'" 
+      },
+      { type: "h2", text: "4. Punctuality (Pünktlichkeit)" },
       {
         type: "p",
         text: "**Rule: Be 5 minutes early. Always.** Not 'on time', not 'almost on time.' EARLY."
@@ -1172,7 +1424,12 @@ export const POSTS = [
         type: "p",
         text: "**Du vs. Sie:** 'Sie' is formal, 'Du' is casual. **Default to Sie.** Your trainer will tell you when you can use Du. Switching too early is considered disrespectful."
       },
-      { type: "h2", text: "4. Dinner Etiquette (If Invited)" },
+      { type: "h2", text: "5.5 Complaints, Notes, and Police at the Door" },
+      {
+        type: "p",
+        text: "If neighbors complain about noise or trash, they often leave a note or tell the Hausverwaltung. Sometimes police knock for loud music. **Stay calm:** open the door, apologize briefly, lower the volume, and move on. First warnings are usually just that—warnings. Adjust quickly to avoid formal letters or fines." 
+      },
+      { type: "h2", text: "5. Dinner Etiquette (If Invited)" },
       {
         type: "p",
         text: "**Timing:** Dinner is usually 19:00 (7 PM). Germans eat early compared to Southern Europe."
@@ -1188,7 +1445,7 @@ export const POSTS = [
           "**Drinking:** Beer is social. Wine is social. Soda is fine too. Say 'Prost!' (Cheers) before drinking."
         ]
       },
-      { type: "h2", text: "5. Relationships & Friendship" },
+      { type: "h2", text: "6. Relationships & Friendship" },
       {
         type: "p",
         text: "**German friendship is slow-burn.** People are polite at first but take time to warm up. Don't interpret this as coldness."
@@ -1254,13 +1511,13 @@ export const POSTS = [
     slug: "side-income-minijob",
     title: "Side Income: Working Legally While Training",
     subtitle: "Minijob rules, taxes, and how much you can earn",
-    stage: "Work & Study",
+    stage: "Financial Defense",
     readTime: "10 min",
     icon: <BriefcaseWork size={24} />,
     color: "from-green-500 to-emerald-600",
     shadow: "shadow-green-500/20",
     accent: "text-green-600",
-    backgroundImage: img4,
+    backgroundImage: img3,
     verified: "2026-01-19",
     summary: "How to work a second part-time job legally without breaking your training contract or visa rules.",
     vibeCheck: "You can earn extra money. But there are legal limits. Here's the rulebook so you don't get fined.",
@@ -1276,12 +1533,12 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**Visa rule:** Your residence permit ties you to your primary training. Working on the side is allowed, but the Ausbildung must remain your focus. If you switch focus, you violate visa terms."
+        text: "**Visa rule:** Your residence permit ties you to your primary training. Working on the side is allowed, but the Ausbildung must remain your focus. If you switch focus, you violate visa terms. **Rest rule:** German law requires **11 hours** rest between shifts. Count training + side job together—don't schedule back-to-back shifts that break this. If your boss pressures you, point them to the rest rule and the expectations in the Work stage (Rights & Hierarchy)." 
       },
-      { type: "h2", text: "2. Minijob (€520/Month or Less)" },
+      { type: "h2", text: "2. Minijob (€603/Month Rule)" },
       {
         type: "p",
-        text: "**Best option:** A **Minijob** (marginal employment). In 2026, you can earn up to **€520/month** without major tax implications."
+        text: "**Best option:** A **Minijob** (marginal employment). As of January 2026, you can earn up to **€603/month** (linked to the €13.90 minimum wage) without major tax implications."
       },
       {
         type: "ul",
@@ -1289,14 +1546,14 @@ export const POSTS = [
           "**How it works:** Employer registers you with social insurance as a **geringfügig Beschäftigter** (marginally employed person).",
           "**Taxes:** Employer pays a flat 2% social insurance contribution. You owe no income tax on this amount.",
           "**What counts as work:** Serving in a café, tutoring, freelance work, delivery driving.",
-          "**Important:** Only 1 Minijob permitted. You can't stack multiple €520 jobs.",
+          "**Important:** Only 1 Minijob permitted. You can't stack multiple €603 jobs.",
           "**Contract:** Get a written contract with hours, pay rate, and start date."
         ]
       },
-      { type: "h2", text: "3. Part-Time Job (Over €520)" },
+      { type: "h2", text: "3. Part-Time Job (Over €603)" },
       {
         type: "p",
-        text: "If you earn more than €520/month, you enter regular employment. This is fine, but:"
+        text: "If you earn more than €603/month, you enter regular employment. This is fine, but:"
       },
       {
         type: "ul",
@@ -1321,7 +1578,12 @@ export const POSTS = [
           "**Documents needed:** Employment contracts, payslips from both jobs, proof of payments."
         ]
       },
-      { type: "h2", text: "5. What Counts as 'Work'" },
+      { type: "h2", text: "5. Get Money Back: The Tax Return" },
+      {
+        type: "p",
+        text: "Training costs are often deductible (**Werbungskosten**): textbooks, scrubs, work shoes, laptop for school, and travel to class. Even on a low trainee salary, filing can return €200-500 per year. Keep receipts and file via ELSTER or a tax app." 
+      },
+      { type: "h2", text: "6. What Counts as 'Work'" },
       {
         type: "ul",
         items: [
@@ -1334,7 +1596,7 @@ export const POSTS = [
       { type: "h2", text: "6. Earnings Reality Check" },
       {
         type: "p",
-        text: "**Minijob €520/month:** Realistic for restaurant/café work. That's €12-13/hour typical."
+        text: "**Minijob €603/month:** Realistic for restaurant/café work. That's about €13-14/hour typical at the 2026 minimum wage."
       },
       {
         type: "p",
@@ -1345,7 +1607,7 @@ export const POSTS = [
         text: "**Net income after taxes:** If earning €1000/month gross, expect ~€750-800 net after all deductions."
       }
     ],
-    goldenRule: "Keep side work under €520/month (Minijob) unless you have trainer approval. Never work for cash under the table.",
+    goldenRule: "Keep side work under €603/month (Minijob) unless you have trainer approval. Never work for cash under the table.",
     steps: [
       {
         title: "Check Your Contract",
@@ -1376,16 +1638,74 @@ export const POSTS = [
   },
 
   {
+    slug: "legal-defense-insurance",
+    title: "The Yellow Letter & Insurance",
+    subtitle: "Rundfunkbeitrag, liability insurance, and official mail",
+    stage: "Legal Defense",
+    readTime: "6 min",
+    icon: <AlertCircle size={24} />,
+    color: "from-red-500 to-amber-600",
+    shadow: "shadow-amber-500/20",
+    accent: "text-red-600",
+    backgroundImage: img15,
+    verified: "2026-01-23",
+    summary: "Don't ignore the yellow letter. Handle broadcast fees and get liability insurance before you need it.",
+    vibeCheck: "German mail is serious. Open everything, respond on time, and protect yourself with basic insurance.",
+    content: [
+      { type: "h2", text: "1) The yellow letter (Rundfunkbeitrag)" },
+      { type: "p", text: "Every household owes the public broadcast fee (~18€ per month). You'll get a yellow letter within weeks of moving in. One fee per flat—split with roommates." },
+      { type: "ul", items: [
+        "**Action:** Register at the link in the letter or online within 4 weeks.",
+        "**Payment rhythm:** Collected **quarterly** (~€55 every 3 months), not monthly. Keep €55 buffered so the direct debit doesn't bounce.",
+        "**If you live in a WG:** Only one person pays; share the Beitragsnummer and split the cost.",
+        "**Consequences:** Late fees and collection notices if you ignore it."
+      ]},
+      { type: "h2", text: "2) Liability insurance (Haftpflicht)" },
+      { type: "p", text: "Covers damage you accidentally cause to others (e.g., water leak, broken laptop). Costs ~3–6€/month. Many landlords expect it." },
+      { type: "ul", items: [
+        "**Coverage:** Personal liability, often keys (lost keys can cost hundreds), some include rental damage.",
+        "**Where to buy:** Check24 comparison or providers like Getsafe, Feather, or your bank.",
+        "**Proof:** Keep the policy PDF handy for landlords."
+      ]},
+      { type: "h2", text: "3) Open your mail weekly" },
+      { type: "p", text: "Official letters rarely come by email. Open paper mail promptly. For anything unclear, take a photo and ask a German colleague or the Bürgeramt hotline." },
+
+      { type: "h2", text: "4. The 'Subscription Trap' (Abo-Falle)" },
+      {
+        type: "p",
+        text: "German contracts (Gym, Internet, Phone) are sticky. If you sign up for 12 months, you usually cannot quit early, even if you move. **Crucial:** Contracts often renew automatically for another year if you don't cancel 1 month before they end. If you stop paying, providers send the case to debt collectors (Inkasso) and it hurts your Schufa. Avoid impulse sign-ups and 'buy now, pay later' or loans unless you can repay comfortably. **Rule:** Set a cancellation reminder on your phone the day you sign any contract."
+      },
+      {
+        type: "p",
+        text: "**Kündigungsfrist (notice period):** Electricity (Strom), internet (DSL/Kabel), and student deals often have 12- or 24-month minimum terms. The end date matters less than the cancellation deadline. Cancel in writing (email/portal) at least 1 month before the term ends or it auto-renews—often for another full year."
+      }
+    ],
+    goldenRule: "Open every letter, register the broadcast fee, and keep liability insurance active.",
+    steps: [
+      { title: "Register Rundfunkbeitrag", text: "Follow the letter link; one per household." },
+      { title: "Buy liability insurance", text: "Pick a plan (€3–6/mo) covering keys + rental damage." },
+      { title: "Store proofs", text: "Save Beitragsnummer + policy PDF in cloud + phone." },
+    ],
+    readMore: [
+      { title: "Official Rundfunkbeitrag", url: "https://www.rundfunkbeitrag.de/welcome/index_ger.html", source: "official" },
+      { title: "Haftpflicht basics (DE)", url: "https://www.verbraucherzentrale.de/wissen/versicherungen/privathaftpflichtversicherung", source: "official" },
+    ],
+    downloads: [{ title: "Rundfunkbeitrag checklist", url: null }],
+    videos: [],
+    tags: ["legal", "rundfunkbeitrag", "insurance", "liability"],
+  },
+
+  {
     slug: "emergency-situations",
     title: "Emergency Situations: Beyond 112",
     subtitle: "What to do after accidents, theft, lost documents, and urgent problems",
-    stage: "Health & Social",
+    stage: "Emergencies",
     readTime: "10 min",
     icon: <AlertCircle size={24} />,
     color: "from-red-600 to-orange-600",
     shadow: "shadow-red-500/20",
     accent: "text-red-600",
-    backgroundImage: img11,
+    backgroundImage: img14,
     verified: "2026-01-19",
     summary: "Medical emergencies use 112. But what about car accidents, theft, or lost passport? Here's the actual protocol.",
     vibeCheck: "Emergencies happen. Knowing the exact steps removes panic. Here's your checklist.",
@@ -1469,7 +1789,16 @@ export const POSTS = [
           "**Also file:** Police report in Germany (case number needed for some countries)."
         ]
       },
-      { type: "h2", text: "5. Lost Bank Card" },
+      { type: "h2", text: "5. Lost Residence Permit (Aufenthaltstitel)" },
+      {
+        type: "ul",
+        items: [
+          "**File police report** the same day and keep the incident number (Aktenzeichen).",
+          "**Email your local Ausländerbehörde** with: passport copy, scan/photo of the lost permit (if available), police report number, and your address. Ask for a replacement appointment (Ersatzkarte/Neuerteilung).",
+          "**Carry passport + police report** as interim proof if asked for ID until the new card arrives."
+        ]
+      },
+      { type: "h2", text: "6. Lost Bank Card" },
       {
         type: "p",
         text: "**Call immediately:** **116 116** (German bank card blocking hotline). Available 24/7, free."
@@ -1482,7 +1811,7 @@ export const POSTS = [
           "**Fraud:** Contact your bank if unauthorized charges appear. German law protects you."
         ]
       },
-      { type: "h2", text: "6. Workplace Injury (Occupational Accident)" },
+      { type: "h2", text: "7. Workplace Injury (Occupational Accident)" },
       {
         type: "p",
         text: "**At work:** Inform your supervisor IMMEDIATELY, even if it seems minor."
@@ -1497,7 +1826,7 @@ export const POSTS = [
           "**Long-term:** If injury causes permanent damage, you may receive additional compensation."
         ]
       },
-      { type: "h2", text: "7. Police Non-Emergency (110)" },
+      { type: "h2", text: "8. Police Non-Emergency (110)" },
       {
         type: "p",
         text: "**Use 110 for:** Theft reports, harassment, property damage (not life-threatening)."
@@ -1544,12 +1873,12 @@ export const POSTS = [
     slug: "accommodation-nursing-ausbildung",
     title: "Accommodation for Nursing Trainees: Your Complete Guide",
     subtitle: "Finding comfortable housing and understanding your options as a nursing student",
-    stage: "Settling In",
+    stage: "Housing",
     readTime: "14 min",
     icon: <HomeIcon size={24} />,
     color: "from-cyan-500 to-blue-500",
     shadow: "shadow-cyan-500/20",
-    backgroundImage: img3,
+    backgroundImage: img4,
     accent: "text-cyan-600",
     verified: "2026-01-19",
     summary: "Nursing Ausbildung requires stability. Explore your accommodation options, understand costs, and know what to expect when living in Germany as a trainee.",
@@ -1636,6 +1965,11 @@ export const POSTS = [
           "**Questions to Ask:** When can I move in? When is rent due each month? What's included in utilities? What happens if equipment breaks? How much notice for landlord to enter? What's the process for getting deposit back?"
         ]
       },
+      { type: "h2", text: "4.5 Empty Shell Shock" },
+      {
+        type: "p",
+        text: "Many German apartments come without light fixtures or a built-in kitchen. Expect bare bulbs, no stove, sometimes no fridge. Plan €500-1,200 for a used kitchen setup (check Kleinanzeigen) and basic lights. Ask if previous tenants will sell theirs cheap before they remove it."
+      },
       { type: "h2", text: "5. The Rental Contract (Mietvertrag)" },
       {
         type: "p",
@@ -1669,7 +2003,7 @@ export const POSTS = [
       { type: "h2", text: "7. Special Considerations for Nursing Trainees" },
       {
         type: "p",
-        text: "Your situation is unique. You're working irregular shifts, often including nights and weekends."
+        text: "Your situation is unique. You're working irregular shifts, often including nights and weekends. Prioritize quiet housing that respects day sleep. Ask if your employer offers **Schwesternwohnheime** (nurse dorms)—they're basic but usually quiet and close to the hospital, ideal for shifts."
       },
       {
         type: "ul",
@@ -1751,12 +2085,12 @@ export const POSTS = [
     slug: "wg-roommate-culture",
     title: "Living in a WG: Mastering Shared Apartment Culture",
     subtitle: "Everything you need to know about German roommate dynamics and house rules",
-    stage: "Settling In",
+    stage: "Housing",
     readTime: "11 min",
     icon: <Users size={24} />,
     color: "from-indigo-500 to-purple-600",
     shadow: "shadow-indigo-500/20",
-    backgroundImage: img2,
+    backgroundImage: img5,
     accent: "text-indigo-600",
     verified: "2026-01-19",
     summary: "WG (shared apartment) living is normal in Germany. Learn the unwritten rules, communication norms, and how to avoid conflicts with roommates.",
@@ -1786,6 +2120,7 @@ export const POSTS = [
           "**Quiet Hours:** 22:00 (10 PM) - 06:00 (6 AM) on weekdays, ALL DAY on Sundays and holidays. This is legally enforced. No loud music, no parties, no vacuuming at midnight. Sleep is sacred in German culture.",
           "**Kitchen Cleanliness:** Clean your dishes IMMEDIATELY after use. Leave the kitchen clean. Don't leave your food in the fridge for weeks. Shared kitchens get messy quickly—preventing it beats fighting over who's responsible.",
           "**Bathroom Time:** Mornings can be bottlenecks. Showers shouldn't exceed 15-20 minutes if multiple people need to use it. Don't hog the shower during peak hours.",
+          "**The 'Lüften' Law (Ventilation):** German windows are airtight. You MUST open windows fully (Stoßlüften) for 5-10 minutes twice a day, even in winter. If you don't, mold (Schimmel) will grow on the walls. Landlords will blame you and keep your deposit to pay for it. This is serious.",
           "**Respect Private Space:** Your roommates' rooms are off-limits. Don't enter without invitation. Don't borrow their things without asking. Ever.",
           "**Bathroom Sharing:** Your cleaning supplies and toiletries belong to you. Share basic things (toilet paper, soap) but keep your personal stuff separate. Don't assume others will replace your stuff.",
           "**Rent & Utilities:** Pay on time, always. Set up automatic payments (Dauerauftrag) if possible. Late payments damage trust immediately."
