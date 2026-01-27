@@ -7,7 +7,7 @@ Data-first, verified guides for international students, scholars, and trainees b
 **Verification date:** January 27, 2026.
 
 ## Overview
-- 17 structured guides with stage-specific styling, photography, and checklists (localStorage persistence)
+- 18 structured guides with stage-specific styling, photography, and checklists (localStorage persistence)
 - Resource library with trusted-source badges and search
 - Emergency shortcuts (112/110/116117) always available
 - PDF export (cover + TOC) for offline use
