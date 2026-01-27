@@ -1,11 +1,11 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { POSTS } from "../data/posts";
+import { ORDERED_POSTS } from "../data/posts";
 
 export const PostNavigation = ({ currentPost, onOpenPost }) => {
-  const currentIndex = POSTS.findIndex((p) => p.slug === currentPost.slug);
-  const prevPost = currentIndex > 0 ? POSTS[currentIndex - 1] : null;
-  const nextPost = currentIndex < POSTS.length - 1 ? POSTS[currentIndex + 1] : null;
+  const currentIndex = ORDERED_POSTS.findIndex((p) => p.slug === currentPost.slug);
+  const prevPost = currentIndex > 0 ? ORDERED_POSTS[currentIndex - 1] : null;
+  const nextPost = currentIndex < ORDERED_POSTS.length - 1 ? ORDERED_POSTS[currentIndex + 1] : null;
 
   const goTo = (post) => {
     if (typeof onOpenPost === "function") {

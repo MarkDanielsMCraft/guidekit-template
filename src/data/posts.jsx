@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import {
   Wifi,
   Landmark,
@@ -28,6 +29,36 @@ import img14 from '../ambulance-970037.jpg';
 import img15 from '../lady-justice-677945.jpg';
 import img16 from '../surgery-1807541.jpg';
 import img17 from '../german-6030980.jpg';
+
+// Defines the logical flow for tiles (arrival → paperwork → housing → essentials → language → work)
+export const POST_ORDER = {
+  "curious-about-germany": 1,
+  "first-72-hours": 2,
+  "money-paperwork": 3,
+  "housing-neighbors": 4,
+  "wg-roommate-culture": 5,
+  "shopping-essentials": 6,
+  "food-eating-cheap": 7,
+  "health-doctors-pharmacies": 8,
+  "emergency-situations": 9,
+  "german-language-ausbildung": 10,
+  "free-learning-resources-non-nursing": 11,
+  "nursing-language-resources": 12,
+  "accommodation-nursing-ausbildung": 13,
+  "rights-work-culture": 14,
+  "legal-defense-insurance": 15,
+  "german-culture-social": 16,
+  "mental-health-community": 17,
+  "side-income-minijob": 18,
+};
+
+const orderValue = (post) => POST_ORDER[post.slug] ?? 999;
+export const sortPosts = (arr) =>
+  [...arr].sort((a, b) => {
+    const diff = orderValue(a) - orderValue(b);
+    if (diff !== 0) return diff;
+    return (a.title || "").localeCompare(b.title || "");
+  });
 import img18 from '../city-2189720.jpg';
 import img19 from '../oktoberfest-4566791.jpg';
 
@@ -1043,7 +1074,6 @@ export const POSTS = [
   ],
   tags: ["nursing", "pflege", "learning", "free", "german", "documentation", "hygiene"]
 },
-
   {
     slug: "rights-work-culture",
     title: "Rights & Hierarchy: Know Your Ground",
@@ -2615,3 +2645,6 @@ export const POSTS = [
     tags: ["wg", "roommates", "shared-apartment", "culture", "rules", "communication"],
   },
 ];
+
+// Pre-sorted list for consistent tile flow (arrival → setup → housing → essentials → language → work)
+export const ORDERED_POSTS = sortPosts(POSTS);

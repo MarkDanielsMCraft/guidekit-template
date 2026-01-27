@@ -5,7 +5,7 @@ import { PostGrid } from './components/PostGrid';
 import { PostDetail } from './components/PostDetail';
 import { Library } from './components/Library';
 import { Footer } from './components/Footer';
-import { POSTS } from './data/posts';
+import { POSTS, ORDERED_POSTS } from './data/posts';
 import { RESOURCES } from './data/resources';
 import { STORAGE_KEY } from './constants/config';
 import { pct } from './utils/helpers';
@@ -108,7 +108,7 @@ export default function App() {
   const activePost = POSTS.find((p) => p.slug === activeSlug);
 
   const filteredPosts = useMemo(() => {
-    let posts = POSTS;
+    let posts = ORDERED_POSTS;
     
     // Filter by stage
     if (selectedStage) {
@@ -118,8 +118,8 @@ export default function App() {
     // Filter by search term
     const q = searchTerm.trim().toLowerCase();
     if (!q) return posts;
-    
-    return posts.filter((p) => {
+
+    const filtered = posts.filter((p) => {
       const inTitle = (p.title || "").toLowerCase().includes(q);
       const inSubtitle = (p.subtitle || "").toLowerCase().includes(q);
       const inSummary = (p.summary || "").toLowerCase().includes(q);
@@ -150,6 +150,9 @@ export default function App() {
         inTags
       );
     });
+
+    // Preserve logical progression order after filtering
+    return filtered;
   }, [searchTerm, selectedStage]);
 
   const postProgress = (post) => {
