@@ -1549,11 +1549,6 @@ export const POSTS = [
           "**If you're sick:** Don't go to the doctor's office sick (you'll infect others). Call instead. They'll either give phone advice or send a doctor to your home (**Hausbesuch**)."
         ]
       },
-      { type: "h2", text: "2.5 The 'Telemedicine' Hack" },
-      {
-        type: "p",
-        text: "Need a sick note (Krankschreibung) for a simple cold or flu but don't want to sit in a waiting room for 3 hours? Use apps like **TeleClinic** or **Doctor.ly**. You video chat with a doctor, and they send the sick note directly to your phone and employer. It is covered by public insurance."
-      },
       { type: "h2", text: "3. Prescriptions & Pharmacies (Apotheke)" },
       {
         type: "p",
