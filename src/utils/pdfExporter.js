@@ -272,19 +272,31 @@ export const downloadAllGuidesPdf = (posts = []) => {
   if (!posts || posts.length === 0) return;
 
   const printableHtml = buildPrintableHtml(posts);
-  const printWindow = window.open('', '_blank', 'noopener,noreferrer');
 
-  if (!printWindow) {
-    alert('Please allow pop-ups to download the PDF.');
-    return;
-  }
+  // Use a hidden iframe to avoid popup blockers.
+  const iframe = document.createElement('iframe');
+  iframe.style.position = 'fixed';
+  iframe.style.right = '0';
+  iframe.style.bottom = '0';
+  iframe.style.width = '0';
+  iframe.style.height = '0';
+  iframe.style.border = '0';
+  iframe.srcdoc = printableHtml;
 
-  printWindow.document.open();
-  printWindow.document.write(printableHtml);
-  printWindow.document.close();
-  printWindow.focus();
+  const cleanup = () => {
+    if (iframe.parentNode) {
+      iframe.parentNode.removeChild(iframe);
+    }
+  };
 
-  setTimeout(() => {
-    printWindow.print();
-  }, 350);
+  iframe.onload = () => {
+    try {
+      iframe.contentWindow?.focus();
+      iframe.contentWindow?.print();
+    } finally {
+      setTimeout(cleanup, 1000);
+    }
+  };
+
+  document.body.appendChild(iframe);
 };
