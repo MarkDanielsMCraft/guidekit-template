@@ -102,7 +102,7 @@ export const POSTS = [
     color: "from-purple-600 to-indigo-600",
     shadow: "shadow-purple-500/20",
     accent: "text-purple-600",
-    verified: "2026-01-27",
+    verified: "2026-01-29",
       backgroundImage: img7,
     summary: "Set your expectations: direct communication, quiet Sundays, card vs. cash, and the weather curveballs.",
     vibeCheck: "Germany rewards preparation. A few mindset shifts upfront will save you awkward moments and late fees.",
@@ -159,7 +159,7 @@ export const POSTS = [
     shadow: "shadow-blue-500/20",
     accent: "text-blue-600",
     backgroundImage: img11,
-    verified: "2026-01-27",
+    verified: "2026-01-29",
     summary:
       "A massive free library for non-nursing scholars: workplace German, job communication, and free online courses for IT, business, and career basics.",
     vibeCheck:
@@ -199,8 +199,7 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "[BAMF – Kostenlose Online-Sprachangebote (PDF)](https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Integrationskurse/online-sprachangebote.pdf?__blob=publicationFile&v=3): A government PDF listing free online German learning offers, useful when you want a quick list of safe tools without scams.",
-          "[BAMF – Kostenlose Online-Sprachangebote (page)](https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Integrationskurse/online-sprachangebote.html?nn=282388): The official web page where the BAMF PDF is hosted, useful for checking you have the correct official source.",
+          "[BAMF – Kostenlose Online-Sprachangebote](https://www.jobcenter-landkreis-calw.de/fileadmin/user_upload/JC_Calw_Alternative_und_kostenfreie_online_Sprachkursangebote.pdf): A government PDF listing free online German learning offers, useful when you want a quick list of safe tools without scams.",
           "[BAMF – Digitale Deutschlernangebote mit Arbeitsmarktorientierung (PDF)](https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Integrationskurse/Lehrkraefte/digitale-deutschlernangebote-arbeitsmarktorientierung.pdf?__blob=publicationFile&v=3): A more job-focused BAMF list that helps you learn German with work situations in mind, which is often what refugees and trainees need most.",
           "[Agentur für Arbeit – Online Sprachlernangebote Deutsch (PDF)](https://www.arbeitsagentur.de/vor-ort/datei/linksammlung-online-sprachlernangebote-deutsch_ba232254.pdf): A reliable list from the Federal Employment Agency, useful because these are tools job centers often recommend.",
           "[KAUSA – Linkliste Deutsch lernen (PDF)](https://www.bildungsketten.de/bildungsketten/shareddocs/arbeitsmaterialien/de/links-kausa-deutsch-lernen.pdf?__blob=publicationFile&v=8): A curated list for migrants and refugees focusing on German learning and integration into Ausbildung and work.",
@@ -273,7 +272,6 @@ export const POSTS = [
           "[openHPI – Courses (DE)](https://open.hpi.de/courses?lang=de&locale=de): A German university-level platform with free online courses in IT and innovation, good for structured learning with clear modules.",
           "[openHPI – Home](https://open.hpi.de/?locale=de): The main openHPI page where you can see current free courses and understand how the platform works.",
           "[openHPI – Courses (global)](https://open.hpi.de/courses): The general course catalog, useful if you want to find English-language options too.",
-          "[SAP Learning – free Expert Lectures (former openSAP)](https://learning.sap.com/expert-lectures-former-opensap): Free learning content for SAP and business processes, very useful if you want office or business-IT careers in Germany.",
           "[freeCodeCamp](https://www.freecodecamp.org/): A free learning platform for web development and programming with step-by-step projects, useful for building a portfolio.",
           "[The Odin Project](https://www.theodinproject.com/): A free full-stack curriculum that teaches you by building real projects, which is exactly what employers respect.",
           "[MDN Web Docs](https://developer.mozilla.org/): The most reliable free documentation for web development, helpful when you want correct explanations and examples.",
@@ -281,7 +279,7 @@ export const POSTS = [
           "[Kaggle Learn](https://www.kaggle.com/learn): Free micro-courses on data analysis, Python, SQL, and machine learning, useful for data and analytics skills.",
           "[GitHub Skills](https://skills.github.com/): Free interactive tutorials that teach you Git and GitHub properly, which is essential for modern tech jobs.",
           "[Microsoft Learn (free)](https://learn.microsoft.com/training/): Free learning modules for Microsoft tools, cloud basics, and productivity skills that are often used in German workplaces.",
-          "[Google Digital Garage](https://grow.google/intl/en/google-digital-garage/): Free courses on digital skills like analytics, marketing, and online business basics, useful for business and career growth.",
+          "[Google Digital Garage](https://skillshop.exceedlms.com/student/catalog/list?category_ids=7879-google-digital-garage): Free courses on digital skills like analytics, marketing, and online business basics, useful for business and career growth.",
           "[Cisco Networking Academy (free options)](https://www.netacad.com/): Free and affordable learning paths for networking and IT fundamentals, useful for IT support and infrastructure roles."
         ]
       },
@@ -301,7 +299,7 @@ export const POSTS = [
           "[edX (audit many courses free)](https://www.edx.org/): Similar to Coursera, often allowing free access to content, good for business and computer science foundations.",
           "[LibreOffice (free office suite)](https://www.libreoffice.org/): A free alternative to Microsoft Office, useful when you need to work with documents and spreadsheets without paying.",
           "[GCFGlobal – Excel basics](https://edu.gcfglobal.org/en/excel/): Free beginner-friendly Excel lessons that help you survive office work and data tasks.",
-          "[GCFGlobal – Word/Docs basics](https://edu.gcfglobal.org/en/topics/word/): Free lessons that help you write professional documents and format them properly."
+          "[GCFGlobal – Word/Docs basics](https://www.learnfree.org): Free lessons that help you write professional documents and format them properly."
         ]
       },
 
@@ -333,7 +331,7 @@ export const POSTS = [
         items: [
           "[bund.de (public services portal)](https://www.bund.de/): The central portal for official public services and government information, useful when you want to find official procedures and not rely on rumors.",
           "[Verbraucherzentrale (consumer advice)](https://www.verbraucherzentrale.de/): A trusted consumer-protection organization that explains contracts, scams, and common problems in simple language.",
-          "[Integration portal (general info)](https://www.bamf.de/DE/Themen/Integration/integration-node.html): Official integration information from BAMF that helps you understand the system and your options."
+          "[Integration portal (general info)](https://www.in.bayern.de/infos-einheimische/infoportal/index.php.en): Official integration information from BAMF that helps you understand the system and your options."
         ]
       },
 
@@ -432,7 +430,7 @@ export const POSTS = [
   color: "from-blue-600 to-indigo-600",
   shadow: "shadow-blue-500/20",
   accent: "text-blue-600",
-  verified: "2026-01-27",
+  verified: "2026-01-29",
   backgroundImage: img12,
   summary: "Your first 72 hours stripped to essentials: internet, transport, and the apps you actually need.",
   vibeCheck: "You just landed. You are tired, your luggage is heavy, and you don't have internet. Take a deep breath. We'll sort this out.",
@@ -474,11 +472,11 @@ export const POSTS = [
     {
       type: "ul",
       items: [
-        "**Google Maps:** Works very well in Germany. It shows public transport routes, walking routes, and often the correct platforms. If you are new, it can feel confusing at first. Simple method: type your destination address, tap “Directions,” and follow the steps exactly.",
-        "**DeepL:** This is not the same as Google Translate. DeepL is very strong for German and often sounds more natural. You can translate text and use the camera for signs or menus. The free version is useful, and some features can work offline after setup.",
-        "**DB Navigator (Deutsche Bahn):** This is the official German railway app. It shows trains, buses, trams, and metro options. It shows the platform (Gleis), departure times, and delays. You can also buy tickets in the app. Many local city transport systems are included, so you can use it for buses and metros too. If DB Navigator feels complicated, you can still use Google Maps for directions and use DB Navigator mainly for tickets and train details.",
-        "**Integreat App:** A newcomer app for many German cities. It gives city-specific information (registration, housing, healthcare, rules). Download it, select your city, and use it as your local guide.",
-        "**Buy the Deutschlandticket:** A nationwide transport ticket costing **€63 per month** (2026 price). It allows unlimited travel on **local and regional** trains and public transport across Germany (but not high-speed ICE/IC trains). You can buy it in DB Navigator or at stations or from the [DB website]. It is valid from the 1st of each month. If you arrive mid-month, consider buying it for the next full month. Note: It is a monthly subscription, so remember to cancel earlier if you no longer need it.",
+        "(Google Maps)[https://maps.google.de]: Works very well in Germany. It shows public transport routes, walking routes, and often the correct platforms. If you are new, it can feel confusing at first. Simple method: type your destination address, tap “Directions,” and follow the steps exactly.",
+        "(DeepL)[https://www.deepl.com/en/translator]: This is not the same as Google Translate. DeepL is very strong for German and often sounds more natural. You can translate text and use the camera for signs or menus. The free version is useful, and some features can work offline after setup.",
+        "(DB Navigator (Deutsche Bahn))[https://www.bahn.de]: This is the official German railway app. It shows trains, buses, trams, and metro options. It shows the platform (Gleis), departure times, and delays. You can also buy tickets in the app. Many local city transport systems are included, so you can use it for buses and metros too. If DB Navigator feels complicated, you can still use Google Maps for directions and use DB Navigator mainly for tickets and train details.",
+        "(Integreat App)[https://integreat-app.de/en/]:A newcomer app for many German cities. It gives city-specific information (registration, housing, healthcare, rules). Download it, select your city, and use it as your local guide.",
+        "(Buy the Deutschlandticket)[https://www.bahn.de/angebot/regio/deutschland-ticket?cid=03_GSE_G21917_0725_RE_SALE_ZENTR_D-Ticket-Always-On&gad_source=1&gad_campaignid=22815299961&gbraid=0AAAAADrstizQJWcN7yBzkPRVtP5pKNyIv&gclid=Cj0KCQiAp-zLBhDkARIsABcYc6sob6BAxcyiaPjU6nVqdQRUYkjrBLcXwrzE-1hH2HFEdbohL1pB_IMaAj52EALw_wcB]: A nationwide transport ticket costing **€63 per month** (2026 price). It allows unlimited travel on **local and regional** trains and public transport across Germany (but not high-speed ICE/IC trains). You can buy it in DB Navigator or at stations or from the [DB website]. It is valid from the 1st of each month. If you arrive mid-month, consider buying it for the next full month. Note: It is a monthly subscription, so remember to cancel earlier if you no longer need it.",
         "**Student/Trainee discount (very important):** Before paying the full **€63**, ask your university, school, Ausbildung provider, or employer about a discounted ticket (often called an **Ermäßigtes Deutschlandticket**). In many places (examples include Bavaria and NRW), trainees/students may pay around **€29 per month**. That can save you over **€400 per year**."
       ]
     
@@ -634,7 +632,7 @@ export const POSTS = [
   shadow: "shadow-emerald-500/20",
   accent: "text-emerald-600",
   backgroundImage: img18,
-  verified: "2026-01-27",
+  verified: "2026-01-29",
   summary: "Banks, registration, taxes, insurance—we break down the catch-22s and show you the smart shortcuts.",
   vibeCheck: "Yes, it feels impossible. You need a bank for rent, but they want an address. We're gonna untangle this.",
   content: [
@@ -660,6 +658,14 @@ export const POSTS = [
         "[Revolut](https://www.revolut.com/) (Online Bank): Similar to N26 and C24, but in practice often more reliable for international documents. After verification, you receive a valid German IBAN. The app is available in multiple languages, including English, and **no Anmeldung is required**, which makes it especially useful during your first weeks in Germany."
       ]
     },
+    {
+      type: "p",
+      text: "**My honest recommendation:** Open [Revolut](https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect) first. Enter your German phone number, download the app, log in, and carefully enter your personal details, including the address where you are currently living. Complete the video verification using your passport. Once verified, your account becomes fully usable and you receive your German IBAN. You can then give this IBAN to your employer and landlord (only when required—never share your bank details unnecessarily). After you complete your Anmeldung, you may optionally open a Sparkasse or Volksbank account if you want a physical bank branch as a backup, but for most newcomers, Revolut alone is fully sufficient."
+    },
+    {
+      type: "p",
+      text: "You can open a free Revolut account using this link: [Open Revolut Account](https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect)."
+    },
 
     {
       type: "h2",
@@ -671,15 +677,6 @@ export const POSTS = [
       text: "German banks usually combine traditional paper mail with modern app-based security. After opening an account, you typically receive a physical letter by post containing a QR code or activation code (often called an 'Aktivierungscode'), along with instructions to install a TAN app that generates one-time passwords for secure transactions. This letter is extremely important. **Do not throw it away thinking it is advertising or junk mail.** You must scan this QR code to activate online transfers. If you lose or discard it, you may be locked out of online banking for several days while waiting for a replacement letter. This is commonly done by banks like Sparkasse, Volksbank, Commerzbank, and Deutsche Bank."
     },
 
-    {
-      type: "p",
-      text: "**My honest recommendation:** Open [Revolut](https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect) first. Enter your German phone number, download the app, log in, and carefully enter your personal details, including the address where you are currently living. Complete the video verification using your passport. Once verified, your account becomes fully usable and you receive your German IBAN. You can then give this IBAN to your employer and landlord (only when required—never share your bank details unnecessarily). After you complete your Anmeldung, you may optionally open a Sparkasse or Volksbank account if you want a physical bank branch as a backup, but for most newcomers, Revolut alone is fully sufficient."
-    },
-
-    {
-      type: "p",
-      text: "You can open a free Revolut account using this link: [Open Revolut Account](https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect)."
-    },
 
     { type: "h2", text: "1.5 The Visa Timer (Ausländerbehörde)" },
 
@@ -780,7 +777,7 @@ export const POSTS = [
   shadow: "shadow-orange-500/20",
   accent: "text-orange-600",
   backgroundImage: img6,
-  verified: "2026-01-27",
+  verified: "2026-01-29",
   summary: "Platform reviews (WG Gesucht), free furniture hacks (Kleinanzeigen), and the house rules that matter.",
   vibeCheck: "Flats are tight and expensive. But furnishing them cheap? That's doable. Here's how.",
   content: [
@@ -928,7 +925,7 @@ export const POSTS = [
   shadow: "shadow-rose-500/20",
   accent: "text-rose-600",
   backgroundImage: img10,
-  verified: "2026-01-27",
+  verified: "2026-01-29",
   summary:
     "A complete free learning library for nursing trainees: German language, medical theory, hygiene standards, documentation, and exam preparation.",
   vibeCheck:
@@ -1085,7 +1082,7 @@ export const POSTS = [
     shadow: "shadow-purple-500/20",
     accent: "text-purple-600",
     backgroundImage: img17,
-    verified: "2026-01-19",
+    verified: "2026-01-29",
     summary:
       "You're a trainee, not a servant. Learn what's legal, what's exploitation, and who to call when something's wrong.",
     vibeCheck:
@@ -1201,7 +1198,7 @@ export const POSTS = [
     shadow: "shadow-cyan-500/20",
     backgroundImage: img8,
     accent: "text-cyan-600",
-    verified: "2026-01-19",
+    verified: "2026-01-29",
     summary:
       "Homesickness is real. Loneliness is real. But so are the communities and support systems around you.",
     vibeCheck:
@@ -1263,7 +1260,7 @@ export const POSTS = [
         title: "Join Club",
         text: "Sports/Hobbies.",
         action: "Find Verein.",
-        readMore: [{ title: "DOSB Finder", url: "https://bewegt.dosb.de/", source: "tool" }],
+        readMore: [{ title: "DOSB Finder", url: "https://sportabzeichen-digital.de/sportabzeichentreffs", source: "tool" }],
       },
       {
         title: "Ask the Community",
@@ -1275,7 +1272,7 @@ export const POSTS = [
     readMore: [
       { title: "TelefonSeelsorge (Crisis)", url: "https://www.telefonseelsorge.de/", source: "official" },
       { title: "Eventbrite Events", url: "https://www.eventbrite.de", source: "tool" },
-      { title: "Meetup", url: "https://www.meetup.com/de", source: "tool" },
+      { title: "Meetup", url: "https://handbookgermany.de/en", source: "tool" },
     ],
     downloads: [],
     videos: [],
@@ -1293,7 +1290,7 @@ export const POSTS = [
       backgroundImage: img19,
     shadow: "shadow-amber-500/20",
     accent: "text-amber-600",
-    verified: "2026-01-19",
+    verified: "2026-01-29",
     summary: "Supermarket chains ranked, weekly budgets, student discounts, and how to eat well without spending your salary on food.",
     vibeCheck: "German supermarkets are cheaper than most countries. Learn which ones, and you'll eat better for less.",
     content: [
@@ -1327,7 +1324,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**€80+/week budget (Varied diet):** Add: salmon, beef, fresh vegetables, better bread, coffee, snacks. Use all supermarkets."
+        text: "**€80+/week or less budget (Varied diet):** Add: salmon, beef, fresh vegetables, better bread, coffee, snacks. Use all supermarkets."
       },
       { type: "h2", text: "3. Free Food Apps & Discounts" },
       {
@@ -1353,7 +1350,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "**Pizza:** €6-9, often large enough for 2 meals. Order on [Lieferando.de](https://www.lieferando.de) (German Uber Eats)."
+        text: "**Pizza:** €6-9, often large enough for 2 meals. Order on [Lieferando.de](https://www.lieferando.de), [Wolt](https://wolt.com/en/deu/berlin) or [Uber Eats](https://www.ubereats.com)."
       },
       {
         type: "p",
@@ -1396,7 +1393,7 @@ export const POSTS = [
       { title: "Lieferando.de - Food Delivery", url: "https://www.lieferando.de", source: "tool" },
     ],
     downloads: [],
-    videos: [{ title: "Budget Meal Prep in Germany", url: "https://youtu.be/q7lU-Yh7X1Q?si=1234567890abcdef" }],
+    videos: [{ title: "Budget Meal Prep in Germany", url: "https://youtu.be/ZLCJ8Beuq2Q?si=wyTc8C_ItTO7gbF0" }],
     tags: ["food", "budget", "savings", "supermarkets", "eating"],
   },
 
@@ -1411,7 +1408,7 @@ export const POSTS = [
     shadow: "shadow-indigo-500/20",
     accent: "text-indigo-600",
       backgroundImage: img1,
-    verified: "2026-01-19",
+    verified: "2026-01-29",
     summary: "You have B2 German. Master workplace communication, field-specific phrases, and communication styles Germans expect.",
     vibeCheck: "B2 means you can survive. Your Ausbildung demands precision and workplace confidence. Here's how.",
     content: [
@@ -1463,7 +1460,7 @@ export const POSTS = [
       },
       {
         type: "p",
-        text: "[Slow German (Podcast)](https://www.slow-german.de/): 5-minute podcasts read slowly. Topics from culture to current events. Perfect for listening practice."
+        text: "[Slow German (Podcast)](https://slowgerman.com): 5-minute podcasts read slowly. Topics from culture to current events. Perfect for listening practice."
       }
       ,
       { type: "h2", text: "5. Why Germans Sound Different From Your Teacher" },
@@ -1494,7 +1491,7 @@ export const POSTS = [
       },
     ],
     readMore: [
-      { title: "Slow German Podcast", url: "https://www.slow-german.de/", source: "learning" },
+      { title: "Slow German Podcast", url: "https://slowgerman.com", source: "learning" },
       { title: "Dict.cc Dictionary", url: "https://www.dict.cc", source: "tool" },
     ],
     downloads: [],
@@ -1513,7 +1510,7 @@ export const POSTS = [
     shadow: "shadow-red-500/20",
     accent: "text-red-600",
     backgroundImage: img16,
-    verified: "2026-01-19",
+    verified: "2026-01-29",
     summary: "How to find a doctor (Hausarzt), make appointments, get prescriptions, and understand the pharmacy system.",
     vibeCheck: "German healthcare is excellent, but the process is different. Here's the map.",
     content: [
@@ -1529,7 +1526,7 @@ export const POSTS = [
       {
         type: "ul",
         items: [
-          "**Search:** Use [Jameda.de](https://www.jameda.de) or [Arztsuche der KBV](https://www.arztsuche.de) to find doctors near you. Filter by: 'Takes new patients' (Nimmt neue Patienten auf), language spoken.",
+          "**Search:** Use [Jameda.de](https://www.jameda.de) or [Arztsuche der KBV](https://www.arztsuche-bw.de) to find doctors near you. Filter by: 'Takes new patients' (Nimmt neue Patienten auf), language spoken.",
           "**Call & book:** Ring the doctor's office. They'll ask: Name, date of birth, insurance company. Book an appointment. This can take weeks—call early and ask for 'Terminsprechstunde' (appointment hours).",
           "**First visit:** Bring your insurance card (Versichertenkarte) and ID. The doctor will do a general check-up.",
           "**If sick now:** Call your local **Ärztlicher Bereitschaftsdienst** (emergency doctor service) at **116 117**. It's free, available 24/7, and they'll direct you to an available doctor or hospital."
@@ -1595,7 +1592,7 @@ export const POSTS = [
         title: "Book First Appointment",
         text: "Register with your new doctor.",
         action: "Bring insurance card & ID.",
-        readMore: [{ title: "Emergency Doctor (116 117)", url: "https://www.nrwga.de/patienten/aerztlicher-bereitschaftsdienst", source: "official" }],
+        readMore: [{ title: "Emergency Doctor (116 117)", url: "https://www.116117.de/de/englisch.php", source: "official" }],
       },
       {
         title: "Know Your Pharmacy",
@@ -1606,10 +1603,10 @@ export const POSTS = [
     ],
     readMore: [
       { title: "German Health Insurance Official Info", url: "https://www.make-it-in-germany.com/en/manage-life/social-security/health-insurance/", source: "official" },
-      { title: "Arztsuche.de - Official Doctor Directory", url: "https://www.arztsuche.de", source: "official" },
+      { title: "Arztsuche.de - Official Doctor Directory", url: "https://www.arztsuche-bw.de", source: "official" },
     ],
     downloads: [],
-    videos: [{ title: "How to See a Doctor in Germany", url: "https://youtu.be/example123" }],
+    videos: [{ title: "How to See a Doctor in Germany", url: "https://youtu.be/f7_CBM5ro70?si=iIbpB2mZlPq8SBe2" }],
     tags: ["health", "doctors", "pharmacy", "healthcare", "insurance"],
   },
 
@@ -1624,7 +1621,7 @@ export const POSTS = [
     shadow: "shadow-pink-500/20",
     accent: "text-pink-600",
     backgroundImage: img11,
-    verified: "2026-01-19",
+    verified: "2026-01-29",
     summary: "Where to buy clothes cheaply, electronics, toiletries, and when online shopping beats physical stores.",
     vibeCheck: "German stores are organized and prices are fair. Here's where to save the most.",
     content: [
@@ -1643,7 +1640,8 @@ export const POSTS = [
           "**Mid-range (€20-60):** [Zalando](https://www.zalando.de/) (online, free returns), [Urban Outfitters](https://www.urbanoutfitters.com/de-de), [Zara](https://www.zara.com/de/). Trendy, better quality.",
           "**Outlet:** [Outletcity Metzingen](https://www.outletcity.com/en/metzingen/) or [Wertheim Village](https://www.wertheimvillage.com/en/home/). 30-70% off major brands. Worth a weekend trip if you have time.",
           "**Thrift/Second-hand:** **Vintage stores** in most cities. German quality clothing lasts forever—used is smart.",
-          "**Online:** [Vinted](https://www.vinted.de/) (German app), [eBay Kleinanzeigen](https://www.kleinanzeigen.de/) (free classifieds). Buy used, save 50-70%."
+          "**Online:** [Vinted](https://www.vinted.de/) (German app), [eBay Kleinanzeigen](https://www.kleinanzeigen.de/) (free classifieds). Buy used, save 50-70%.",
+          "**Note:** You can also buy nice clothes from second-hand shops around your city for very low prices (often under €7). These stores have a wide variety of styles and sizes."
         ]
       },
       { type: "h2", text: "2. Toiletries & Personal Care" },
