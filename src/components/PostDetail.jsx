@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import {
   ArrowLeft,
   ExternalLink,
@@ -10,6 +10,7 @@ import {
   PlayCircle,
   RotateCcw,
   Share2,
+  Menu
 } from "lucide-react";
 import { Header } from './Header';
 import { SourcePill } from './SourcePill';
@@ -20,6 +21,8 @@ import { safeOpen } from '../utils/security';
 import { POSTS } from "../data/posts";
 import { STAGE_STYLES } from "../constants/ui";
 import { SmartImage } from "./SmartImage";
+import { ScrollProgress } from "./ScrollProgress";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const stripText = (value) =>
   String(value || "")
@@ -31,7 +34,7 @@ const stripText = (value) =>
     .trim();
 
 const RelatedThumbnail = ({ post }) => (
-  <div className="h-12 w-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+  <div className="h-16 w-16 rounded-lg bg-slate-100 overflow-hidden shrink-0 border border-slate-200">
     <SmartImage
       src={post.backgroundImage}
       alt={`${post.title} thumbnail`}
@@ -41,22 +44,6 @@ const RelatedThumbnail = ({ post }) => (
     />
   </div>
 );
-
-const HeroImage = ({ post }) => {
-  const imageUrl = post.cardImage || post.backgroundImage || "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=2000&auto=format&fit=crop";
-  
-  return (
-    <div className="relative h-96 sm:h-[28rem] lg:h-[32rem] w-full overflow-hidden bg-slate-100">
-      <SmartImage
-        src={imageUrl}
-        alt={`${post.title} header`}
-        fallbackIcon={post.icon}
-        width={2000}
-        className="h-full w-full object-cover"
-      />
-    </div>
-  );
-};
 
 export const PostDetail = ({
   post,
@@ -73,6 +60,9 @@ export const PostDetail = ({
   const [activeSectionId, setActiveSectionId] = useState(null);
   const [pageSearch, setPageSearch] = useState("");
   const stageStyle = STAGE_STYLES[post.stage] || STAGE_STYLES.DEFAULT;
+  const { scrollY } = useScroll();
+  const yRange = useTransform(scrollY, [0, 500], [0, 250]);
+  const opacityRange = useTransform(scrollY, [0, 400], [1, 0]);
 
   const sections = useMemo(() => {
     const result = [];
@@ -145,8 +135,8 @@ export const PostDetail = ({
         }
       },
       {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: reducedMotion ? 0.1 : [0.1, 0.25, 0.5, 0.75],
+        rootMargin: "-20% 0px -50% 0px",
+        threshold: reducedMotion ? 0.1 : [0.1, 0.25, 0.5],
       }
     );
 
@@ -161,7 +151,9 @@ export const PostDetail = ({
     const element = document.getElementById(sectionId);
     if (!element) return;
     const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    element.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    // Offset for sticky header + spacing
+    const y = element.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: reducedMotion ? "auto" : "smooth" });
   };
 
   const handlePageSearch = () => {
@@ -182,15 +174,6 @@ export const PostDetail = ({
         .toLowerCase();
       return text.includes(query);
     });
-    if (!match) {
-      const stepMatch = post.steps.find((step) =>
-        [step.title, step.text, step.action].map(stripText).join(" ").toLowerCase().includes(query)
-      );
-      if (stepMatch && sections.length > 0) {
-        scrollToSection(sections[0].id);
-      }
-      return;
-    }
     if (match) scrollToSection(match.id);
   };
 
@@ -210,7 +193,8 @@ export const PostDetail = ({
   };
 
   return (
-    <div className="min-h-screen bg-transparent" id={`post-${post.slug}`}>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950" id={`post-${post.slug}`}>
+      <ScrollProgress />
       <Header
         emergencyMode={emergencyMode}
         setEmergencyMode={setEmergencyMode}
@@ -226,299 +210,217 @@ export const PostDetail = ({
         onSearchSubmit={handlePageSearch}
       />
 
-      {/* Floating controls */}
-      <div className="sticky top-[72px] z-40 px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between border-b border-slate-200 bg-white gap-2">
-        <div className="flex items-center gap-2">
-          <button
-            onClick={onBack}
-            className="flex items-center text-slate-700 hover:text-slate-900 bg-white px-3 sm:px-4 py-2 rounded-full border border-slate-200 transition-colors text-xs sm:text-sm font-semibold"
-          >
-            <ArrowLeft className="mr-1 sm:mr-2" size={16} />
-            <span className="hidden sm:inline">Back</span>
-          </button>
-          <button
-            onClick={onReset}
-            className="inline-flex items-center text-xs font-semibold text-slate-600 bg-white border border-slate-200 px-2.5 sm:px-3 py-2 rounded-full hover:bg-slate-50 transition"
-            title="Reset checklist for this post"
-          >
-            <RotateCcw size={12} className="mr-1" />
-            <span className="hidden sm:inline">Reset</span>
-          </button>
-        </div>
-
-        <button
-          onClick={handleShare}
-          className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 bg-white border border-slate-200 px-3 sm:px-4 py-2 rounded-full hover:bg-slate-50 transition"
+      {/* Parallax Hero Section */}
+      <div className="relative h-[60vh] min-h-[500px] overflow-hidden -mt-[73px]">
+        <motion.div
+          style={{ y: yRange, opacity: opacityRange }}
+          className="absolute inset-0 w-full h-full"
         >
-          <Share2 size={14} />
-          {copied ? "Link copied" : "Share"}
-        </button>
-      </div>
-
-      {/* Page introduction block with image background */}
-      <section className="relative w-full overflow-hidden">
-         {/* Background image */}
-         <div className="absolute inset-0 h-full w-full min-h-[520px]">
           <SmartImage
             src={post.backgroundImage}
             alt={`${post.title} header`}
             fallbackIcon={post.icon}
             width={2000}
-            className="h-full w-full"
+            className="h-full w-full object-cover"
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/28"></div>
-        </div>
-        
-        {/* Text content overlay */}
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-32 space-y-5">
-          <h1 className="text-[34px] sm:text-[40px] md:text-[48px] font-semibold text-white leading-tight drop-shadow-lg">
-            {post.title}
-          </h1>
-          <p className="text-[18px] text-white/90 font-medium leading-relaxed drop-shadow-md">
-            {post.subtitle || post.summary}
-          </p>
-          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/80">
-            <span className={`inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 backdrop-blur-sm`}>{post.stage}</span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 backdrop-blur-sm">{post.readTime} read</span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 backdrop-blur-sm">
-              <CheckCircle size={12} className="text-white" /> Verified {post.verified}
-            </span>
-          </div>
-        </div>
-      </section>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-50 dark:to-slate-950" />
+        </motion.div>
 
-      {/* Main layout */}
-      <main className="w-full min-h-screen pb-20 relative z-20 bg-white/95 backdrop-blur">
-        <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 pt-8">
-          <article className="space-y-6 sm:space-y-8">
-            {post.vibeCheck && (
-              <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 sm:p-6">
-                <p className="text-slate-800 font-semibold text-base sm:text-lg leading-relaxed">{post.vibeCheck}</p>
-              </div>
-            )}
+        <div className="absolute inset-0 flex items-center justify-center z-10 p-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-4xl text-center space-y-6 pt-20"
+          >
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+              <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg`}>
+                {post.stage}
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg">
+                {post.readTime} min read
+              </span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-white leading-tight drop-shadow-2xl">
+              {post.title}
+            </h1>
+            <p className="text-xl sm:text-2xl text-white/90 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
+              {post.subtitle || post.summary}
+            </p>
+          </motion.div>
+        </div>
+      </div>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 sm:gap-6">
-              <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 sm:p-6">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 mb-4">On this page</h3>
-                <TableOfContents sections={sections} activeSectionId={activeSectionId} onSelect={scrollToSection} />
-              </div>
-              <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 sm:p-6">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 mb-4">Related reads</h3>
-                <div className="space-y-3">
-                  {relatedPosts.map((rp) => (
-                    <button
-                      key={rp.slug}
-                      onClick={() => {
-                        if (typeof onOpenPost === "function") {
-                          onOpenPost(rp.slug);
-                        }
-                      }}
-                      className="w-full text-left p-3 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0">
-                          <RelatedThumbnail post={rp} />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">{rp.stage}</p>
-                          <p className="text-sm font-semibold text-slate-800 line-clamp-2">{rp.title}</p>
-                          <p className="text-xs text-slate-500 mt-1">{rp.readTime}</p>
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 -mt-32 relative z-20 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)] gap-8 xl:gap-12 items-start">
+
+          {/* Sticky Sidebar (Desktop) */}
+          <aside className="hidden lg:block sticky top-24 space-y-8">
+            <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/20 dark:border-white/5 rounded-2xl p-6 shadow-xl shadow-slate-900/5">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-6">On this page</h3>
+              <nav className="space-y-1">
+                {sections.map(section => (
+                  <button
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
+                    className={`block w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 border-l-2 ${activeSectionId === section.id
+                        ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 border-primary-500 pl-3'
+                        : 'text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200'
+                      }`}
+                  >
+                    {section.title}
+                  </button>
+                ))}
+              </nav>
             </div>
 
-            {sections.length > 0 && (
-              <div className="space-y-6">
-                {sections.map((section) => (
-                  <section
-                    key={section.id}
-                    id={section.id}
-                    data-section-id={section.id}
-                    className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4 scroll-mt-28"
-                  >
-                    <div className="space-y-2">
-                      <h2 className="text-[28px] sm:text-[30px] font-semibold text-slate-900 tracking-tight">
-                        {section.title}
-                      </h2>
-                      {section.intro && (
-                        <p className="text-[17px] text-slate-700 font-medium leading-relaxed">
-                          {renderRichText(section.intro, `intro-${section.id}`)}
-                        </p>
+            <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/20 dark:border-white/5 rounded-2xl p-6 shadow-xl shadow-slate-900/5">
+              <div className="flex items-center gap-2 mb-4 text-emerald-600 dark:text-emerald-400">
+                <CheckCircle size={20} />
+                <h3 className="text-xs font-bold uppercase tracking-widest">Progress</h3>
+              </div>
+              <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 mb-2">
+                <div
+                  className="bg-emerald-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${Object.keys(progress).filter(k => k.startsWith(post.slug)).length / post.steps.length * 100}%` }}
+                />
+              </div>
+              <p className="text-xs text-slate-500 font-medium">
+                {Math.round(Object.keys(progress).filter(k => k.startsWith(post.slug)).length / post.steps.length * 100)}% completed
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <button
+                onClick={handleShare}
+                className="w-full flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition shadow-sm"
+              >
+                <Share2 size={16} />
+                {copied ? "Link Copied!" : "Share Guide"}
+              </button>
+              <button
+                onClick={onReset}
+                className="w-full flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition shadow-sm"
+              >
+                <RotateCcw size={16} />
+                Reset Progress
+              </button>
+            </div>
+          </aside>
+
+          {/* Main Content Area */}
+          <div className="space-y-8 min-w-0">
+            {post.vibeCheck && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-900/5 rounded-3xl p-6 sm:p-8"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400">
+                    <AlertTriangle size={16} />
+                  </span>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-lg">Vibe Check</h3>
+                </div>
+                <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed font-medium">{post.vibeCheck}</p>
+              </motion.div>
+            )}
+
+            {/* Dynamic Sections */}
+            {sections.map((section, idx) => (
+              <section
+                key={section.id}
+                id={section.id}
+                data-section-id={section.id}
+                className="group scroll-mt-28"
+              >
+                <div className="mb-6">
+                  <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-sm font-bold opacity-50 group-hover:opacity-100 transition-opacity">
+                      {idx + 1}
+                    </span>
+                    {section.title}
+                  </h2>
+                  {section.intro && (
+                    <div className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed border-l-4 border-indigo-500/20 pl-4 py-1">
+                      {renderRichText(section.intro, `intro-${section.id}`)}
+                    </div>
+                  )}
+                </div>
+
+                <div className="space-y-6">
+                  {section.blocks.map((block, i) => (
+                    <div key={i} className="text-slate-700 dark:text-slate-300 text-[17px] leading-7">
+                      {block.type === 'p' && renderRichText(block.text, `p-${i}`)}
+                      {block.type === 'ul' && (
+                        <ul className="space-y-3 my-4">
+                          {block.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-3">
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
+                              <span>{renderRichText(item, `li-${i}-${j}`)}</span>
+                            </li>
+                          ))}
+                        </ul>
                       )}
                     </div>
-                    <div className="space-y-4">
-                      {section.blocks.map((block, i) => {
-                        if (block.type === "p") {
-                          return (
-                            <p key={i} className="text-[17px] text-slate-700 font-medium leading-relaxed">
-                              {renderRichText(block.text, `p-${section.id}-${i}`)}
-                            </p>
-                          );
-                        }
-                        if (block.type === "ul") {
-                          return (
-                            <div key={i} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                              <ul className="list-disc list-outside pl-6 space-y-2">
-                                {block.items.map((item, j) => (
-                                  <li key={j} className="text-[16px] text-slate-700 font-medium leading-relaxed">
-                                    {renderRichText(item, `li-${section.id}-${i}-${j}`)}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          );
-                        }
-                        return null;
-                      })}
-                    </div>
-                  </section>
-                ))}
-              </div>
-            )}
-
-            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-2 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-3">
-                <AlertTriangle size={16} />
-                Golden rule
-              </div>
-              <p className="text-slate-800 text-base sm:text-lg font-semibold leading-relaxed">{post.goldenRule}</p>
-            </div>
+                  ))}
+                </div>
+              </section>
+            ))}
 
             {/* Checklist */}
-            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8 space-y-6">
-              <div className="flex items-center justify-between flex-wrap gap-3">
-                <h3 className="text-[24px] sm:text-[28px] font-semibold text-slate-900">Key steps checklist</h3>
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Click to mark done</div>
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-xl shadow-slate-900/5 p-6 sm:p-8 space-y-8">
+              <div className="border-b border-slate-100 dark:border-slate-800 pb-6">
+                <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">Key Steps Checklist</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">Follow these steps in order to complete this milestone.</p>
               </div>
 
               <div className="space-y-4">
                 {post.steps.map((step, idx) => {
                   const key = `${post.slug}-${idx}`;
                   const isDone = Boolean(progress[key]);
-
                   return (
                     <div
                       key={key}
-                      className={`rounded-2xl border p-5 sm:p-6 transition-colors ${
-                        isDone
-                          ? `${stageStyle.doneBorder} ${stageStyle.doneBg}`
-                          : "border-slate-200 bg-white"
-                      }`}
+                      className={`group relative overflow-hidden rounded-2xl border transition-all duration-300 ${isDone ? 'bg-emerald-50/50 dark:bg-emerald-900/10 border-emerald-200 dark:border-emerald-800/30' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-700'}`}
                     >
-                      <div className="flex flex-col gap-4">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                          <div className="flex items-start gap-3 min-w-0">
-                            <span
-                              className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold ${
-                                isDone ? stageStyle.doneChip : "bg-slate-100 text-slate-500"
-                              }`}
-                            >
-                              {idx + 1}
-                            </span>
-                            <div className="min-w-0 space-y-1">
-                              <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                                Step {idx + 1}
-                              </div>
-                              <h4
-                                className={`text-lg font-semibold leading-snug ${
-                                  isDone ? stageStyle.doneText : "text-slate-900"
-                                }`}
-                              >
-                                {step.title}
-                              </h4>
-                            </div>
+                      <div className="p-5 flex gap-4">
+                        <button
+                          onClick={() => onToggle(post.slug, idx)}
+                          className={`flex-shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all ${isDone ? 'bg-emerald-500 border-emerald-500 text-white scale-110' : 'border-slate-300 text-transparent hover:border-indigo-500'}`}
+                        >
+                          <CheckCircle size={16} strokeWidth={3} />
+                        </button>
+                        <div className="flex-1 space-y-2">
+                          <div className="flex justify-between items-start">
+                            <h4 className={`text-lg font-bold transition-all ${isDone ? 'text-emerald-900 dark:text-emerald-400 line-through decoration-emerald-500/50' : 'text-slate-900 dark:text-white'}`}>
+                              {step.title}
+                            </h4>
+                            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Step {idx + 1}</span>
                           </div>
+                          <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">{step.text}</p>
 
-                          <button
-                            onClick={() => onToggle(post.slug, idx)}
-                            className={`self-start rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                              isDone
-                                ? stageStyle.doneButton
-                                : "bg-slate-100 text-slate-500 hover:bg-slate-200"
-                            }`}
-                          >
-                            {isDone ? "Marked done" : "Mark done"}
-                          </button>
+                          {!isDone && (
+                            <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wide mt-2">
+                              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
+                              Action Required
+                            </div>
+                          )}
                         </div>
-
-                        <p className={`text-sm sm:text-base text-slate-600 leading-relaxed ${isDone ? "opacity-60" : ""}`}>
-                          {step.text}
-                        </p>
-
-                        {!isDone && (
-                          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                            <div className="flex items-start gap-2">
-                              <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Action</span>
-                              <p className="text-slate-800 text-sm sm:text-base font-semibold leading-snug">{step.action}</p>
-                            </div>
-                          </div>
-                        )}
-
                       </div>
+                      {isDone && <div className="absolute inset-0 bg-emerald-500/5 pointer-events-none" />}
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* Downloads + videos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {post.downloads?.length > 0 && (
-                <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                  <div className="flex items-center space-x-2 mb-4 text-indigo-700">
-                    <FileText size={20} />
-                    <h3 className="font-semibold uppercase tracking-wider text-xs">Downloads</h3>
-                  </div>
-                  <ul className="space-y-3">
-                    {post.downloads.map((f, i) => (
-                      <li
-                        key={`${f.title}-${i}`}
-                        onClick={() => safeOpen(f.url)}
-                        className="flex items-center text-sm font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer transition-colors group"
-                      >
-                        <Download size={14} className="mr-2 opacity-60" />
-                        <span className="truncate">{f.title}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {post.videos?.length > 0 && (
-                <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                  <div className="flex items-center space-x-2 mb-4 text-indigo-700">
-                    <Youtube size={20} />
-                    <h3 className="font-semibold uppercase tracking-wider text-xs">Videos</h3>
-                  </div>
-                  <ul className="space-y-3">
-                    {post.videos.map((v, i) => (
-                      <li
-                        key={`${v.title}-${i}`}
-                        onClick={() => safeOpen(v.url)}
-                        className="flex items-center text-sm font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer transition-colors group"
-                      >
-                        <PlayCircle size={14} className="mr-2 opacity-60" />
-                        <span className="truncate">{v.title}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-
-            {/* Navigation */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
-              <PostNavigation currentPost={post} onOpenPost={onOpenPost} />
-            </div>
-          </article>
+            <PostNavigation currentPost={post} onOpenPost={onOpenPost} />
+          </div>
         </div>
       </main>
     </div>
   );
 };
+

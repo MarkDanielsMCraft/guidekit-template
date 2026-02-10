@@ -1,0 +1,42 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        debug: true,
+        fallbackLng: 'en',
+        interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+        },
+        resources: {
+            en: {
+                translation: {
+                    siteTitle: "StartGermany",
+                    tagline: "Real talk for international students starting vocational training in Germany",
+                    searchPlaceholder: "Search guides...",
+                    minRead: "min read",
+                    verified: "Verified",
+                    complete: "complete",
+                    source: "Source",
+                    language: "Language"
+                }
+            },
+            de: {
+                translation: {
+                    siteTitle: "StartGermany",
+                    tagline: "Klartext für internationale Azubis in Deutschland",
+                    searchPlaceholder: "Ratgeber suchen...",
+                    minRead: "Min. Lesezeit",
+                    verified: "Verifiziert",
+                    complete: "abgeschlossen",
+                    source: "Quelle",
+                    language: "Sprache"
+                }
+            }
+        }
+    });
+
+export default i18n;

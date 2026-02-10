@@ -1,158 +1,101 @@
 import { IMAGES } from '../constants/assets';
 
 export const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Outfit', system-ui, sans-serif;
+  }
 
-  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  * { 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #eef2f7;
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
     background-image:
-      linear-gradient(rgba(238, 242, 247, 0.35), rgba(238, 242, 247, 0.35)),
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
       url('${IMAGES.globalBg}');
-    background-size: cover;
+    background-size: 100% 100%, 100% 100%, cover;
     background-position: center;
     background-attachment: fixed;
-    font-weight: 400;
-    letter-spacing: 0;
-    font-size: 17px;
-    line-height: 1.7;
-    color: #0b1220;
+    color: #0f172a;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Dark mode overrides */
+  .dark body {
+    background-color: #020617; /* Slate 950 */
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.10) 0px, transparent 50%);
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, h4, h5, h6, .display-heading {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   .app-shell {
     position: relative;
     background-color: transparent;
+    transition: background-color 0.3s ease;
   }
 
-  h1, h2, h3, .display-heading {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  ::-webkit-scrollbar { width: 8px; }
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar { width: 10px; }
   ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
-  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  ::-webkit-scrollbar-thumb { 
+    background: #cbd5e1; 
+    border-radius: 5px; 
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background-color: #94a3b8; }
+  
+  .dark ::-webkit-scrollbar-thumb { background-color: #334155; }
+  .dark ::-webkit-scrollbar-thumb:hover { background-color: #475569; }
 
-  .hide-scrollbar {
-    scrollbar-width: none;
+  .hide-scrollbar { scrollbar-width: none; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* Selection */
+  ::selection {
+    background: rgba(99, 102, 241, 0.2); /* Indigo 500 */
+    color: inherit;
+  }
+  .dark ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #fff;
   }
 
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  /* Utilities */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
   }
-
-  .content-block {
-    width: 100%;
-    max-width: 72ch;
-    margin: 0 auto;
-    word-spacing: 0.02em;
+  .dark .glass-panel {
+    background: rgba(15, 23, 42, 0.6); /* Slate 900 */
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
-
-  .prose h2 {
-    color: #0b1220;
-    font-weight: 600;
-    font-size: 1.875rem;
-    margin-top: 2.25rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
-  .prose h2:first-child { margin-top: 0; }
-
-  .prose p {
-    margin-bottom: 1.4rem;
-    line-height: 1.7;
-    color: #23324a;
-    font-size: 1.0625rem;
-    letter-spacing: -0.002em;
-  }
-
-  .prose ul {
-    margin-bottom: 1.7rem;
-    margin-top: 1rem;
-    padding-left: 1.6rem;
-    list-style-type: disc;
-  }
-
-  .prose li {
-    margin-bottom: 0.85rem;
-    color: #26344a;
-    font-size: 1.01rem;
-    line-height: 1.7;
-  }
-
-  .prose li:last-child { margin-bottom: 0; }
-
-  .prose a,
-  .rich-link {
-    color: #0f766e;
-    text-decoration: underline;
-    text-decoration-color: rgba(14, 165, 233, 0.45);
-    text-underline-offset: 3px;
-    font-weight: 600;
-    background-image: linear-gradient(120deg, rgba(14, 165, 233, 0.15), rgba(16, 185, 129, 0.15));
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 100%;
-    transition: color 150ms ease, background-size 180ms ease, text-decoration-color 150ms ease;
-  }
-
-  .prose a:hover,
-  .rich-link:hover {
-    color: #0ea5e9;
-    text-decoration-color: rgba(16, 185, 129, 0.65);
-    background-size: 100% 0.35em;
-  }
-
-  .prose strong {
-    color: #111827;
-    font-weight: 600;
-  }
-
-  .prose ul + p { margin-top: 1.1rem; }
-  .prose h2 + p { margin-top: 1.2rem; }
-  .prose p + p { margin-top: 0.7rem; }
 
   @media (prefers-reduced-motion: reduce) {
-    * {
+    *, ::before, ::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
-  }
-
-  .content-block h2:first-child {
-    margin-top: 0;
-  }
-
-  .content-block p + h2 {
-    margin-top: 2rem;
-  }
-
-  .content-block ul + h2,
-  .content-block ul + p {
-    margin-top: 1.5rem;
-  }
-
-  /* Enhanced button states */
-  button {
-    outline: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Better shadows */
-  .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04); }
-  .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04); }
-  .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04); }
-  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.04); }
-
-  /* Selection styles */
-  ::selection {
-    background: rgba(79, 70, 229, 0.2);
-    color: inherit;
   }
 `;

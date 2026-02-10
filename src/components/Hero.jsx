@@ -1,169 +1,123 @@
-import { Search, Grid, Info } from "lucide-react";
-import { META } from '../constants/config';
-import { CategoryFilter } from './CategoryFilter';
-import { IMAGES } from '../constants/assets';
+import React from 'react';
+import { Search, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
-export const Hero = ({ view, setView, searchTerm, setSearchTerm, selectedStage, setSelectedStage, postsSectionRef }) => {
-  const handleExploreClick = () => {
-    if (view !== "posts") {
-      setView("posts");
-      return;
+export const Hero = ({ searchTerm, setSearchTerm, selectedStage, setSelectedStage, postsSectionRef }) => {
+  const { t } = useTranslation();
+
+  const stages = [
+    { id: 'First Week', label: 'First Week', color: 'bg-rose-500' },
+    { id: 'Settling In', label: 'Settling In', color: 'bg-indigo-500' },
+    { id: 'Long Term', label: 'Long Term', color: 'bg-emerald-500' },
+  ];
+
+  const scrollToPosts = () => {
+    if (postsSectionRef.current) {
+      postsSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
-
-    const node = postsSectionRef?.current;
-    if (!node) return;
-
-    if (typeof window === "undefined") return;
-
-    const rect = node.getBoundingClientRect();
-    const scrollTop = window.scrollY + rect.top - 96;
-    window.scrollTo({ top: Math.max(scrollTop, 0), behavior: "smooth" });
   };
 
-  if (view === "library") {
-    return (
-      <div className="relative pt-12 pb-10 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-[40px] md:text-[44px] font-semibold text-slate-900 mb-4 tracking-tight">
-            Resource Library
-          </h2>
-          <p className="text-[18px] text-slate-600 mb-8 font-medium">
-            Curated tools, apps, and links for your first year in Germany.
-          </p>
-
-          <div className="max-w-lg mx-auto mb-8">
-            <div className="relative flex items-center rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <Search className="ml-4 text-slate-400" size={20} />
-              <input
-                type="text"
-                placeholder="Search: apps, banking, health"
-                className="w-full py-4 px-4 rounded-2xl focus:outline-none text-slate-700 font-medium placeholder:text-slate-400 bg-white"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center gap-2">
-            <button
-              onClick={() => setView("posts")}
-              className="px-5 py-2.5 rounded-full text-sm font-semibold transition-colors bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
-            >
-              <div className="flex items-center gap-2">
-                <Grid size={16} />
-                Back to Guides
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <>
-      <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0">
-          <img
-            src={IMAGES.hero}
-            alt="German skyline"
-            className="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-white/65 backdrop-blur-[2px]" />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-8 lg:gap-16 items-center">
-            <div className="max-w-2xl space-y-6 text-slate-900">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Germany, decoded
-              </div>
+    <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden pt-24 pb-8 lg:pt-32 lg:pb-12">
+      {/* Animated Gradient Background ("Aurora") */}
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-400/30 dark:bg-indigo-600/20 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-pulse-slow" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-rose-400/30 dark:bg-rose-600/20 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-1000" />
+        <div className="absolute top-[20%] right-[20%] w-[300px] h-[300px] bg-cyan-400/20 dark:bg-cyan-600/10 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-2000" />
+      </div>
 
-              <h1 className="text-[40px] sm:text-[42px] lg:text-[44px] font-semibold leading-tight">
-                Plain-language playbooks for your first year in Germany
-              </h1>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md text-slate-600 dark:text-slate-300 text-[11px] font-bold uppercase tracking-widest mb-8 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            Germany, Decoded
+          </span>
 
-              <p className="text-[18px] text-slate-600 font-medium leading-relaxed">
-                Graded checklists, timelines, and verified links that keep you moving. Built for students and researchers landing in a new system.
-              </p>
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[0.9]">
+            Your first 100 days <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-rose-500 dark:from-indigo-400 dark:to-rose-400">made simple.</span>
+          </h1>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <button
-                  onClick={handleExploreClick}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-700 text-white px-7 py-3 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
-                >
-                  Explore guides
-                </button>
+          <p className="max-w-2xl mx-auto text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed font-medium">
+            No-nonsense guides for expats. We've done the paperwork, translation,
+            and research so you don't have to.
+          </p>
+        </motion.div>
 
-                <button
-                  onClick={() => setView("library")}
-                  className="inline-flex items-center justify-center rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold text-slate-700 hover:border-slate-400"
-                >
-                  Browse resources
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 lg:p-8 flex flex-col gap-5 text-slate-700 max-w-md">
-              <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-slate-500 font-semibold mb-2">What to expect</p>
-                <h2 className="text-[22px] font-semibold leading-snug text-slate-900">Step-by-step essentials from Anmeldung to your first pay slip</h2>
-              </div>
-              <ul className="space-y-4 text-sm font-medium">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 inline-flex h-2 w-2 rounded-full bg-indigo-600"></span>
-                  Local checklists synced with Germany-specific deadlines and forms.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 inline-flex h-2 w-2 rounded-full bg-indigo-600"></span>
-                  Updated pricing, office hours, and documents verified this year.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 inline-flex h-2 w-2 rounded-full bg-indigo-600"></span>
-                  Searchable resource library covering banking, housing, healthcare, and more.
-                </li>
-              </ul>
-            </div>
+        {/* Modern Search Bar */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+          className="w-full max-w-xl relative group z-20"
+        >
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-rose-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500 group-hover:duration-200" />
+          <div className="relative flex items-center bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-2">
+            <Search className="ml-4 text-slate-400" size={22} />
+            <input
+              type="text"
+              placeholder={t('searchPlaceholder')}
+              className="w-full py-3 px-4 bg-transparent text-slate-800 dark:text-white placeholder:text-slate-400 focus:outline-none font-medium text-lg"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm('')}
+                className="mr-2 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 transition-colors"
+              >
+                ✕
+              </button>
+            )}
           </div>
-        </div>
-      </section>
+        </motion.div>
 
-      {/* Search & Filter (visible when viewing posts) */}
-      {view === "posts" && (
-        <div className="px-4 sm:px-6 py-10">
-          <div className="max-w-3xl mx-auto space-y-5 sm:space-y-6">
-            {/* Search */}
-            <div className="max-w-md mx-auto">
-              <div className="relative flex items-center rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <Search className="ml-4 text-slate-400" size={20} />
-                <input
-                  type="text"
-                  placeholder="Search guides"
-                  className="w-full py-3 sm:py-4 px-4 rounded-2xl focus:outline-none text-slate-700 font-medium placeholder:text-slate-400 bg-white"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-            </div>
+        {/* Filter Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-10 flex flex-wrap justify-center gap-3"
+        >
+          <button
+            onClick={() => setSelectedStage(null)}
+            className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all border ${selectedStage === null
+              ? 'bg-slate-900 text-white border-slate-900 dark:bg-white dark:text-slate-900 dark:border-white shadow-lg'
+              : 'bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-slate-300 backdrop-blur-sm'
+              }`}
+          >
+            All Guides
+          </button>
+          {stages.map((stage) => (
+            <button
+              key={stage.id}
+              onClick={() => setSelectedStage(stage.id === selectedStage ? null : stage.id)}
+              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all border flex items-center gap-2 ${selectedStage === stage.id
+                ? 'bg-slate-900 text-white border-slate-900 dark:bg-white dark:text-slate-900 dark:border-white shadow-lg'
+                : 'bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-slate-300 backdrop-blur-sm'
+                }`}
+            >
+              <span className={`w-1.5 h-1.5 rounded-full ${stage.color}`} />
+              {stage.label}
+            </button>
+          ))}
+        </motion.div>
 
-            {/* Category Filter */}
-            <CategoryFilter selectedStage={selectedStage} setSelectedStage={setSelectedStage} />
-
-            {/* Disclaimer */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 text-left shadow-sm">
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="mt-0.5 text-indigo-700 flex-shrink-0">
-                  <Info size={20} />
-                </div>
-                <p className="text-sm text-slate-700 font-medium leading-relaxed">
-                  {META.disclaimer}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          onClick={scrollToPosts}
+          className="absolute bottom-4 text-slate-400 dark:text-slate-600 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+        >
+          <ChevronDown size={28} className="animate-bounce" />
+        </motion.button>
+      </div>
+    </section>
   );
 };

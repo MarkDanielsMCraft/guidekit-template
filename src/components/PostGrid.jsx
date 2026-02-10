@@ -16,13 +16,13 @@ export const PostGrid = ({ posts, searchTerm, onOpenPost, getProgress }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 auto-rows-fr">
-      {posts.map((post) => (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 auto-rows-fr pb-10">
+      {posts.map((post, index) => (
         <PostCard
           key={post.slug}
           post={post}
-          onOpen={onOpenPost}
           progressPercent={getProgress(post)}
+          index={index}
         />
       ))}
     </div>

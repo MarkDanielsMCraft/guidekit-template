@@ -1,84 +1,94 @@
 import React from "react";
-import { ChevronRight, Clock, Tag } from "lucide-react";
-import { STAGE_STYLES } from "../constants/ui";
+import { ChevronRight, Clock, Tag, CheckCircle2 } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SmartImage } from "./SmartImage";
+import { SpotlightCard } from "./SpotlightCard";
+import { STAGE_STYLES } from "../constants/ui";
+import { motion } from 'framer-motion';
 
-export const PostCard = ({ post, onOpen, progressPercent }) => {
+export const PostCard = ({ post, progressPercent, index = 0 }) => {
+  const { t } = useTranslation();
   const cardImage = post.cardImage || post.backgroundImage;
   const stageStyle = STAGE_STYLES[post.stage] || STAGE_STYLES.DEFAULT;
 
   return (
-    <button
-      onClick={() => onOpen(post.slug)}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white/85 backdrop-blur text-left shadow-md transition hover:border-slate-300 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      className="h-full"
     >
-      <div className="relative h-44 w-full overflow-hidden bg-slate-100">
-        <SmartImage
-          src={cardImage}
-          alt={`${post.title} guide cover`}
-          fallbackIcon={post.icon}
-          className="absolute inset-0 h-full w-full"
-          width={900}
-        />
-      </div>
+      <Link to={`/guide/${post.slug}`} className="block h-full group">
+        <SpotlightCard className="h-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-white/40 dark:border-white/10 hover:border-primary-500/30 dark:hover:border-primary-400/30 transition-colors shadow-sm hover:shadow-xl hover:shadow-primary-500/5">
+          <div className="flex flex-col h-full z-10 w-full">
+            <div className="relative h-56 w-full overflow-hidden">
+              <SmartImage
+                src={cardImage}
+                alt={`${post.title} guide cover`}
+                fallbackIcon={post.icon}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                width={900}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80" />
 
-      <div className="relative z-10 flex flex-col gap-6 p-6 sm:p-7">
-        <div className="flex items-start justify-between gap-4">
-          <div className="space-y-3">
-            <span className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${stageStyle.pill}`}>
-              {post.stage}
-            </span>
-            <h3 className="text-[20px] font-semibold leading-snug text-slate-900">
-              {post.title}
-            </h3>
+              <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
+                <span className={`inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/20 backdrop-blur-md px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-sm`}>
+                  {post.stage}
+                </span>
+                {progressPercent === 100 && (
+                  <div className="bg-emerald-500 text-white p-1.5 rounded-full shadow-lg shadow-emerald-500/20">
+                    <CheckCircle2 size={16} strokeWidth={3} />
+                  </div>
+                )}
+              </div>
+
+              <div className="absolute bottom-4 left-6 right-6">
+                <h3 className="font-display text-2xl font-bold leading-tight text-white drop-shadow-md mb-1 group-hover:text-primary-200 transition-colors">
+                  {post.title}
+                </h3>
+              </div>
+            </div>
+
+            <div className="relative flex flex-col gap-4 p-6 flex-1 bg-transparent">
+              <p className="text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300 line-clamp-2">
+                {post.summary}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {post.tags && post.tags.slice(0, 3).map((tag, i) => (
+                  <span key={i} className="inline-flex items-center gap-1 rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-5 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    <Clock size={14} />
+                    {post.readTime} {t('minRead')}
+                  </span>
+                </div>
+
+                <span className="flex items-center gap-1 text-sm font-bold text-primary-600 dark:text-primary-400 group-hover:gap-2 transition-all">
+                  Read Guide <ChevronRight size={16} strokeWidth={3} />
+                </span>
+              </div>
+
+              {progressPercent > 0 && (
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100 dark:bg-slate-800">
+                  <div
+                    className="h-full bg-primary-500 transition-all duration-1000 ease-out"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
+              )}
+            </div>
           </div>
-          <div className={`flex h-12 w-12 items-center justify-center rounded-xl text-white ${stageStyle.icon}`}>
-            {post.icon}
-          </div>
-        </div>
-
-        <p className="text-sm font-medium leading-relaxed text-slate-600">
-          {post.summary}
-        </p>
-
-        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
-          <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-3 py-1">
-            <Clock size={14} className="text-slate-500" />
-            {post.readTime}
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-3 py-1 text-slate-600">
-            {progressPercent}% complete
-          </span>
-        </div>
-
-        {post.tags && post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 pt-1">
-            {post.tags.slice(0, 3).map((tag, i) => (
-              <span key={i} className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                <Tag size={12} className="text-slate-400" />
-                {tag}
-              </span>
-            ))}
-            {post.tags.length > 3 && (
-              <span className="text-[11px] font-semibold text-slate-400">
-                +{post.tags.length - 3}
-              </span>
-            )}
-          </div>
-        )}
-
-        <div className="flex items-center justify-between gap-4 pt-4 border-t border-slate-200">
-          <div className="h-2 w-full rounded-full bg-slate-100">
-            <div
-              className={`h-full rounded-full ${stageStyle.bar}`}
-              style={{ width: `${Math.max(progressPercent, 4)}%` }}
-            />
-          </div>
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
-            <ChevronRight size={18} />
-          </span>
-        </div>
-      </div>
-    </button>
+        </SpotlightCard>
+      </Link>
+    </motion.div>
   );
 };
