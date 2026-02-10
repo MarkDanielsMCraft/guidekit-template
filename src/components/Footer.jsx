@@ -93,6 +93,9 @@ export const Footer = ({ onShowPosts, onShowLibrary, onOpenEmergency, variant = 
             <button onClick={() => window.location.href = '/datenschutz'} className="hover:text-slate-900 dark:hover:text-white transition-colors">
               Datenschutz
             </button>
+            <button onClick={() => window.location.href = '/privacy-policy'} className="hover:text-slate-900 dark:hover:text-white transition-colors">
+              Privacy Policy
+            </button>
           </div>
         </div>
       </div>
