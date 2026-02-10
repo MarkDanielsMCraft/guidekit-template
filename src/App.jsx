@@ -12,6 +12,8 @@ const PostPage = lazy(() => import('./pages/PostPage').then(m => ({ default: m.P
 const ImpressumPage = lazy(() => import('./pages/ImpressumPage').then(m => ({ default: m.ImpressumPage })));
 const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage').then(m => ({ default: m.DatenschutzPage })));
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
+const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const TermsPage = lazy(() => import('./pages/TermsPage').then(m => ({ default: m.TermsPage })));
 
 // Components (not lazy loaded - needed immediately)
 import { CookieConsent } from './components/CookieConsent';
@@ -119,6 +121,24 @@ export default function App() {
                 path="/privacy-policy"
                 element={
                   <PrivacyPolicyPage
+                    emergencyMode={emergencyMode}
+                    setEmergencyMode={setEmergencyMode}
+                  />
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <AboutPage
+                    emergencyMode={emergencyMode}
+                    setEmergencyMode={setEmergencyMode}
+                  />
+                }
+              />
+              <Route
+                path="/terms"
+                element={
+                  <TermsPage
                     emergencyMode={emergencyMode}
                     setEmergencyMode={setEmergencyMode}
                   />
