@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer';
 import { POSTS, ORDERED_POSTS } from '../data/posts';
 import { downloadAllGuidesPdf } from '../utils/pdfExporter';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
+import { META } from '../constants/config';
 
 export const PostPage = ({ progress, onToggle, onReset, emergencyMode, setEmergencyMode }) => {
     const { slug } = useParams();
@@ -37,18 +37,18 @@ export const PostPage = ({ progress, onToggle, onReset, emergencyMode, setEmerge
     return (
         <PageTransition>
             <Helmet>
-                <title>{post.title} | StartGermany</title>
+                <title>{post.title} | {META.siteTitle}</title>
                 <meta name="description" content={post.summary} />
 
                 {/* Open Graph */}
-                <meta property="og:title" content={`${post.title} | StartGermany`} />
+                <meta property="og:title" content={`${post.title} | ${META.siteTitle}`} />
                 <meta property="og:description" content={post.summary} />
                 <meta property="og:image" content={post.cardImage || post.backgroundImage} />
                 <meta property="og:type" content="article" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title} | StartGermany`} />
+                <meta name="twitter:title" content={`${post.title} | ${META.siteTitle}`} />
                 <meta name="twitter:description" content={post.summary} />
                 <meta name="twitter:image" content={post.cardImage || post.backgroundImage} />
             </Helmet>

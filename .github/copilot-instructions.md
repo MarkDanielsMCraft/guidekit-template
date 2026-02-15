@@ -1,7 +1,7 @@
-# Copilot Instructions: Survival Kit
+# Copilot Instructions: GuideKit Template
 
 ## Project Overview
-React + Vite app providing a comprehensive guide for international students/scholars moving to Germany. Content-focused SPA with blog posts, resource library, and interactive checklists. **Content accuracy is paramount** — all information must be verified and dated.
+React + Vite app providing a premium template for content-first guide sites. Content-focused SPA with posts, a resource library, and interactive checklists. **Content accuracy is paramount** — all information must be verified and dated.
 
 ## Architecture & Data Flow
 
@@ -33,13 +33,13 @@ content: [
 ### Development Commands
 ```bash
 npm run dev      # Vite dev server on localhost:5173
-npm run build    # Production build (sets base: /survival-kit/ for GitHub Pages)
+npm run build    # Production build (set base path for GitHub Pages)
 npm run preview  # Preview production build locally
 npm run lint     # ESLint check
 ```
 
 ### Deployment
-- Builds to GitHub Pages at `/survival-kit/` (see `vite.config.js` base path)
+- Builds to GitHub Pages at your configured base path (see `vite.config.js`)
 - Production URLs must account for subdirectory base path
 
 ## Project-Specific Conventions
@@ -68,10 +68,10 @@ npm run lint     # ESLint check
 
 ### Content Quality Standards
 1. **Verification dates:** Every post must have `verified: "YYYY-MM-DD"` field
-2. **Beginner-friendly:** Explain German terms inline (e.g., "Anmeldung (address registration)")
+2. **Beginner-friendly:** Explain domain terms inline
 3. **Concrete examples:** Include real prices, timelines, platform names
-4. **External sources:** Prefer official (.de government) > NGO > commercial tools
-5. **Update references:** Link to `CURRENT_AS_OF_JAN19_2026.md` for verification status
+4. **External sources:** Prefer official sources over commercial tools
+5. **Update references:** Maintain a verification log for content status
 
 ### Styling System
 - **Tailwind utility-first** with responsive modifiers (`sm:`, `md:`)

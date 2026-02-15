@@ -1,6 +1,5 @@
 import { META, LINKS } from '../constants/config';
-import { safeOpen } from '../utils/security';
-import { motion } from 'framer-motion';
+import { Coffee } from 'lucide-react';
 
 export const Footer = ({ onShowPosts, onShowLibrary, onOpenEmergency, variant = "default", onBackToGuideList, onDownloadGuides }) => (
   <footer className="relative mt-10 border-t border-slate-200 dark:border-white/10 bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl text-slate-600 dark:text-slate-400 overflow-hidden">
@@ -17,13 +16,13 @@ export const Footer = ({ onShowPosts, onShowLibrary, onOpenEmergency, variant = 
           <div className="max-w-sm space-y-6">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Germany Orientation</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Guide Template</span>
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white">StartGermany</h3>
+              <h3 className="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{META.siteTitle}</h3>
               <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Built by internationals for internationals. Trusted playbooks, verified links, and pricing notes so your first year in Germany stays predictable.
+                A premium template for guides, checklists, and resource libraries. Swap in your own content and launch fast.
               </p>
             </div>
 
@@ -52,9 +51,9 @@ export const Footer = ({ onShowPosts, onShowLibrary, onOpenEmergency, variant = 
             <div className="space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white">Essentials</h4>
               <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-400 font-medium">
-                <li>Anmeldung</li>
-                <li>Health Insurance</li>
-                <li>Banking & Tax</li>
+                <li>Guide structure</li>
+                <li>Resource library</li>
+                <li>Progress tracking</li>
               </ul>
             </div>
 
@@ -73,9 +72,10 @@ export const Footer = ({ onShowPosts, onShowLibrary, onOpenEmergency, variant = 
                   href={LINKS.buyMeACoffee}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-indigo-600 text-white px-4 py-2.5 text-xs font-bold uppercase tracking-wide hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/20"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white px-4 py-2.5 text-xs font-bold uppercase tracking-wide hover:brightness-110 transition-all shadow-lg shadow-orange-500/30"
                 >
-                  Support Project
+                  <Coffee size={14} />
+                  Buy Me a Coffee
                 </a>
               </div>
             </div>
@@ -84,9 +84,17 @@ export const Footer = ({ onShowPosts, onShowLibrary, onOpenEmergency, variant = 
 
         <div className="border-t border-slate-200 dark:border-white/5 pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <p className="text-xs text-slate-500 dark:text-slate-500 font-medium">
-            © 2026 StartGermany. Unofficial orientation guide.
+            © 2026 MCraft. Guide template for public use.
           </p>
           <div className="flex items-center flex-wrap gap-4 md:gap-6 text-xs font-bold text-slate-500 dark:text-slate-500">
+            <a
+              href="https://github.com/MarkDanielsMCraft"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              Built by MCraft
+            </a>
             <button onClick={() => window.location.href = '/about'} className="hover:text-slate-900 dark:hover:text-white transition-colors">
               About
             </button>

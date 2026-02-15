@@ -50,13 +50,13 @@ export const Header = ({
             type="button"
             onClick={onNavigateHome}
             className={`flex items-center gap-2 group ${onNavigateHome ? 'cursor-pointer' : 'cursor-default'}`}
-            aria-label={onNavigateHome ? 'Go to StartGermany home' : undefined}
-            title={onNavigateHome ? 'Back to StartGermany home' : undefined}
+            aria-label={onNavigateHome ? `Go to ${META.siteTitle} home` : undefined}
+            title={onNavigateHome ? `Back to ${META.siteTitle} home` : undefined}
           >
             <div className="flex flex-col items-start gap-0.5">
               <div className="flex items-center gap-1">
                 <span className="text-2xl font-display font-bold tracking-tight bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent transition-transform group-hover:scale-105">
-                  Start<span className="bg-gradient-to-r from-red-600 via-yellow-500 to-slate-900 dark:to-white bg-clip-text">Germany</span>
+                  {META.siteTitle}
                 </span>
               </div>
               <p className="text-[9px] uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400 ml-0.5">
@@ -138,65 +138,63 @@ export const Header = ({
         <div className="border-t border-red-200 bg-red-50">
           <div className="max-w-5xl mx-auto grid grid-cols-1 gap-8 px-6 py-7 md:grid-cols-3 text-slate-900">
             <div className="md:col-span-2 space-y-4">
-              <h3 className="text-xl sm:text-2xl font-semibold">Emergency contacts</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold">Quick contacts</h3>
               <p className="text-sm text-slate-700 font-medium leading-relaxed">
-                Call the numbers below immediately in a life-threatening situation. Operators speak German and English.
+                Replace these placeholders with your own emergency or support numbers.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a href="tel:112" className="rounded-xl border border-red-200 bg-white px-4 py-3">
+                <a href="tel:000" className="rounded-xl border border-red-200 bg-white px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">112</div>
+                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">000</div>
                     <div>
-                      <p className="text-base font-semibold">Ambulance & Fire</p>
-                      <p className="text-xs text-slate-600">Medical emergencies or fire brigade</p>
+                      <p className="text-base font-semibold">Emergency Line</p>
+                      <p className="text-xs text-slate-600">Primary emergency contact</p>
                     </div>
                   </div>
                 </a>
-                <a href="tel:110" className="rounded-xl border border-red-200 bg-white px-4 py-3">
+                <a href="tel:111" className="rounded-xl border border-red-200 bg-white px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">110</div>
+                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">111</div>
                     <div>
-                      <p className="text-base font-semibold">Police</p>
-                      <p className="text-xs text-slate-600">Immediate danger or crime</p>
+                      <p className="text-base font-semibold">Security Line</p>
+                      <p className="text-xs text-slate-600">Safety or incident reports</p>
                     </div>
                   </div>
                 </a>
-                <a href="tel:116117" className="rounded-xl border border-red-200 bg-white px-4 py-3">
+                <a href="tel:222" className="rounded-xl border border-red-200 bg-white px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">116 117</div>
+                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">222</div>
                     <div>
-                      <p className="text-base font-semibold">Medical On-Call Service</p>
-                      <p className="text-xs text-slate-600">Non-life-threatening urgent care</p>
+                      <p className="text-base font-semibold">Support Line</p>
+                      <p className="text-xs text-slate-600">Non-urgent support requests</p>
                     </div>
                   </div>
                 </a>
-                <a href="tel:116123" className="rounded-xl border border-red-200 bg-white px-4 py-3">
+                <a href="tel:333" className="rounded-xl border border-red-200 bg-white px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">116 123</div>
+                    <div className="inline-flex min-w-[3rem] items-center justify-center rounded-full bg-red-600 px-3 py-1 text-sm font-semibold text-white">333</div>
                     <div>
-                      <p className="text-base font-semibold">Emotional Support Hotline</p>
-                      <p className="text-xs text-slate-600">TelefonSeelsorge 24/7 in German & English</p>
+                      <p className="text-base font-semibold">Wellbeing Line</p>
+                      <p className="text-xs text-slate-600">Mental health support</p>
                     </div>
                   </div>
                 </a>
               </div>
             </div>
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-slate-900">Lost documents?</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Quick checklist</h3>
               <div className="rounded-xl border border-red-200 bg-white p-4 space-y-3">
-                <p className="text-sm text-slate-700 font-semibold">
-                  Lost passport or residence permit:
-                </p>
+                <p className="text-sm text-slate-700 font-semibold">Document checklist:</p>
                 <ul className="list-disc pl-5 text-xs space-y-2 text-slate-600">
-                  <li>Contact your embassy or consulate. Most have 24/7 emergency lines.</li>
-                  <li>Report the loss to the local police (Polizei) within 24 hours.</li>
+                  <li>List required documents for emergency cases.</li>
+                  <li>Note where to access replacements.</li>
                 </ul>
               </div>
               <div className="rounded-xl border border-red-200 bg-white p-4 space-y-3">
-                <p className="text-sm text-slate-700 font-semibold">Lost bank or credit card:</p>
+                <p className="text-sm text-slate-700 font-semibold">Account checklist:</p>
                 <ul className="list-disc pl-5 text-xs space-y-2 text-slate-600">
-                  <li>Call 116 116 to block German-issued cards immediately.</li>
-                  <li>For international cards, use the emergency number on your bank’s app.</li>
+                  <li>Add hotline numbers for account access.</li>
+                  <li>List any required verification steps.</li>
                 </ul>
               </div>
             </div>

@@ -71,10 +71,10 @@ export const HomePage = ({ progress, emergencyMode, setEmergencyMode }) => {
     return (
         <PageTransition>
             <Helmet>
-                <title>StartGermany - Your Guide to Life in Germany</title>
-                <meta name="description" content="Realistic, no-nonsense guides for your first 100 days in Germany." />
-                <meta property="og:title" content="StartGermany - Your Guide to Life in Germany" />
-                <meta property="og:description" content="Realistic, no-nonsense guides for your first 100 days in Germany." />
+                <title>GuideKit - Premium Guide Template</title>
+                <meta name="description" content="A modern template for guides, playbooks, and resource libraries." />
+                <meta property="og:title" content="GuideKit - Premium Guide Template" />
+                <meta property="og:description" content="A modern template for guides, playbooks, and resource libraries." />
                 <meta property="og:image" content="/og-image.jpg" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
@@ -108,12 +108,12 @@ export const HomePage = ({ progress, emergencyMode, setEmergencyMode }) => {
                 <main ref={postsSectionRef} className="max-w-6xl mx-auto px-6 py-4 pb-12">
                     <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                            <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 dark:text-white">Guides that keep you moving</h2>
-                            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Hand verified walkthroughs for every milestone in your first year.</p>
+                            <h2 className="text-2xl sm:text-3xl font-display font-semibold text-slate-900 dark:text-white">Guides that feel premium</h2>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Swap in your content and ship a polished knowledge hub.</p>
                         </div>
                         <span className="inline-flex items-center gap-2 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                             <span className="h-2 w-2 rounded-full bg-primary-500 animate-pulse" />
-                            {filteredPosts.length} guides available
+                            {filteredPosts.length} guide templates
                         </span>
                     </div>
 

@@ -236,12 +236,12 @@ const buildPrintableHtml = (posts = []) => {
   const coverHero = 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80';
   const cover = `
     <section class="cover">
-      <h1>${escapeHtml(META.siteTitle || 'Survival Kit')}</h1>
-      <p class="accent">${escapeHtml(META.tagline || 'Guides for internationals in Germany')}</p>
+      <h1>${escapeHtml(META.siteTitle || 'GuideKit')}</h1>
+      <p class="accent">${escapeHtml(META.tagline || 'Premium guide template')}</p>
       <p><strong>${escapeHtml(META.lastUpdatedLabel || 'Last updated')}:</strong> ${escapeHtml(META.lastUpdatedDate)}</p>
       <p><strong>Printed:</strong> ${escapeHtml(printedOn)}</p>
-      <p style="font-size:14px; color:#475569; margin-top:12px;">Exported from Survival Kit guides. Save as PDF to keep an offline copy.</p>
-      <div class="hero"><img src="${escapeAttr(coverHero)}" alt="Germany cityscape" /></div>
+      <p style="font-size:14px; color:#475569; margin-top:12px;">Exported from your GuideKit content. Save as PDF to keep an offline copy.</p>
+      <div class="hero"><img src="${escapeAttr(coverHero)}" alt="Guide cover" /></div>
     </section>
   `;
 
@@ -255,14 +255,14 @@ const buildPrintableHtml = (posts = []) => {
     <html>
       <head>
         <meta charset="UTF-8" />
-        <title>Survival Kit Guides</title>
+        <title>${escapeHtml(META.siteTitle || 'GuideKit')} Guides</title>
         <style>${buildStyles()}</style>
       </head>
       <body>
         ${cover}
         ${renderToc(posts)}
         ${body}
-        <div class="footer-line">Survival Kit · Verified ${escapeHtml(META.lastUpdatedDate)}</div>
+        <div class="footer-line">${escapeHtml(META.siteTitle || 'GuideKit')} · Verified ${escapeHtml(META.lastUpdatedDate)}</div>
       </body>
     </html>`;
 };

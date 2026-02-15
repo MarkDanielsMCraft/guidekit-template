@@ -14,8 +14,8 @@ i18n
         resources: {
             en: {
                 translation: {
-                    siteTitle: "StartGermany",
-                    tagline: "Real talk for international students starting vocational training in Germany",
+                    siteTitle: "GuideKit",
+                    tagline: "Premium template for modern guide sites",
                     searchPlaceholder: "Search guides...",
                     minRead: "min read",
                     verified: "Verified",
@@ -26,9 +26,9 @@ i18n
             },
             de: {
                 translation: {
-                    siteTitle: "StartGermany",
-                    tagline: "Klartext für internationale Azubis in Deutschland",
-                    searchPlaceholder: "Ratgeber suchen...",
+                    siteTitle: "GuideKit",
+                    tagline: "Vorlage fuer moderne Guide-Seiten",
+                    searchPlaceholder: "Guides suchen...",
                     minRead: "Min. Lesezeit",
                     verified: "Verifiziert",
                     complete: "abgeschlossen",

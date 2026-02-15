@@ -11,8 +11,8 @@ export const ImpressumPage = ({ emergencyMode, setEmergencyMode }) => {
     return (
         <PageTransition>
             <Helmet>
-                <title>Impressum - StartGermany</title>
-                <meta name="description" content="Legal notice and contact information for StartGermany" />
+                <title>Impressum - GuideKit</title>
+                <meta name="description" content="Legal notice template for GuideKit." />
             </Helmet>
 
             <Header
@@ -29,56 +29,22 @@ export const ImpressumPage = ({ emergencyMode, setEmergencyMode }) => {
 
                 <div className="prose prose-slate dark:prose-invert max-w-none">
                     <section className="mb-8">
-                        <h2 className="text-2xl font-semibold mb-4">Information pursuant to § 5 TMG</h2>
+                        <h2 className="text-2xl font-semibold mb-4">Legal Notice</h2>
                         <p className="text-slate-600 dark:text-slate-400">
-                            <strong>StartGermany</strong><br />
-                            An unofficial, community-driven orientation guide<br />
-                            For international students and trainees in Germany
+                            Replace this section with your legal notice, company name, and contact details required in your jurisdiction.
                         </p>
                     </section>
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold mb-4">Contact</h2>
                         <p className="text-slate-600 dark:text-slate-400">
-                            This is an educational resource project.<br />
-                            For official immigration and visa matters, please contact:<br />
-                            <a href="https://www.make-it-in-germany.com" className="text-primary-600 dark:text-primary-400 hover:underline">
-                                Make it in Germany (Official Portal)
-                            </a>
-                        </p>
-                    </section>
-
-                    <section className="mb-8">
-                        <h2 className="text-2xl font-semibold mb-4">Disclaimer</h2>
-                        <h3 className="text-xl font-semibold mb-2">Liability for content</h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-4">
-                            The contents of our pages have been created with the utmost care. However, we cannot guarantee the
-                            contents' accuracy, completeness, or topicality. According to statutory provisions, we are furthermore
-                            responsible for our own content on these web pages. In this matter, please note that we are not obliged
-                            to monitor the transmitted or saved information of third parties, or investigate circumstances pointing
-                            to illegal activity.
-                        </p>
-
-                        <h3 className="text-xl font-semibold mb-2">Liability for links</h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-4">
-                            Our offer contains links to external third-party websites. We have no influence on the contents of those
-                            websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites
-                            are always responsible for their own contents.
-                        </p>
-
-                        <h3 className="text-xl font-semibold mb-2">Copyright</h3>
-                        <p className="text-slate-600 dark:text-slate-400">
-                            The content and works published on this website are governed by the copyright laws of Germany. Any
-                            duplication, processing, distribution, or any form of commercialization beyond the scope of copyright
-                            law shall require the prior written consent of the author or creator.
+                            Provide the official email address and mailing address for user inquiries.
                         </p>
                     </section>
 
                     <section className="mb-8 p-6 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
                         <p className="text-sm text-amber-900 dark:text-amber-200">
-                            <strong>Important Notice:</strong> This website provides general orientation information and does not
-                            constitute legal advice. For official information regarding visas, residence permits, and legal matters,
-                            please consult official government sources or qualified legal professionals.
+                            <strong>Important:</strong> Legal requirements vary by country. Consult counsel before publishing.
                         </p>
                     </section>
                 </div>

@@ -7,9 +7,9 @@ export const Hero = ({ searchTerm, setSearchTerm, selectedStage, setSelectedStag
   const { t } = useTranslation();
 
   const stages = [
-    { id: 'First Week', label: 'First Week', color: 'bg-rose-500' },
-    { id: 'Settling In', label: 'Settling In', color: 'bg-indigo-500' },
-    { id: 'Long Term', label: 'Long Term', color: 'bg-emerald-500' },
+    { id: 'Plan', label: 'Plan', color: 'bg-rose-500' },
+    { id: 'Build', label: 'Build', color: 'bg-indigo-500' },
+    { id: 'Launch', label: 'Launch', color: 'bg-emerald-500' },
   ];
 
   const scrollToPosts = () => {
@@ -35,17 +35,17 @@ export const Hero = ({ searchTerm, setSearchTerm, selectedStage, setSelectedStag
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md text-slate-600 dark:text-slate-300 text-[11px] font-bold uppercase tracking-widest mb-8 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Germany, Decoded
+            GuideKit Template
           </span>
 
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[0.9]">
-            Your first 100 days <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-rose-500 dark:from-indigo-400 dark:to-rose-400">made simple.</span>
+            Build a guide hub <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-rose-500 dark:from-indigo-400 dark:to-rose-400">that feels premium.</span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed font-medium">
-            No-nonsense guides for expats. We've done the paperwork, translation,
-            and research so you don't have to.
+            A modern, content-first template for publishing checklists, playbooks,
+            and resource libraries with confidence.
           </p>
         </motion.div>
 

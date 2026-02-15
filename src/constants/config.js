@@ -1,31 +1,27 @@
 export const META = {
-  siteTitle: "StartGermany",
-  tagline: "Real talk for international students starting vocational training in Germany",
+  siteTitle: "GuideKit",
+  tagline: "A premium template for building modern, content-first guide sites",
   lastUpdatedLabel: "Last updated",
-  lastUpdatedDate: "2026-02-10",
-  siteUrl: "https://markdanielsm.github.io/survival-kit/",
+  lastUpdatedDate: "2026-02-15",
+  siteUrl: "https://example.com",
   disclaimer:
-    "I've tested everything here. Rules change though, so always double-check with official sources. When in doubt, trust the official letter over this guide.",
+    "This template is provided as-is. Replace all placeholder content with your own verified information.",
 };
 
 export const LINKS = {
-  revolutReferral:
-    "https://revolut.com/referral/?referral-code=markdaniels_m!JAN1-26-AR-H1&geo-redirect",
-  trashGuide: "https://www.muelltrennung-wirkt.de/de/muelltrennung/",
   buyMeACoffee: "https://buymeacoffee.com/markdanielsmcraft",
 };
 
-export const STORAGE_KEY = "survivalKit_blog_progress_v12";
+export const STORAGE_KEY = "guidekit_template_progress_v1";
 
 export const RESOURCE_CATEGORIES = [
   "All",
-  "Arrival & Setup",
-  "Money & Banking",
-  "Housing",
-  "Nursing & Math",
-  "Rights & Legal",
-  "Health & Social",
-  "Apps & Tools",
+  "Planning",
+  "Setup",
+  "Content",
+  "Launch",
+  "Growth",
+  "Operations",
 ];
 
 export const SOURCE_BADGE = {

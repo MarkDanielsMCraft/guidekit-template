@@ -129,10 +129,10 @@ export const Library = ({ resources, searchTerm, onBack }) => {
             No resources found
           </p>
           <p className="text-sm text-slate-400">
-            Try searching "visa", "Anmeldung", "health insurance", "banking"
+            Try searching "onboarding", "docs", "launch", "growth"
           </p>
           <p className="text-xs text-slate-400 mt-3">
-            Official sources include Make it in Germany, BAMF, and the Federal Employment Agency.
+            Replace the examples in src/data/resources.js with your verified sources.
           </p>
         </div>
       )}

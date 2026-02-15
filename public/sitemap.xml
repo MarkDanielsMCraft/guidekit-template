@@ -2,104 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Static Pages -->
   <url>
-    <loc>https://markdanielsm.github.io/survival-kit/</loc>
+    <loc>https://example.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://markdanielsm.github.io/survival-kit/library</loc>
+    <loc>https://example.com/library</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Guides -->
   <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/curious-about-germany</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/first-72-hours</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/money-paperwork</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/housing-neighbors</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/wg-roommate-culture</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/shopping-essentials</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/food-eating-cheap</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/health-doctors-pharmacies</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/emergency-situations</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/german-language-ausbildung</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/free-learning-resources-non-nursing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/nursing-language-resources</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/accommodation-nursing-ausbildung</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/rights-work-culture</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/legal-defense-insurance</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/german-culture-social</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/mental-health-community</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markdanielsm.github.io/survival-kit/guide/side-income-minijob</loc>
+    <loc>https://example.com/guide/template-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

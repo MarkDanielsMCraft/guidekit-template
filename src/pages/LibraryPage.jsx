@@ -35,7 +35,7 @@ export const LibraryPage = ({ emergencyMode, setEmergencyMode }) => {
                         Resource Library
                     </h2>
                     <p className="text-[18px] text-slate-600 dark:text-slate-400 mb-8 font-medium">
-                        Curated tools, apps, and links for your first year in Germany.
+                        Curated links and tools for your guide ecosystem.
                     </p>
 
                     <div className="max-w-lg mx-auto mb-8">
@@ -43,7 +43,7 @@ export const LibraryPage = ({ emergencyMode, setEmergencyMode }) => {
                             <Search className="ml-4 text-slate-400" size={20} />
                             <input
                                 type="text"
-                                placeholder="Search: apps, banking, health"
+                                placeholder="Search: onboarding, docs, launch"
                                 className="w-full py-4 px-4 rounded-2xl focus:outline-none text-slate-700 dark:text-slate-200 font-medium placeholder:text-slate-400 bg-transparent"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
