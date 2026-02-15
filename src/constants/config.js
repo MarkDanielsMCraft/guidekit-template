@@ -1,9 +1,9 @@
 export const META = {
-  siteTitle: "GuideKit",
+  siteTitle: "MCraft",
   tagline: "A premium template for building modern, content-first guide sites",
   lastUpdatedLabel: "Last updated",
   lastUpdatedDate: "2026-02-15",
-  siteUrl: "https://example.com",
+  siteUrl: "https://mcraftportfolio.vercel.app",
   disclaimer:
     "This template is provided as-is. Replace all placeholder content with your own verified information.",
 };

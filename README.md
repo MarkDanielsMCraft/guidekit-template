@@ -13,7 +13,7 @@ All content ships as placeholders so you can insert your own verified informatio
 - **Progress tracking**: Checklist completion stored in local storage
 - **Search + filtering**: Fast discovery across titles, tags, and steps
 - **Modern UI**: Glassmorphism, gradients, and smooth transitions
-- **SEO basics**: Meta tags, sitemap, robots.txt, and 404 fallback
+- **SEO basics**: Meta tags and 404 fallback (add sitemap/robots for your domain)
 - **Legal page templates**: About, Terms, Privacy, Impressum, Datenschutz
 
 ## Tech Stack
@@ -34,8 +34,20 @@ npm run dev
 1. Replace the sample guide in src/data/posts/template-guide.jsx
 2. Replace resources in src/data/resources.js
 3. Update metadata in src/constants/config.js
-4. Review legal pages in src/pages
-5. Update public/sitemap.xml and public/robots.txt
+4. Update SEO tags in index.html (title, description, OG/Twitter URLs)
+5. Review legal pages in src/pages
+6. Add public/sitemap.xml and public/robots.txt for your domain
+
+## Forking Checklist (Do This Before You Publish)
+1. **Branding**: Update site name, tagline, and site URL in src/constants/config.js.
+2. **SEO**: Set title/description and OG/Twitter tags in index.html.
+3. **Guides**: Replace src/data/posts/template-guide.jsx with your real content.
+4. **Resources**: Replace src/data/resources.js with verified sources.
+5. **Legal**: Edit About/Terms/Privacy/Impressum/Datenschutz pages or remove routes if you do not need them.
+6. **Search**: Confirm your content appears in search and filters.
+7. **Sitemap/Robots**: Add public/sitemap.xml and public/robots.txt for your domain.
+8. **Verification**: Add verified dates to each post and double-check all links.
+9. **Deploy**: Run npm run build and npm run preview before going live.
 
 ## Deploy
 ```bash
